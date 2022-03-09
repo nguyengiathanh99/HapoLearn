@@ -36,75 +36,75 @@ $bg-other-courses-3: #1b75bb;
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
       border-radius: 15px;
       flex-basis: 30%;
+    }
 
-      .bg-course {
-        width: 100%;
-        height: 180px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
-        border-radius: 15px 15px 0px 0px;
+    .bg-course {
+      width: 100%;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+      border-radius: 15px 15px 0px 0px;
+    }
+
+    .bg-course-css {
+      background: $bg-other-courses-1;
+
+      img {
+        width: 50%;
+        height: 50%;
       }
+    }
 
-      .bg-course-css {
-        background: $bg-other-courses-1;
+    .bg-course-group {
+      background: $bg-other-courses-2;
 
-        img {
-          width: 50%;
-          height: 50%;
-        }
+      img {
+        width: 50%;
+        height: 50%;
       }
+    }
 
-      .bg-course-group {
-        background: $bg-other-courses-2;
-
-        img {
-          width: 50%;
-          height: 50%;
-        }
+    .bg-course-java {
+      background: $bg-other-courses-3;
+      img {
+        width: 50%;
+        height: 50%;
       }
+    }
 
-      .bg-course-java {
-        background: $bg-other-courses-3;
-        img {
-          width: 50%;
-          height: 50%;
-        }
-      }
+    .title-course {
+      font-size: 20px;
+      padding: 5px;
+      margin-bottom: 0;
+      text-align: center;
+      line-height: 37px;
+      color: $color-title-course;
+      font-weight: 600;
+    }
 
-      .title-course {
-        font-size: 20px;
-        padding: 5px;
-        margin-bottom: 0;
-        text-align: center;
-        line-height: 37px;
-        color: $color-title-course;
-        font-weight: 600;
-      }
+    .content-course {
+      text-align: center;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 20px;
+      padding: 20px;
+      margin-bottom: 0;
+    }
 
-      .content-course {
-        text-align: center;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 20px;
-        padding: 20px;
-        margin-bottom: 0;
-      }
-
-      .btn-course {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: $color-title-course;
-        box-shadow: inset 0px 1.5px 2px #6f8710;
-        border-radius: 22px;
-        text-align: center;
-        border: none;
-        padding: 6px 12px;
-        color: white;
-        margin: 0 auto;
-      }
+    .btn-course {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: $color-title-course;
+      box-shadow: inset 0px 1.5px 2px #6f8710;
+      border-radius: 22px;
+      text-align: center;
+      border: none;
+      padding: 6px 12px;
+      color: white;
+      margin: 0 auto;
     }
   }
 
@@ -128,17 +128,19 @@ $bg-other-courses-3: #1b75bb;
       .list-course {
         width: 158px;
         height: 150px;
-        .bg-course {
-          height: 100%;
-        }
-        
-        .title-course {
-          font-size: 15px;
-        }
-        .content-course {
-          font-size: 15px;
-          padding: 8px;
-        }
+      }
+
+      .bg-course {
+        height: 100%;
+      }
+      
+      .title-course {
+        font-size: 15px;
+      }
+      
+      .content-course {
+        font-size: 15px;
+        padding: 8px;
       }
     }
 
@@ -153,19 +155,17 @@ $bg-other-courses-3: #1b75bb;
     margin-top: 25px;
     .hapo-other-course {
       
-      .list-course {
-        .bg-course {
-          height: 100%;
-        }
+      .bg-course {
+        height: 100%;
+      }
 
-        .title-course {
-          font-size: 15px;
-        }
+      .title-course {
+        font-size: 15px;
+      }
 
-        .content-course {
-          font-size: 13px;
-          padding: 0;
-        }
+      .content-course {
+        font-size: 13px;
+        padding: 0;
       }
     }
 
@@ -182,14 +182,15 @@ $bg-other-courses-3: #1b75bb;
     .hapo-other-course {
       flex-direction: column;
       height: 100vh;
+      
       .list-course {
-
         margin-bottom: -250px;
         width: 270px;
         height: 230px;
-        .content-course {
-          padding-bottom: 10px;
-        }
+      }
+
+      .content-course {
+        padding-bottom: 10px;
       }
     }
 

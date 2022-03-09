@@ -48,10 +48,58 @@ $color-title: #ffffff;
                 font-size: 17px;
                 line-height: 25px;
                 letter-spacing: -0.05em;
+                padding: 5px 0;
+
                 i {
                     padding-right: 8px;
                 }
             }
         }
+
+        .why-hapo-img {
+            width: 780px;
+            height: 540px;
+            top: -200px;
+            left: 425px;
+            position: absolute;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .why-hapo-learn {
+        .why-hapo-mb {
+            width: 375px;
+            height: 465px;
+        }
+
+        .why-hapo-content {
+            top: 200px;
+            left: 90px;
+
+            .why-hapo-title-2 {
+                font-size: 45px;
+                line-height: 75px;
+            }
+
+            .why-hapo-nav {
+                p {
+                    font-size: 15px;
+                }
+            }
+
+            .why-hapo-img {
+                width: 500px;
+                height: 500px;
+                top: -180px;
+                left: 427px;
+            }
+        }
+    
     }
 }
