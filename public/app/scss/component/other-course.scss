@@ -1,7 +1,7 @@
 $bg-hapo-list-course: #ffffff;
-$bg-course-1: #3f6185;
-$bg-course-2: #dc594c;
-$bg-course-3: #556598;
+$bg-course-html-css: #3f6185;
+$bg-course-laravel: #dc594c;
+$bg-course-php: #556598;
 $color-title-course: #b2d235;
 $color-content-course: #505353;
 $bg-other-courses-1: #24abe2;
@@ -47,7 +47,7 @@ $bg-other-courses-3: #1b75bb;
         border-radius: 15px 15px 0px 0px;
       }
 
-      .bg-course-1 {
+      .bg-course-css {
         background: $bg-other-courses-1;
 
         img {
@@ -56,7 +56,7 @@ $bg-other-courses-3: #1b75bb;
         }
       }
 
-      .bg-course-2 {
+      .bg-course-group {
         background: $bg-other-courses-2;
 
         img {
@@ -65,7 +65,7 @@ $bg-other-courses-3: #1b75bb;
         }
       }
 
-      .bg-course-3 {
+      .bg-course-java {
         background: $bg-other-courses-3;
         img {
           width: 50%;
@@ -109,7 +109,7 @@ $bg-other-courses-3: #1b75bb;
   }
 
   .view-courses {
-    color: #90ab26;
+    color: $color-title-course;
     font-size: 30px;
     font-weight: 600;
     letter-spacing: -0.02em;
@@ -131,7 +131,10 @@ $bg-other-courses-3: #1b75bb;
         .bg-course {
           height: 100%;
         }
-
+        
+        .title-course {
+          font-size: 15px;
+        }
         .content-course {
           font-size: 15px;
           padding: 8px;
