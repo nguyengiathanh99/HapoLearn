@@ -1,18 +1,9 @@
-$bg-hapo-list-course: #ffffff;
-$bg-course-html-css: #3f6185;
-$bg-course-laravel: #dc594c;
-$bg-course-php: #556598;
-$color-title-course: #b2d235;
-$color-content-course: #505353;
-$bg-other-courses-1: #24abe2;
-$bg-other-courses-2: #e14e40;
-$bg-other-courses-3: #1b75bb;
-
 .wp-hapo-other-course {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 100px;
+  padding-top: 10%;
+
   .title-other-course {
     font-weight: 700;
     font-size: 70px;
@@ -114,12 +105,13 @@ $bg-other-courses-3: #1b75bb;
     font-weight: 600;
     letter-spacing: -0.02em;
     line-height: 49px;
-    margin-top: 30px;
+    padding-top: 50px;
   }
 }
 
 @media screen and (max-width: 768px) {
   .wp-hapo-other-course {
+    padding-top: 35%;
     .title-other-course {
       font-size: 50px;
     }
@@ -133,11 +125,11 @@ $bg-other-courses-3: #1b75bb;
       .bg-course {
         height: 100%;
       }
-      
+
       .title-course {
         font-size: 15px;
       }
-      
+
       .content-course {
         font-size: 15px;
         padding: 8px;
@@ -152,37 +144,40 @@ $bg-other-courses-3: #1b75bb;
 
 @media screen and (max-width: 600px) {
   .wp-hapo-other-course {
-    margin-top: 25px;
+    padding-top: 40%;
+    .title-other-course {
+      font-size: 40px;
+    }
+
     .hapo-other-course {
-      
       .bg-course {
         height: 100%;
       }
 
       .title-course {
-        font-size: 15px;
+        font-size: 14px;
       }
 
       .content-course {
         font-size: 13px;
-        padding: 0;
+        padding-bottom: 6px;
       }
     }
 
     .view-courses {
-      margin-top: 180px;
+      margin-top: 225px;
     }
   }
 }
 
 @media screen and (max-width: 420px) {
   .wp-hapo-other-course {
-    margin-top: 700px;
+    padding-top: 140%;
 
     .hapo-other-course {
       flex-direction: column;
       height: 100vh;
-      
+
       .list-course {
         margin-bottom: -250px;
         width: 270px;

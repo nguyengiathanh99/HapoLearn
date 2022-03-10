@@ -1,9 +1,3 @@
-$color-special: #11114e;
-$color-span: #505353;
-$color-btn: #b2d235;
-$color-hover: #c1dd50;
-$text-color-btn: #ffffff;
-
 .hapo-banner {
   width: 100%;
   height: 593px;
@@ -11,17 +5,15 @@ $text-color-btn: #ffffff;
   background-image: url("https://s3-alpha-sig.figma.com/img/866b/63ac/1e9eca12ac0612fb7b885045132e08f8?Expires=1647820800&Signature=NhlkpIpR6qN9L7m7-pfHBq5CIZ2ouCnC5HnoqWJpGwg2X3bxKw0PwdqbD6pOVC2bkh1EZhALlq6bRzlzhi-PAkP-A2GCTYJW-LwDXss3DDreysAOAoHToqPOAvt-h6bH13-2kYc4b9gPVUbWBAZ5x-cM0-daiEht7K5elJyh26MXyyqN~lVcQKoZCkW4fk9PQZqALMNW8fAXsCFJLS3rc17Wb~Y-OJKdvCRZBZtWQCzO~7xh~moTdznh1VdqxF2U-gXam~PNA~Lxf1ixzgktPPOeX1DuZmEwbcbjjDpDdEIjApJ4stSg-KicKlNrx9Fbe5PfNY0~QXmcBKi0pCwbgA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
   background-repeat: no-repeat;
   background-size: 100% auto;
-  position: relative;
 
   .banner-content {
     position: absolute;
     top: 185px;
-    left: 110px;
+    left: 105px;
     width: 70%;
-    
+
     .banner-title {
       width: 100%;
-      height: 60px;
       margin-bottom: 0;
       font-size: 38px;
       font-weight: 300;
@@ -32,13 +24,13 @@ $text-color-btn: #ffffff;
 
     .banner-special {
       width: 100%;
-      height: 60px;
       margin-bottom: 0;
       color: $color-special;
       font-weight: bold;
       font-size: 35px;
       line-height: 50px;
     }
+
     img {
       width: 50px;
       height: 45px;
@@ -52,8 +44,8 @@ $text-color-btn: #ffffff;
     }
 
     .banner-btn {
-      width: 280px;
-      height: 50px;
+      width: 320px;
+      height: 60px;
       background: $color-btn;
       border: none;
       box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -62,24 +54,34 @@ $text-color-btn: #ffffff;
       font-weight: bold;
       color: $text-color-btn;
       text-align: center;
+      font-size: 25px;
     }
   }
 }
 
 @media screen and (max-width: 1024px) {
   .hapo-banner {
-    height: 555px;
+    height: 466px;
     .banner-content {
       top: 135px;
       left: 60px;
+
       .banner-title {
         font-size: 31px;
       }
+
       .banner-special {
         font-size: 28px;
       }
+
       .banner-span {
         font-size: 14px;
+      }
+
+      .banner-btn {
+        font-size: 20px;
+        width: 275px;
+        height: 60px;
       }
     }
   }
@@ -98,7 +100,7 @@ $text-color-btn: #ffffff;
   .hapo-banner {
     height: 349px;
     .banner-content {
-      top: 45px;
+      top: 60px;
       left: 42px;
       .banner-title {
         font-size: 25px;
@@ -107,6 +109,7 @@ $text-color-btn: #ffffff;
       .banner-special {
         font-size: 23px;
       }
+
       img {
         width: 45px;
         height: 40px;
@@ -129,9 +132,9 @@ $text-color-btn: #ffffff;
 
 @media screen and (max-width: 600px) {
   .hapo-banner {
-    height: 273px;
+    height: 275px;
     .banner-content {
-      top: 20px;
+      top: 40px;
       left: 20px;
       .banner-title {
         font-size: 20px;
@@ -163,7 +166,7 @@ $text-color-btn: #ffffff;
 
 @media screen and (max-width: 420px) {
   .hapo-banner {
-    height: 350px;
+    height: 165px;
     .banner-content {
       top: 200px;
       left: 80px;
@@ -175,8 +178,9 @@ $text-color-btn: #ffffff;
 
       .banner-special {
         height: 50px;
-        font-size: 25px;
+        font-size: 22px;
       }
+
       img {
         width: 25px;
         height: 22px;
@@ -199,13 +203,12 @@ $text-color-btn: #ffffff;
     .banner-content {
       top: 170px;
       .banner-title {
-        font-size: 22px;
+        font-size: 20px;
         height: 40px;
       }
 
       .banner-special {
         height: 50px;
-        font-size: 25px;
         .banner-img {
           width: 20px;
           height: 18px;
@@ -215,7 +218,7 @@ $text-color-btn: #ffffff;
       .banner-span {
         font-size: 14px;
       }
-      
+
       .banner-btn {
         width: 230px;
         height: 46px;
@@ -226,12 +229,19 @@ $text-color-btn: #ffffff;
 
 @media screen and (max-width: 320px) {
   .hapo-banner {
+    height: 140px;
     .banner-content {
-      top: 170px;
-      left: 56px;
+      top: 150px;
+      left: 50px;
+
       .banner-title {
+        font-size: 18px;
+      }
+
+      .banner-special {
         font-size: 19px;
       }
     }
   }
 }
+
