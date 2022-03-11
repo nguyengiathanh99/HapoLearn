@@ -4,7 +4,6 @@ $(document).ready(function () {
     $(".menu-content").toggleClass('show');
   });
 });
-
 // Feed-back
 $('.slick').slick({
   dots: false,
