@@ -1,0 +1,218 @@
+.why-hapo-learn {
+  width: 100%;
+  height: 700px;
+  background-image: url("https://s3-alpha-sig.figma.com/img/c558/56f1/074a76c0613b7249fa2847b58b2160cd?Expires=1647820800&Signature=D4h8p4Fp1bXnsCEMB20API6aUomP8uE6v2u9xM-Sfj0tAH69oIBZES95JuT8u2y80aupUbcEcNokObgzQj~ifbT6Ny-TLlX0NfVnJ1BD8zVYW90w52fpwevvjMOcGiQNkw1yqtzoCxF6orfOWbm-W2MBEoaHTNQ0DhztfWjLN1HSebcQcKtWYuaulfYkuL2-BZZNyl5wNDqO~nuosdHsB3ILLOhCwDFy1CAPGgBYWWcBKwal7Aw8AN1v~6utg4gYqdv1gbcE2fIWG1pz~6OM4JaI8rX-oDqd7yVaBcWFfxq1rnwmFeqHp6ktl4rX0BCu4Uo5pi73TM0YZy-s8SamBQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
+  margin-top: 100px;
+  position: relative;
+
+  .why-hapo-mb {
+    width: 400px;
+    height: 492px;
+    position: absolute;
+    top: -200px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .why-hapo-title-main {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 86px;
+    letter-spacing: -0.02em;
+    color: $color-title;
+    padding-top: 40px;
+    display: none;
+  }
+
+  .why-hapo-content {
+    position: absolute;
+    top: 240px;
+    left: 105px;
+
+    .why-hapo-title {
+      font-size: 50px;
+      font-weight: bold;
+      line-height: 86px;
+      letter-spacing: -0.02em;
+      color: $color-title;
+    }
+
+    .why-hapo-nav {
+      p {
+        color: #ffff;
+        font-size: 17px;
+        line-height: 25px;
+        letter-spacing: -0.05em;
+        padding: 5px 0;
+
+        i {
+          padding-right: 8px;
+        }
+      }
+    }
+
+    .why-hapo-img {
+      width: 780px;
+      height: 540px;
+      top: -200px;
+      left: 425px;
+      position: absolute;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .why-hapo-learn {
+    .why-hapo-mb {
+      width: 375px;
+      height: 465px;
+    }
+
+    .why-hapo-content {
+      top: 200px;
+      left: 90px;
+
+      .why-hapo-title {
+        font-size: 45px;
+        line-height: 75px;
+      }
+
+      .why-hapo-nav {
+        p {
+          font-size: 15px;
+        }
+      }
+
+      .why-hapo-img {
+        width: 480px;
+        height: 490px;
+        top: -180px;
+        left: 418px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .why-hapo-learn {
+    .why-hapo-title-main {
+      display: block;
+      font-size: 45px;
+    }
+    .why-hapo-mb {
+      width: 280px;
+      height: 390px;
+    }
+
+    .why-hapo-content {
+      top: 147px;
+      left: 35px;
+
+      .why-hapo-title {
+        display: none;
+      }
+
+      .why-hapo-nav {
+        p {
+          font-size: 14px;
+        }
+      }
+
+      .why-hapo-img {
+        width: 340px;
+        height: 270px;
+        top: 12px;
+        left: 360px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .why-hapo-learn {
+    .why-hapo-title-main {
+      font-size: 35px;
+    }
+
+    .why-hapo-mb {
+      top: -160px;
+      width: 235px;
+      height: 330px;
+    }
+
+    .why-hapo-content {
+      top: 130px;
+      left: 28px;
+
+      .why-hapo-nav {
+        p {
+          padding: 0;
+          font-size: 13px;
+        }
+      }
+
+      .why-hapo-img {
+        width: 70%;
+        height: 100%;
+        top: 10px;
+        left: 307px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .why-hapo-learn {
+    .why-hapo-title-main {
+      position: absolute;
+      font-size: 33px;
+      line-height: 42px;
+      width: 70px;
+      left: 155px;
+      top: -10px;
+    }
+
+    .why-hapo-mb {
+      width: 210px;
+      height: 300px;
+    }
+
+    .why-hapo-content {
+      top: 130px;
+      left: 28px;
+
+      .why-hapo-img {
+        width: 311px;
+        position: sticky;
+      }
+
+      p {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .why-hapo-learn {
+    .why-hapo-title-main {
+      font-size: 30px;
+      left: 150px;
+    }
+
+    .why-hapo-content {
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+}

@@ -88,6 +88,11 @@
 @media screen and (max-width: 768px) {
   .wp-hapo-list-courses {
     .card {
+
+      .card-title {
+        font-size: 15px;
+      }
+
       .card-image {
         height: 170px;
       }

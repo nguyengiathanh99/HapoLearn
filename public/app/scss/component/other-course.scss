@@ -46,7 +46,7 @@
     }
 
     .card-title {
-      font-size: 21px;
+      font-size: 20px;
       color: $card-text-title;
       font-weight: 700;
       letter-spacing: -0.05rem;
@@ -74,6 +74,17 @@
       color: $btn-text-course;
       font-weight: bold;
     }
+  }
+
+  .view-courses {
+    color: $color-title-course;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 49px;
+    padding-top: 50px;
+    text-decoration: none;
+    text-align: center;
   }
 }
 
@@ -116,7 +127,7 @@
         padding: 10px 0;
         font-size: 13px;
       }
-      
+
       .card-btn {
         padding: 10px 20px;
         font-size: 14px;
@@ -137,6 +148,10 @@
   .wp-hapo-other-course {
     .title-other-course {
       font-size: 40px;
+    }
+
+    .view-courses {
+      font-size: 25px;
     }
   }
 }
