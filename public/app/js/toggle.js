@@ -3,4 +3,3 @@ $(document).ready(function () {
       $(".menu-content").toggleClass('show');
     });
   });
-  
