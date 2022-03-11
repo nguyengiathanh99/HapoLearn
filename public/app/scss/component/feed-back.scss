@@ -1,7 +1,7 @@
-.hapo-feddback {
+.hapo-feedback {
   margin-top: 100px;
 
-  .hapo-feddback-header {
+  .hapo-feedback-header {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,7 +16,7 @@
       border-radius: 3px;
     }
 
-    .fedd-back-header-content {
+    .feed-back-header-content {
       text-align: center;
       font-weight: 400;
       font-size: 20px;
@@ -27,7 +27,7 @@
     }
   }
 
-  .fedd-back-up {
+  .feed-back-up {
     box-sizing: border-box;
     border-radius: 15px;
     border: 0.5px solid #e2e2e2;
@@ -38,70 +38,70 @@
     padding: 10px;
     gap: 1rem;
 
-    .fedd-back-border {
+    .feed-back-border {
       padding: 2px;
       height: 100px;
       background: #d9dadc;
     }
 
-    .fedd-back-up-content {
+    .feed-back-up-content {
       font-size: 16px;
       line-height: 20px;
       font-weight: 400;
     }
   }
 
-  .fedd-back-down {
+  .feed-back-down {
     display: flex;
     padding: 20px;
 
-    .fedd-back-img {
+    .feed-back-img {
       width: 60px;
       height: 60px;
     }
 
-    .fedd-back-img-avt {
+    .feed-back-img-avt {
       width: 100%;
     }
 
-    .fedd-back-down-content {
+    .feed-back-down-content {
       padding-left: 8px;
 
-      .fedd-back-name {
+      .feed-back-name {
         color: #11114e;
         font-size: 16px;
         font-weight: bold;
         line-height: 25px;
         margin-bottom: 0;
       }
+    }
 
-      .fedd-back-span {
-        font-size: 14px;
-        color: #505353;
-        font-weight: 700;
-        margin-bottom: 0;
-      }
+    .feed-back-span {
+      font-size: 14px;
+      color: #505353;
+      font-weight: 700;
+      margin-bottom: 0;
+    }
 
-      .fedd-back-star {
-        color: #f2c54f;
-      }
+    .feed-back-star {
+      color: #f2c54f;
+    }
 
-      .star-special {
-        color: antiquewhite;
-      }
+    .star-special {
+      color: antiquewhite;
     }
   }
 }
 
 @media screen and (max-width: 600px) {
-  .hapo-feddback {
-    .hapo-feddback-header {
+  .hapo-feedback {
+    .hapo-feedback-header {
       .feed-back-header-title {
         font-size: 60px;
         width: 280px;
       }
 
-      .fedd-back-header-content {
+      .feed-back-header-content {
         font-size: 16px;
       }
     }
@@ -109,20 +109,20 @@
 }
 
 @media screen and (max-width: 600px) {
-  .hapo-feddback {
-    .hapo-feddback-header {
+  .hapo-feedback {
+    .hapo-feedback-header {
       .feed-back-header-title {
         font-size: 53px;
         width: 240px;
       }
 
-      .fedd-back-header-content {
+      .feed-back-header-content {
         font-size: 16px;
       }
     }
 
-    .fedd-back-up {
-      .fedd-back-up-content {
+    .feed-back-up {
+      .feed-back-up-content {
         font-size: 15px;
       }
     }
