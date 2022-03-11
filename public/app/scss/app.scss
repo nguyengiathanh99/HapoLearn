@@ -1,6 +1,5 @@
-body {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  font-size: 14px;
-}
+@import "./component/variable.scss";
+@import "./component/header.scss";
+@import "./component/banner.scss";
+@import "./component/courses.scss";
+@import "./component/other-course.scss";
