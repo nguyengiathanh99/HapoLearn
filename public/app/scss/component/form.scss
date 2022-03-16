@@ -1,0 +1,121 @@
+.hapo-form {
+  .hapo-form-main {
+    border: 1px solid $border-form-main;
+    width: 400px;
+    height: 100%;
+    background: $form-text-normal;
+
+    .form-content {
+      margin-top: 30px;
+    }
+
+    .form-header {
+      border-bottom: 0.5px solid $form-header-border;
+      box-sizing: border-box;
+      box-sizing: border-box;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .form-header-xmark {
+      position: absolute;
+      right: -22px;
+      top: -23px;
+      font-size: 32px;
+      color: #b2d235;
+    }
+
+    .form-header-content {
+      box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 11px 62px;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 29px;
+      letter-spacing: -0.02em;
+      cursor: pointer;
+    }
+
+    input {
+      background: $form-header-bg-input;
+      box-sizing: border-box;
+    }
+
+    .form-header-content-login {
+      color: $form-header-border;
+    }
+
+    .form-header-content-reg {
+      background: $form-header-border;
+      color: $form-text-normal;
+    }
+
+    .forgot-psw {
+      color: $form-header-border;
+    }
+
+    .btn-submit {
+      display: block;
+      background: $form-header-border;
+      box-shadow: inset 0px 1.5px 2px $btn-sm-box;
+      border-radius: 22px;
+      font-size: 16px;
+      border: none;
+      padding: 10px 30px;
+      text-align: center;
+      color: $form-text-normal;
+      font-weight: bold;
+      margin: 30px auto;
+      padding: 8px 60px;
+    }
+
+    .login-diff {
+      width: 100%;
+      text-align: center;
+      border-bottom: 1px solid $login-diff-bg;
+      line-height: 0.1em;
+      font-size: 16px;
+      margin-bottom: 0;
+    }
+
+    span {
+      background: $form-text-normal;
+    }
+
+    .login-social {
+      margin-top: 30px;
+    }
+
+    .login-google {
+      text-align: center;
+      background: $login-google-bg;
+      padding: 10px;
+      margin-bottom: 15px;
+    }
+
+    .login-facebook {
+      text-align: center;
+      background: $login-facebook-bg;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    .login-special {
+      color: $form-text-normal;
+      font-size: 16px;
+      line-height: 25px;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .login-icon {
+      padding: 0 8px;
+    }
+  }
+}
+

@@ -98,6 +98,21 @@
   }
 }
 
+@media screen and (max-width: 800px) {
+  .why-hapo-learn {
+      .why-hapo-content {
+        .why-hapo-img {
+          width: 270px;
+          height: 300px;
+          top: 68px;
+          left: 410px;
+        }
+      }
+  }
+}
+
+
+
 @media screen and (max-width: 768px) {
   .why-hapo-learn {
     .why-hapo-title-main {
@@ -123,7 +138,7 @@
       }
 
       .why-hapo-img {
-        width: 340px;
+        width: 323px;
         height: 270px;
         top: 12px;
         left: 360px;
@@ -154,10 +169,10 @@
       }
 
       .why-hapo-img {
-        width: 70%;
+        width: 205px;
         height: 100%;
-        top: 10px;
-        left: 307px;
+        top: 16px;
+        left: 346px;
       }
     }
   }

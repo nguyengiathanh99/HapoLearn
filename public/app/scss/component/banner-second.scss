@@ -1,0 +1,118 @@
+$banner-second-btn-text: #90ab26;
+$banner-second-content: #ffff;
+.hapo-banner-second {
+  background-image: url("http://127.0.0.1:5500/public/app/public/img/banner-second.png");
+  height: 469px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  margin-top: 50px;
+
+  .hapo-banner-second-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+
+    .banner-second-content {
+      font-size: 45px;
+      text-align: center;
+      font-weight: 700;
+      color: $banner-second-content;
+      line-height: 70px;
+      letter-spacing: -0.02em;
+      padding-bottom: 15px;
+    }
+
+    .banner-second-btn {
+      background: $banner-second-content;
+      border-radius: 35px;
+      font-size: 25px;
+      letter-spacing: -0.05em;
+      color: $banner-second-btn-text;
+      padding: 10px 50px;
+      border: none;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .hapo-banner-second {
+    height: 350px;
+    .hapo-banner-second-content {
+      padding-top: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hapo-banner-second {
+    height: 260px;
+    .hapo-banner-second-content {
+      padding-top: 40px;
+      .banner-second-content {
+        font-size: 30px;
+        line-height: 50px;
+      }
+
+      .banner-second-btn {
+        padding: 6px 25px;
+        font-size: 21px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .hapo-banner-second {
+    height: 203px;
+    .hapo-banner-second-content {
+      padding-top: 25px;
+      .banner-second-content {
+        font-size: 27px;
+        line-height: 45px;
+      }
+
+      .banner-second-btn {
+        padding: 6px 20px;
+        font-size: 19px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .hapo-banner-second {
+    height: 125px;
+    .hapo-banner-second-content {
+      padding-top: 17px;
+      .banner-second-content {
+        font-size: 19px;
+        line-height: 25px;
+      }
+
+      .banner-second-btn {
+        padding: 4px 24px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .hapo-banner-second {
+    .hapo-banner-second-content {
+      padding-top: 16px;
+      .banner-second-content {
+        font-size: 15px;
+        line-height: 22px;
+      }
+
+      .banner-second-btn {
+        padding: 3px 18px;
+        font-size: 12px;
+      }
+    }
+  }
+}

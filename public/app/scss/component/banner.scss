@@ -37,7 +37,7 @@
         height: 30px;
       }
     }
-    
+
     .banner-span {
       height: 50px;
       color: $color-span;
@@ -64,6 +64,7 @@
 @media screen and (max-width: 1024px) {
   .hapo-banner {
     height: 455px;
+
     .banner-content {
       top: 135px;
       left: 40px;
@@ -101,6 +102,7 @@
 @media screen and (max-width: 768px) {
   .hapo-banner {
     height: 336px;
+
     .banner-content {
       top: 60px;
       left: 25px;
@@ -135,6 +137,7 @@
 @media screen and (max-width: 600px) {
   .hapo-banner {
     height: 260px;
+
     .banner-content {
       top: 40px;
       left: 12px;
@@ -170,10 +173,11 @@
 @media screen and (max-width: 420px) {
   .hapo-banner {
     height: 390px;
+
     .banner-content {
       top: 200px;
       left: 80px;
-      
+
       .banner-title {
         font-size: 21px;
         line-height: 31px;
@@ -200,6 +204,7 @@
 @media screen and (max-width: 375px) {
   .hapo-banner {
     height: 370px;
+
     .banner-content {
       top: 170px;
       .banner-title {
@@ -230,6 +235,7 @@
 @media screen and (max-width: 320px) {
   .hapo-banner {
     height: 348px;
+
     .banner-content {
       top: 150px;
       left: 50px;
@@ -245,8 +251,6 @@
       .banner-span {
         font-size: 13px;
       }
-
     }
   }
 }
-
