@@ -1,10 +1,8 @@
-$banner-second-btn-text: #90ab26;
-$banner-second-content: #ffff;
 .hapo-banner-second {
   background-image: url("http://127.0.0.1:5500/public/app/public/img/banner-second.png");
   height: 469px;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% auto;
   width: 100%;
   margin-top: 50px;
 
@@ -40,8 +38,21 @@ $banner-second-content: #ffff;
 @media screen and (max-width: 1024px) {
   .hapo-banner-second {
     height: 350px;
+
     .hapo-banner-second-content {
       padding-top: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .hapo-banner-second {
+    .hapo-banner-second-content {
+      padding-top: 22px;
+
+      .banner-second-content {
+        font-size: 35px;
+      }
     }
   }
 }
@@ -49,8 +60,10 @@ $banner-second-content: #ffff;
 @media screen and (max-width: 768px) {
   .hapo-banner-second {
     height: 260px;
+
     .hapo-banner-second-content {
       padding-top: 40px;
+
       .banner-second-content {
         font-size: 30px;
         line-height: 50px;
@@ -67,8 +80,10 @@ $banner-second-content: #ffff;
 @media screen and (max-width: 600px) {
   .hapo-banner-second {
     height: 203px;
+
     .hapo-banner-second-content {
       padding-top: 25px;
+
       .banner-second-content {
         font-size: 27px;
         line-height: 45px;
@@ -82,28 +97,46 @@ $banner-second-content: #ffff;
   }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 520px) {
   .hapo-banner-second {
-    height: 125px;
     .hapo-banner-second-content {
-      padding-top: 17px;
+      padding-top: 16px;
+
       .banner-second-content {
-        font-size: 19px;
-        line-height: 25px;
+        font-size: 23px;
       }
 
       .banner-second-btn {
-        padding: 4px 24px;
-        font-size: 14px;
+        padding: 4px 20px;
+        font-size: 18px;
       }
     }
   }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 470px) {
+  .hapo-banner-second {
+    .hapo-banner-second-content {
+      padding-top: 14px;
+
+      .banner-second-content {
+        font-size: 18px;
+        line-height: 38px;
+      }
+
+      .banner-second-btn {
+        padding: 5px 21px;
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
   .hapo-banner-second {
     .hapo-banner-second-content {
       padding-top: 16px;
+
       .banner-second-content {
         font-size: 15px;
         line-height: 22px;

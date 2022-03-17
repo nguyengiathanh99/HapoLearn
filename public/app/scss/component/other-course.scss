@@ -7,7 +7,7 @@
   .title-other-course {
     font-weight: 700;
     font-size: 60px;
-    color: #11114e;
+    color: $title-other-course-color;
     letter-spacing: -0.02em;
     line-height: 98px;
     margin-bottom: 2rem;
@@ -65,7 +65,7 @@
 
     .card-btn {
       background: $card-text-title;
-      box-shadow: inset 0px 1.5px 2px #6f8710;
+      box-shadow: inset 0px 1.5px 2px $cart-btn-box-shadow;
       border-radius: 22px;
       font-size: 16px;
       border: none;
@@ -78,7 +78,7 @@
 
   .view-courses {
     color: $color-title-course;
-    font-size: 30px;
+    font-size: 26px;
     font-weight: 600;
     letter-spacing: -0.02em;
     line-height: 49px;
@@ -136,6 +136,29 @@
   }
 }
 
+@media screen and (max-width: 767px) {
+  .wp-hapo-other-course {
+    .card {
+      .card-image {
+        height: 130px;
+      }
+
+      .card-title {
+        font-size: 11px;
+      }
+
+      .card-content {
+        font-size: 10px;
+      }
+
+      .card-btn {
+        padding: 10px 15px;
+        font-size: 9px;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 600px) {
   .wp-hapo-other-course {
     .card {
@@ -155,6 +178,15 @@
   }
 }
 
+@media screen and (max-width: 575px) {
+  .wp-hapo-other-course {
+    .card {
+      width: 80%;
+      margin: 30px auto;
+    }
+  }
+}
+
 @media screen and (max-width: 420px) {
   .wp-hapo-other-course {
     .title-other-course {
@@ -162,7 +194,7 @@
     }
 
     .card {
-      margin-bottom: 30px;
+      margin-bottom: 20px;
 
       .view-courses {
         font-size: 25px;

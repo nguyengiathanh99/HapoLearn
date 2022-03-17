@@ -23,7 +23,7 @@ body {
 
   .nav-bar {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding-top: 35px;
 
@@ -129,14 +129,14 @@ body {
         background: $background-toggle;
         transition: all 0.6s;
         z-index: 1;
+      }
 
-        &.show {
-          left: 0%;
-        }
+      .show {
+        left: 0%;
+      }
 
-        li {
-          padding: 15px 0;
-        }
+      .menu-content li {
+        padding: 15px 0;
       }
     }
   }

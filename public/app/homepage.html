@@ -20,32 +20,29 @@
 	<div class="wp-container">
 		<!-- Header -->
 		<div class="header">
-			<div class="container">
-				<div class="toggle-nav">
-					<i class="fa-solid fa-bars toggle"></i>
+			<div class="toggle-nav">
+				<i class="fa-solid fa-bars toggle"></i>
+			</div>
+			<div class="nav-bar">
+				<!-- Logo -->
+				<div class="logo">
+					<img src="/public/app/public/img/hapolearn.png" alt="HapoLearn-Logo">
 				</div>
-				<div class="nav-bar">
-					<!-- Logo -->
-					<div class="logo">
-						<img src="/public/app/public/img/hapolearn.png" alt="HapoLearn-Logo">
-					</div>
-					<!-- Menu -->
-					<ul class="menu-content">
-						<li><a href="#">home</a></li>
-						<li><a href="#">allcourses</a></li>
-						<li>
-							<a href="#" data-toggle="modal" data-target="#exampleModal"
-								class="nav-login">login/register</a>
-						</li>
-						<li><a href="#">profile</a></li>
-					</ul>
-				</div>
+				<!-- Menu -->
+				<ul class="menu-content">
+					<li><a href="#">home</a></li>
+					<li><a href="#">allcourses</a></li>
+					<li>
+						<a href="#" data-toggle="modal" data-target="#modal-form" class="nav-login">login/register</a>
+					</li>
+					<li><a href="#">profile</a></li>
+				</ul>
 			</div>
 		</div>
 		<!--End Header -->
 
 		<!-- Modal -->
-		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		<div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
 			aria-hidden="true">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
@@ -154,12 +151,14 @@
 
 		<!-- Banner -->
 		<div class="hapo-banner">
-			<div class="banner-content">
-				<p class="banner-title">Learn Anytime, Anywhere</p>
-				<p class="banner-special">at HapoLearn <span class="banner-img"><img src="./public/img/birdlogo.png"
-							alt="Hapo Bird Logo"></span>!</p>
-				<p class="banner-span">Interactive lesson, "on-the-go"<br> practice, peer support</p>
-				<button type="button" class="banner-btn">Start Learning Now!</button>
+			<div class="container">
+				<div class="banner-content">
+					<p class="banner-title">Learn Anytime, Anywhere</p>
+					<p class="banner-special">at HapoLearn <span class="banner-img"><img src="./public/img/birdlogo.png"
+								alt="Hapo Bird Logo"></span>!</p>
+					<p class="banner-span">Interactive lesson, "on-the-go"<br> practice, peer support</p>
+					<button type="button" class="banner-btn">Start Learning Now!</button>
+				</div>
 			</div>
 		</div>
 		<!-- End Banner -->
@@ -168,7 +167,7 @@
 		<div class="wp-hapo-list-courses">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-4 col-md-4 col-sm-4">
+					<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
 						<div class="card">
 							<div class="card-image course-hcj">
 								<img src="./public/img/htmlcss.png" alt="Hapo bg html">
@@ -183,7 +182,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-4 col-sm-4">
+					<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
 						<div class="card">
 							<div class="card-image course-laravel">
 								<img src="./public/img/laravel.png" alt="Hapo bg html">
@@ -198,7 +197,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-4 col-sm-4">
+					<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
 						<div class="card">
 							<div class="card-image course-php">
 								<img src="./public/img/php.png" alt="Hapo bg html">
@@ -223,7 +222,7 @@
 			<p class="title-other-course">Other courses</p>
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-4 col-md-4 col-sm-4">
+					<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
 						<div class="card">
 							<div class="card-image course-css">
 								<img src="./public/img/css.png" alt="Hapo bg css">
@@ -237,7 +236,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-4 col-sm-4">
+					<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
 						<div class="card">
 							<div class="card-image course-ruby">
 								<img src="./public/img/group.png" alt="Hapo image ruby">
@@ -251,7 +250,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-4 col-sm-4">
+					<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
 						<div class="card">
 							<div class="card-image course-java">
 								<img src="./public/img/java-1.png" alt="Hapo image java">
@@ -325,7 +324,7 @@
 				</div>
 				<div class="hapo-feed-back-body">
 					<div class="row slick">
-						<div class="col-md-6 col-sm-6">
+						<div class="col-md-6 col-sm-6 col-lg-6 col-xl-6">
 							<div class="feed-back-up">
 								<p class="feed-back-border"></p>
 								<p class="feed-back-up-content">
@@ -353,7 +352,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-6 col-sm-6">
+						<div class="col-md-6 col-sm-6 col-lg-6 col-xl-6">
 							<div class="feed-back-up">
 								<p class="feed-back-border"></p>
 								<p class="feed-back-up-content">
@@ -381,7 +380,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-6 col-sm-6">
+						<div class="col-md-6 col-sm-6 col-lg-6 col-xl-6">
 							<div class="feed-back-up">
 								<p class="feed-back-border"></p>
 								<p class="feed-back-up-content">
@@ -409,7 +408,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-6 col-sm-6">
+						<div class="col-md-6 col-sm-6 col-lg-6 col-xl-6">
 							<div class="feed-back-up">
 								<p class="feed-back-border"></p>
 								<p class="feed-back-up-content">
@@ -514,6 +513,36 @@
 			</div>
 		</div>
 		<!-- End-Footer -->
+		<!-- Message -->
+		<div class="hapo-message">
+			<div class="content-message">
+				<div class="content-message-body">
+					<div class="content-message-title">HapoLearn</div>
+					<div class="content-message-main">
+						<div class="content-message-logo">
+							<img src="./public/img/mess-bird.png" alt="bird-message">
+						</div>
+						<div class="content-message-chat">HapoLearn xin chào bạn.<br> Bạn có cần chúng tôi hỗ
+							trợ gì
+							không?</div>
+					</div>
+					<div class="content-message-login">
+						<i class="fa-brands fa-facebook-messenger"></i>
+						<p class="mess-log">Đăng nhập vào Messenger</p>
+					</div>
+					<div class="content-message-footer">
+						Chat với HapoLearn trong Messenger
+					</div>
+					<div class="message-close">
+						<i class="fa-solid fa-circle-xmark"></i>
+					</div>
+				</div>
+			</div>
+			<div class="logo-message">
+				<img src="./public/img/message.png" alt="hapo-message">
+			</div>
+		</div>
+		<!-- End Message -->
 	</div>
 </body>
 <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
