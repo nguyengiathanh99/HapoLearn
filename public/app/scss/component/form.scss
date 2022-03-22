@@ -71,6 +71,11 @@
       font-weight: bold;
       margin: 30px auto;
       padding: 8px 60px;
+      cursor: pointer;
+    }
+
+    .btn-submit:hover {
+      background: #c4e73c;
     }
 
     .login-diff {
@@ -95,6 +100,11 @@
       background: $login-google-bg;
       padding: 10px;
       margin-bottom: 15px;
+      cursor: pointer;
+    }
+
+    .login-google:hover {
+      background: #c82333;
     }
 
     .login-facebook {
@@ -102,6 +112,11 @@
       background: $login-facebook-bg;
       padding: 10px;
       margin-bottom: 20px;
+      cursor: pointer;
+    }
+
+    .login-facebook:hover {
+      background: #007bff;
     }
 
     .login-special {
