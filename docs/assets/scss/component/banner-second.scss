@@ -31,6 +31,11 @@
       color: $banner-second-btn-text;
       padding: 10px 50px;
       border: none;
+      cursor: pointer;
+    }
+
+    .banner-second-btn:hover {
+      background: #e8e8e8;
     }
   }
 }
