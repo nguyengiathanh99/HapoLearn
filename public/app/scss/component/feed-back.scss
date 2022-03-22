@@ -53,10 +53,14 @@
 
   .feed-back-sort-down {
     font-size: 35px;
-    color: #efefef;
     position: absolute;
-    bottom: -25px;
+    bottom: -37px;
     left: 20px;
+  }
+
+  .feed-back-sort-down::before {
+    content: "▽";
+    color: #f9f5f5;
   }
 
   .feed-back-down {
