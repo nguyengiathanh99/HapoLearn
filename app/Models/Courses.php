@@ -25,7 +25,7 @@ class Courses extends Model
     }
 
     public function reviews() {
-        return $this->belongsToMany(User::class,'review');
+        return $this->hasMany(Reviews::class);
     }
 
     public function tags() {
