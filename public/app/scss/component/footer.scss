@@ -16,6 +16,7 @@
       width: 290px;
       height: 70px;
       padding-bottom: 10px;
+      cursor: pointer;
     }
 
     .footer-logo {
@@ -28,10 +29,12 @@
       color: $footer-left-content-color;
       line-height: 25px;
       font-weight: 500;
+      cursor: pointer;
     }
 
     .footer-mid {
       display: flex;
+      cursor: pointer;
     }
 
     .footer-mid-content-left {
@@ -41,6 +44,10 @@
       line-height: 25px;
       letter-spacing: -0.05em;
       padding-right: 100px;
+    }
+
+    .footer-mid-txt {
+      cursor: pointer;
     }
 
     .footer-mid-content-right {
@@ -56,6 +63,7 @@
       padding: 8px 20px;
       font-size: 30px;
       color: $footer-left-content-color;
+      cursor: pointer;
     }
   }
 

@@ -1,14 +1,15 @@
+.modal-body {
+  padding: 0;
+  margin-top: 60px;
+}
 .hapo-form {
   .hapo-form-main {
     border: 1px solid $border-form-main;
     width: 400px;
     height: 100%;
     background: $form-text-normal;
-
-    .form-content {
-      margin-top: 30px;
-    }
-
+    
+    
     .form-header {
       border-bottom: 0.5px solid $form-header-border;
       box-sizing: border-box;
@@ -23,10 +24,18 @@
 
     .form-header-xmark {
       position: absolute;
-      right: -22px;
-      top: -23px;
-      font-size: 32px;
-      color: $form-header-xmark-color;
+      right: -12px;
+      top: -15px;
+      font-size: 18px;
+      background: #B2D235;
+      padding: 0px 8px;
+      border-radius: 18px;
+      color: #ffff;
+      cursor: pointer;
+    }
+
+    .form-group {
+      padding-top: 15px;
     }
 
     .form-header-content {
@@ -43,6 +52,10 @@
     input {
       background: $form-header-bg-input;
       box-sizing: border-box;
+    }
+
+    .form-check-input {
+      accent-color: #B2D235;
     }
 
     .form-header-content-login {
@@ -89,6 +102,7 @@
 
     span {
       background: $form-text-normal;
+      padding: 0 5px;
     }
 
     .login-social {

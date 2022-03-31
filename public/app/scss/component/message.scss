@@ -2,6 +2,7 @@
   position: fixed;
   bottom: 150px;
   right: 25px;
+  cursor: pointer;
 
   .logo-message {
     width: 70px;
@@ -66,19 +67,24 @@
 
   .content-message-login {
     display: flex;
-    align-items: baseline;
+    border: none;
+    align-items: center;
     justify-content: center;
-    padding-top: 10px;
-    background: $content-message-login-bg;
+    background: #4690f8;
     border-radius: 10px;
-    text-align: center;
-    width: 275px;
-    color: $content-message-bg;
+    color: #ffffff;
     margin-top: 15px;
-
+    padding: 8px 20px;
+    margin-left: 30px;
+    cursor: pointer;
+    
     i {
-      padding-right: 10px;
+      padding-right: 8px;
     }
+  }
+
+  .content-message-login:hover {
+    background: #3a80e3;
   }
 
   .content-message-footer {
@@ -88,11 +94,13 @@
     color: $content-message-footer-color;
     font-weight: 600;
     padding: 8px 0 18px;
+    margin-left: 30px;
   }
 
   .message-close {
     position: absolute;
     top: 10px;
     right: 15px;
+    font-size: 20px;
   }
 }
