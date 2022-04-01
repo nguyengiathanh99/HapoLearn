@@ -15,11 +15,11 @@ class CreateDocumentsTable extends Migration
     {
         Schema::create('documents', function (Blueprint $table) {
             $table->id();
-            $table->string('name',50);
-            $table->string('title',50);
-            $table->integer('lesson_id');
-            $table->string('file_path',100);
-            $table->softDeletes('softdelete');
+            $table->string('name', 50)->nullable();
+            $table->string('title', 50)->nullable();
+            $table->integer('lesson_id')->nullable();
+            $table->string('file_path', 100)->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

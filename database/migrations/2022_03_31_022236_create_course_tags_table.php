@@ -15,9 +15,9 @@ class CreateCourseTagsTable extends Migration
     {
         Schema::create('course_tags', function (Blueprint $table) {
             $table->id();
-            $table->integer('course_id');
-            $table->integer('tag_id');
-            $table->softDeletes('softdelete');
+            $table->integer('course_id')->nullable();
+            $table->integer('tag_id')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

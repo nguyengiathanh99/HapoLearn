@@ -15,12 +15,12 @@ class CreateReviewsTable extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
-            $table->integer('course_id');
-            $table->string('file_path');
-            $table->text('comment');
-            $table->string('vote','100');
-            $table->softDeletes('softdelete');
+            $table->integer('user_id')->nullable();
+            $table->integer('course_id')->nullable();
+            $table->string('file_path')->nullable();
+            $table->text('comment')->nullable();
+            $table->string('vote', '100')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

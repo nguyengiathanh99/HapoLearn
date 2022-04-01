@@ -15,9 +15,9 @@ class CreateUserLessonsTable extends Migration
     {
         Schema::create('user_lessons', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
-            $table->integer('lesson_id');
-            $table->softDeletes('softdelete');
+            $table->integer('user_id')->nullable();
+            $table->integer('lesson_id')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

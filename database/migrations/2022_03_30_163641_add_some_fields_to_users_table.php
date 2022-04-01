@@ -14,14 +14,14 @@ class AddSomeFieldsToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('image','255');
-            $table->string('phone','20');
-            $table->integer('role')->unsigned();
-            $table->date('date_of_birth');
-            $table->text('description');
-            $table->text('about');
-            $table->tinyInteger('status');
-            $table->softDeletes('softdelete');
+            $table->string('image', '255')->nullable();
+            $table->string('phone', '20')->nullable();
+            $table->integer('role')->unsigned()->nullable();
+            $table->date('date_of_birth')->nullable();
+            $table->text('description')->nullable();
+            $table->text('about')->nullable();
+            $table->tinyInteger('status')->nullable();
+            $table->softDeletes();
         });
     }
 
@@ -33,7 +33,13 @@ class AddSomeFieldsToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('image','phone','role','date_of_birth','description','about','status','softdelete');
+            $table->dropColumn('image');
+            $table->dropColumn('phone');
+            $table->dropColumn('role');
+            $table->dropColumn('date_of_birth');
+            $table->dropColumn('description');
+            $table->dropColumn('about');
+            $table->dropColumn('status');
         });
     }
 }

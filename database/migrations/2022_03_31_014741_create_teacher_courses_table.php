@@ -15,9 +15,9 @@ class CreateTeacherCoursesTable extends Migration
     {
         Schema::create('teacher_courses', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
-            $table->integer('course_id');
-            $table->softDeletes('softdelete');
+            $table->integer('user_id')->nullable();
+            $table->integer('course_id')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
