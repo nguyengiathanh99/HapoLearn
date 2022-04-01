@@ -2,14 +2,14 @@
   width: 100%;
   height: 700px;
   background-image: url("https://s3-alpha-sig.figma.com/img/c558/56f1/074a76c0613b7249fa2847b58b2160cd?Expires=1647820800&Signature=D4h8p4Fp1bXnsCEMB20API6aUomP8uE6v2u9xM-Sfj0tAH69oIBZES95JuT8u2y80aupUbcEcNokObgzQj~ifbT6Ny-TLlX0NfVnJ1BD8zVYW90w52fpwevvjMOcGiQNkw1yqtzoCxF6orfOWbm-W2MBEoaHTNQ0DhztfWjLN1HSebcQcKtWYuaulfYkuL2-BZZNyl5wNDqO~nuosdHsB3ILLOhCwDFy1CAPGgBYWWcBKwal7Aw8AN1v~6utg4gYqdv1gbcE2fIWG1pz~6OM4JaI8rX-oDqd7yVaBcWFfxq1rnwmFeqHp6ktl4rX0BCu4Uo5pi73TM0YZy-s8SamBQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
-  margin-top: 100px;
+  margin-top: 140px;
   position: relative;
 
   .why-hapo-mb {
-    width: 400px;
-    height: 492px;
+    width: 450px;
+    height: 500px;
     position: absolute;
-    top: -200px;
+    top: -250px;
 
     .why-hapo-img-mb {
       width: 100%;
@@ -31,10 +31,10 @@
   .why-hapo-content {
     position: absolute;
     top: 240px;
-    left: 105px;
+    left: 250px;
 
     .why-hapo-title {
-      font-size: 50px;
+      font-size: 70px;
       font-weight: bold;
       line-height: 86px;
       letter-spacing: -0.02em;
@@ -42,15 +42,16 @@
     }
 
     .why-hapo-nav-content {
-      color: #ffff;
-      font-size: 17px;
+      color: $why-hapo-nav-content-color;
+      font-size: 23px;
       line-height: 25px;
       letter-spacing: -0.05em;
       padding: 5px 0;
     }
 
     .icon-check {
-      padding-right: 8px;
+      padding-right: 10px;
+      font-size: 28px;
     }
 
     .why-hapo-img {
@@ -68,31 +69,218 @@
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1920px) {
   .why-hapo-learn {
     .why-hapo-mb {
-      width: 375px;
-      height: 465px;
+      width: 450px;
+      height: 530px;
+      top: -248px;
     }
 
     .why-hapo-content {
-      top: 200px;
-      left: 90px;
-
-      .why-hapo-title {
-        font-size: 45px;
-        line-height: 75px;
-      }
+      top: 240px;
+      left: 202px;
 
       .why-hapo-nav-content {
-        font-size: 15px;
+        font-size: 23px;
+        line-height: 28px;
+        padding: 8px 0;
+        font-weight: 300;
       }
 
       .why-hapo-img {
-        width: 480px;
-        height: 490px;
-        top: -180px;
-        left: 418px;
+        width: 790px;
+        height: 550px;
+        top: -200px;
+        left: 770px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1730px) {
+  .why-hapo-learn {
+    .why-hapo-content {
+      left: 170px;
+
+      .why-hapo-img {
+        width: 750px;
+        left: 650px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1580px) {
+  .why-hapo-learn {
+    .why-hapo-content {
+      left: 160px;
+
+      .why-hapo-nav-content {
+        font-size: 21px;
+      }
+
+      .why-hapo-img {
+        width: 680px;
+        height: 500px;
+        left: 640px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1490px) {
+  .why-hapo-learn {
+    .why-hapo-content {
+      left: 120px;
+
+      .why-hapo-img {
+        width: 600px;
+        height: 470px;
+        left: 630px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .why-hapo-learn {
+    .why-hapo-content {
+      left: 100px;
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .why-hapo-learn {
+    .why-hapo-content {
+      .why-hapo-img {
+        width: 500px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .why-hapo-learn {
+    .why-hapo-content {
+      .why-hapo-img {
+        width: 410px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1170px) {
+  .why-hapo-learn {
+    .why-hapo-mb {
+      width: 420px;
+      height: 500px;
+      top: -248px;
+    }
+
+    .why-hapo-content {
+      left: 60px;
+
+      .why-hapo-title {
+        font-size: 70px;
+      }
+
+      .why-hapo-img {
+        width: 400px;
+        height: 350px;
+        top: -150px;
+        left: 610px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1040px) {
+  .why-hapo-learn {
+    .why-hapo-content {
+      left: 37px;
+
+      .why-hapo-title {
+        font-size: 66px;
+      }
+
+      .why-hapo-img {
+        width: 380px;
+        height: 350px;
+        left: 580px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .why-hapo-learn {
+    .why-hapo-content {
+      left: 35px;
+
+      .why-hapo-title {
+        font-size: 60px;
+      }
+
+      .why-hapo-nav-content {
+        font-size: 19px;
+      }
+
+      .why-hapo-img {
+        top: -120px;
+        width: 370px;
+        height: 340px;
+        left: 510px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .why-hapo-learn {
+    .why-hapo-content {
+      left: 33px;
+
+      .why-hapo-title {
+        font-size: 58px;
+      }
+
+      .why-hapo-nav-content {
+        font-size: 17px;
+      }
+
+      .why-hapo-img {
+        top: -116px;
+        width: 350px;
+        height: 322px;
+        left: 480px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 870px) {
+  .why-hapo-learn {
+    .why-hapo-content {
+      .why-hapo-img {
+        top: 120px;
+        width: 330px;
+        height: 300px;
+        left: 435px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .why-hapo-learn {
+    .why-hapo-content {
+      .why-hapo-img {
+        top: 130px;
+        left: 420px;
+        width: 300px;
+        height: 290px;
       }
     }
   }
@@ -106,8 +294,9 @@
     }
 
     .why-hapo-mb {
-      width: 280px;
-      height: 390px;
+      top: -210px;
+      width: 270px;
+      height: 360px;
     }
 
     .why-hapo-content {
@@ -123,10 +312,34 @@
       }
 
       .why-hapo-img {
-        width: 340px;
+        width: 300px;
         height: 270px;
-        top: 12px;
-        left: 360px;
+        top: 42px;
+        left: 350px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .why-hapo-learn {
+    .why-hapo-title-main {
+      display: block;
+      font-size: 45px;
+    }
+
+    .why-hapo-content {
+      left: 32px;
+
+      .why-hapo-nav-content {
+        font-size: 14px;
+      }
+
+      .why-hapo-img {
+        width: 270px;
+        height: 250px;
+        top: 60px;
+        left: 342px;
       }
     }
   }
@@ -154,10 +367,50 @@
       }
 
       .why-hapo-img {
-        width: 70%;
-        height: 100%;
-        top: 10px;
-        left: 307px;
+        width: 200px;
+        height: 240px;
+        top: 70px;
+        left: 340px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .why-hapo-learn {
+    .why-hapo-mb {
+      width: 209px;
+      height: 300px;
+    }
+
+    .why-hapo-content {
+      left: 115px;
+
+      .why-hapo-img {
+        width: 311px;
+        position: sticky;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .why-hapo-learn {
+    .why-hapo-mb {
+      width: 190px;
+      height: 280px;
+    }
+
+    .why-hapo-title-main {
+      font-size: 30px;
+    }
+
+    .why-hapo-content {
+      left: 70px;
+
+      .why-hapo-img {
+        width: 311px;
+        position: sticky;
       }
     }
   }
@@ -205,6 +458,32 @@
     .why-hapo-content {
       .why-hapo-nav-content {
         font-size: 12px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .why-hapo-learn {
+    .why-hapo-mb {
+      width: 190px;
+      height: 270px;
+    }
+
+    .why-hapo-title-main {
+      font-size: 30px;
+      left: 115px;
+    }
+
+    .why-hapo-content {
+      left: 7px;
+
+      .why-hapo-nav-content {
+        font-size: 12px;
+      }
+
+      .why-hapo-img {
+        width: 286px;
       }
     }
   }

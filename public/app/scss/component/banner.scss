@@ -2,22 +2,21 @@
   width: 100%;
   height: 593px;
   position: relative;
-  background-image: url("https://s3-alpha-sig.figma.com/img/866b/63ac/1e9eca12ac0612fb7b885045132e08f8?Expires=1647820800&Signature=NhlkpIpR6qN9L7m7-pfHBq5CIZ2ouCnC5HnoqWJpGwg2X3bxKw0PwdqbD6pOVC2bkh1EZhALlq6bRzlzhi-PAkP-A2GCTYJW-LwDXss3DDreysAOAoHToqPOAvt-h6bH13-2kYc4b9gPVUbWBAZ5x-cM0-daiEht7K5elJyh26MXyyqN~lVcQKoZCkW4fk9PQZqALMNW8fAXsCFJLS3rc17Wb~Y-OJKdvCRZBZtWQCzO~7xh~moTdznh1VdqxF2U-gXam~PNA~Lxf1ixzgktPPOeX1DuZmEwbcbjjDpDdEIjApJ4stSg-KicKlNrx9Fbe5PfNY0~QXmcBKi0pCwbgA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
+  background-image: url("https://res.cloudinary.com/derrfxjxx/image/upload/v1646801607/hapo_learn_banner_1_ya6dcc.png");
   background-repeat: no-repeat;
   background-size: 100% auto;
-  margin-bottom: 25px;
 
   .banner-content {
     position: absolute;
     top: 185px;
-    left: 80px;
-    width: 70%;
+    left: 140px;
+    width: 60%;
 
     .banner-title {
       width: 100%;
       margin-bottom: 0;
-      font-size: 38px;
-      font-weight: 300;
+      font-size: 35px;
+      font-weight: 400;
       line-height: 61px;
       color: $color-special;
       opacity: 0.9;
@@ -29,7 +28,7 @@
       margin-bottom: 0;
       color: $color-special;
       font-weight: bold;
-      font-size: 35px;
+      font-size: 34px;
       line-height: 50px;
 
       .banner-img {
@@ -37,16 +36,16 @@
         height: 30px;
       }
     }
-    
+
     .banner-span {
       height: 50px;
       color: $color-span;
-      font-size: 16px;
+      font-size: 17px;
       line-height: 25px;
     }
 
     .banner-btn {
-      width: 320px;
+      width: 276px;
       height: 60px;
       background: $color-btn;
       border: none;
@@ -56,21 +55,126 @@
       font-weight: bold;
       color: $text-color-btn;
       text-align: center;
-      font-size: 25px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    .banner-btn:hover {
+      background: #c4e73c;
     }
   }
 }
 
+@media screen and (max-width: 1920px) {
+  .hapo-banner {
+    .banner-content {
+      position: absolute;
+      top: 182px;
+      left: 70px;
+      width: 60%;
+
+      .banner-title {
+        font-size: 50px;
+      }
+
+      .banner-special {
+        font-size: 40px;
+      }
+
+      .banner-span {
+        font-size: 18px;
+      }
+
+      .banner-btn {
+        font-size: 26px;
+        display: flex;
+        width: 400px;
+        height: 60px;
+        justify-content: center;
+        align-items: center;
+        font-weight: 400;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1720px) {
+  .hapo-banner {
+    .banner-content {
+      .banner-title {
+        font-size: 40px;
+      }
+
+      .banner-special {
+        font-size: 36px;
+      }
+
+      .banner-btn {
+        width: 380px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .hapo-banner {
+    .banner-content {
+      .banner-btn {
+        width: 350px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .hapo-banner {
+    height: 540px;
+
+    .banner-content {
+      .banner-title {
+        font-size: 35px;
+      }
+      
+      .banner-special {
+        font-size: 32px;
+      }
+
+      .banner-btn {
+        font-size: 22px;
+        width: 320px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1120px) {
+  .hapo-banner {
+    height: 490px;
+
+    .banner-content {
+      top: 150px;
+      left: 90px;
+
+      .banner-title {
+        font-size: 30px;
+      }
+
+      .banner-btn {
+        width: 280px;
+      }
+    }
+  }
+}
+
+
 @media screen and (max-width: 1024px) {
   .hapo-banner {
     height: 455px;
-    .banner-content {
-      top: 135px;
-      left: 40px;
 
-      .banner-title {
-        font-size: 31px;
-      }
+    .banner-content {
+      top: 140px;
+      left: 60px;
 
       .banner-special {
         font-size: 28px;
@@ -89,8 +193,45 @@
   }
 }
 
+@media screen and (max-width: 950px) {
+  .hapo-banner {
+    height: 435px;
+
+    .banner-content {
+      top: 130px;
+      left: 36px;
+    }
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .hapo-banner {
+    height: 400px;
+
+    .banner-content {
+      top: 114px;
+      left: 30px;
+
+      .banner-title {
+        font-size: 28px;
+      }
+
+      .banner-special {
+        font-size: 26px;
+      }
+
+      .banner-btn {
+        font-size: 19px;
+        width: 250px;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 800px) {
   .hapo-banner {
+    height: 370px;
+
     .banner-content {
       top: 60px;
       left: 8px;
@@ -101,15 +242,17 @@
 @media screen and (max-width: 768px) {
   .hapo-banner {
     height: 336px;
+
     .banner-content {
-      top: 60px;
-      left: 25px;
+      top: 80px;
+      left: 18px;
+
       .banner-title {
-        font-size: 25px;
+        font-size: 24px;
       }
 
       .banner-special {
-        font-size: 23px;
+        font-size: 22px;
       }
 
       .banner-img {
@@ -132,12 +275,25 @@
   }
 }
 
+@media screen and (max-width: 670px) {
+  .hapo-banner {
+    height: 320px;
+
+    .banner-content {
+      top: 50px;
+      left: 10px;
+    }
+  }
+}
+
 @media screen and (max-width: 600px) {
   .hapo-banner {
     height: 260px;
+
     .banner-content {
       top: 40px;
       left: 12px;
+
       .banner-title {
         font-size: 20px;
         height: 50px;
@@ -167,15 +323,47 @@
   }
 }
 
+@media screen and (max-width: 500px) {
+  .hapo-banner {
+    .banner-content {
+      top: 23px;
+      left: 8px;
+
+      .banner-title {
+        font-size: 18px;
+      }
+
+      .banner-special {
+        font-size: 16px;
+      }
+
+      img {
+        width: 40px;
+        height: 35px;
+      }
+
+      .banner-span {
+        font-size: 10px;
+      }
+
+      .banner-btn {
+        width: 150px;
+        font-size: 11px;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 420px) {
   .hapo-banner {
     height: 390px;
+
     .banner-content {
       top: 200px;
-      left: 80px;
-      
+      left: 85px;
+
       .banner-title {
-        font-size: 21px;
+        font-size: 20px;
         line-height: 31px;
         height: 31px;
       }
@@ -200,10 +388,12 @@
 @media screen and (max-width: 375px) {
   .hapo-banner {
     height: 370px;
+
     .banner-content {
       top: 170px;
+
       .banner-title {
-        font-size: 20px;
+        font-size: 18px;
         height: 40px;
       }
 
@@ -211,7 +401,7 @@
         height: 50px;
         .banner-img {
           width: 20px;
-          height: 18px;
+          height: 17px;
         }
       }
 
@@ -230,22 +420,26 @@
 @media screen and (max-width: 320px) {
   .hapo-banner {
     height: 348px;
+
     .banner-content {
-      top: 150px;
-      left: 50px;
+      top: 160px;
+      left: 70px;
 
       .banner-title {
-        font-size: 16px;
+        font-size: 15px;
       }
 
       .banner-special {
-        font-size: 19px;
+        font-size: 14px;
       }
 
       .banner-span {
-        font-size: 13px;
+        font-size: 12px;
       }
 
+      .banner-btn {
+        width: 200px;
+      }
     }
   }
 }

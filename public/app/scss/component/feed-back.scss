@@ -10,9 +10,10 @@
       font-size: 60px;
       font-weight: 700;
       line-height: 90px;
-      color: #11114e;
-      border-bottom: 4px solid #b2d235;
+      color: $feed-back-header-title-color;
+      border-bottom: 4px solid $feed-back-border-bottom;
       border-radius: 3px;
+      cursor: pointer;
     }
 
     .feed-back-header-content {
@@ -20,8 +21,8 @@
       font-weight: 400;
       font-size: 20px;
       line-height: 31px;
-      color: #505353;
-      padding: 20px;
+      color: $feed-back-header-content-color;
+      padding: 25px;
       margin-bottom: 0;
     }
   }
@@ -29,18 +30,19 @@
   .feed-back-up {
     box-sizing: border-box;
     border-radius: 15px;
-    border: 0.5px solid #e2e2e2;
-    background: #ffffff;
+    border: 0.5px solid $feed-back-up-border;
+    background: $feed-back-up-bg;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px;
     gap: 1rem;
+    position: relative;
 
     .feed-back-border {
       padding: 2px;
       height: 100px;
-      background: #d9dadc;
+      background: $feed-back-borde-bg;
     }
 
     .feed-back-up-content {
@@ -50,9 +52,21 @@
     }
   }
 
+  .feed-back-sort-down {
+    font-size: 35px;
+    position: absolute;
+    bottom: -37px;
+    left: 20px;
+  }
+
+  .feed-back-sort-down::before {
+    content: "▽";
+    color: #f9f5f5;
+  }
+
   .feed-back-down {
     display: flex;
-    padding: 20px;
+    padding: 25px 0;
 
     .feed-back-img {
       width: 60px;
@@ -68,8 +82,8 @@
     }
 
     .feed-back-name {
-      color: #11114e;
-      font-size: 16px;
+      color: $feed-back-header-title-color;
+      font-size: 18px;
       font-weight: bold;
       line-height: 25px;
       margin-bottom: 0;
@@ -77,13 +91,13 @@
 
     .feed-back-span {
       font-size: 14px;
-      color: #505353;
+      color: $feed-back-header-content-color;
       font-weight: 700;
       margin-bottom: 0;
     }
 
     .feed-back-star {
-      color: #f2c54f;
+      color: $feed-back-star;
     }
 
     .star-special {
@@ -107,7 +121,7 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 420px) {
   .hapo-feedback {
     .hapo-feedback-header {
       .feed-back-header-title {

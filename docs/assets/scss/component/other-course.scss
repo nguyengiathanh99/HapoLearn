@@ -1,0 +1,221 @@
+.wp-hapo-other-course {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 35px;
+
+  .title-other-course {
+    font-weight: 700;
+    font-size: 60px;
+    color: $title-other-course-color;
+    letter-spacing: -0.02em;
+    line-height: 98px;
+    margin-bottom: 2rem;
+    border-bottom: 4px solid $card-text-title;
+  }
+
+  .card {
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+
+    .card-image {
+      height: 195px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .course-css {
+      background: $list-course-bg-css;
+    }
+
+    .course-ruby {
+      background: $list-course-bg-ruby;
+    }
+
+    .course-java {
+      background: $list-course-bg-java;
+    }
+
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card-title {
+      font-size: 20px;
+      color: $card-text-title;
+      font-weight: 700;
+      letter-spacing: -0.05rem;
+      line-height: 37px;
+      margin-bottom: 0;
+    }
+
+    .card-content {
+      text-align: center;
+      padding: 15px 0;
+      line-height: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: -0.05em;
+    }
+
+    .card-btn {
+      background: $card-text-title;
+      box-shadow: inset 0px 1.5px 2px $cart-btn-box-shadow;
+      border-radius: 22px;
+      font-size: 16px;
+      border: none;
+      padding: 10px 30px;
+      text-align: center;
+      color: $btn-text-course;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .card-btn:hover {
+      background: #c4e73c;
+    }
+  }
+
+  .view-courses {
+    color: $color-title-course;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 49px;
+    padding-top: 50px;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  .view-courses:hover {
+    font-size: 32px;
+  }
+}
+
+@media only screen and (max-width: 990px) and (min-width: 768px) {
+  .wp-hapo-other-course {
+    .card {
+      .card-image {
+        height: 160px;
+      }
+
+      img {
+        width: 70%;
+        height: 50%;
+      }
+
+      .card-title {
+        font-size: 16px;
+      }
+
+      .card-btn {
+        padding: 10px 15px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wp-hapo-other-course {
+    .card {
+      .card-image {
+        height: 135px;
+      }
+
+      img {
+        width: 50%;
+        height: 50%;
+      }
+
+      .card-content {
+        padding: 10px 0;
+        font-size: 13px;
+      }
+
+      .card-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .wp-hapo-other-course {
+    .card {
+      .card-image {
+        height: 130px;
+      }
+
+      .card-title {
+        font-size: 11px;
+      }
+
+      .card-content {
+        font-size: 10px;
+      }
+
+      .card-btn {
+        padding: 10px 15px;
+        font-size: 9px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .wp-hapo-other-course {
+    .card {
+      .card-title {
+        font-size: 11px;
+      }
+
+      .card-content {
+        font-size: 11px;
+      }
+
+      .card-btn {
+        padding: 10px 7px;
+        font-size: 11px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .wp-hapo-other-course {
+    .card {
+      width: 80%;
+      margin: 30px auto;
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .wp-hapo-other-course {
+    .title-other-course {
+      font-size: 50px;
+    }
+
+    .card {
+      margin-bottom: 20px;
+
+      .view-courses {
+        font-size: 25px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .wp-hapo-other-course {
+    .title-other-course {
+      font-size: 40px;
+    }
+  }
+}
