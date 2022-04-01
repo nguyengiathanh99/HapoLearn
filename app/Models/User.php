@@ -2,14 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
+    use SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -20,6 +21,13 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'image',
+        'phone',
+        'role',
+        'date_of_birth',
+        'about',
+        'description',
+        'status',
     ];
 
     /**
@@ -40,4 +48,24 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function courses()
+    {
+        return $this->belongsToMany(Courses::class, 'user_courses', 'user_id', 'course_id');
+    }
+
+    public function teacherCourses()
+    {
+        return $this->belongsToMany(Courses::class, 'teacher_courses', 'user_id', 'course_id');
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(Reviews::class);
+    }
+
+    public function lessons()
+    {
+        return $this->belongsToMany(Lessons::class, 'user_lessons', 'user_id', 'lesson_id');
+    }
 }
