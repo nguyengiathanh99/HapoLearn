@@ -19,8 +19,7 @@ class CreateReviewsTable extends Migration
             $table->integer('course_id');
             $table->string('file_path');
             $table->text('comment');
-            $table->string('vote','100');
-            $table->softDeletes('softdelete');
+            $table->string('vote', '100');
             $table->timestamps();
         });
     }
