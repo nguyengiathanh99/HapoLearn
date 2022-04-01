@@ -16,8 +16,8 @@
     .banner-title {
       width: 100%;
       margin-bottom: 0;
-      font-size: 38px;
-      font-weight: 300;
+      font-size: 35px;
+      font-weight: 400;
       line-height: 61px;
       color: $color-special;
       opacity: 0.9;
@@ -37,7 +37,7 @@
         height: 30px;
       }
     }
-    
+
     .banner-span {
       height: 50px;
       color: $color-span;
@@ -56,21 +56,126 @@
       font-weight: bold;
       color: $text-color-btn;
       text-align: center;
-      font-size: 25px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    .banner-btn:hover {
+      background: #c4e73c;
     }
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1920px) {
   .hapo-banner {
-    height: 455px;
     .banner-content {
-      top: 135px;
-      left: 40px;
+      position: absolute;
+      top: 182px;
+      left: 70px;
+      width: 60%;
+
+      .banner-title {
+        font-size: 50px;
+      }
+
+      .banner-special {
+        font-size: 40px;
+      }
+
+      .banner-span {
+        font-size: 18px;
+      }
+
+      .banner-btn {
+        font-size: 26px;
+        display: flex;
+        width: 400px;
+        height: 60px;
+        justify-content: center;
+        align-items: center;
+        font-weight: 400;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1720px) {
+  .hapo-banner {
+    .banner-content {
+      .banner-title {
+        font-size: 40px;
+      }
+
+      .banner-special {
+        font-size: 36px;
+      }
+
+      .banner-btn {
+        width: 380px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .hapo-banner {
+    .banner-content {
+      .banner-btn {
+        width: 350px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .hapo-banner {
+    height: 540px;
+
+    .banner-content {
+      .banner-title {
+        font-size: 35px;
+      }
+
+      .banner-special {
+        font-size: 32px;
+      }
+
+      .banner-btn {
+        font-size: 22px;
+        width: 320px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1120px) {
+  .hapo-banner {
+    height: 490px;
+
+    .banner-content {
+      top: 150px;
+      left: 90px;
 
       .banner-title {
         font-size: 31px;
       }
+
+      .banner-btn {
+        width: 280px;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 1024px) {
+  .hapo-banner {
+    height: 455px;
+
+    .banner-content {
+      top: 140px;
+      left: 60px;
 
       .banner-special {
         font-size: 28px;
@@ -89,8 +194,45 @@
   }
 }
 
+@media screen and (max-width: 950px) {
+  .hapo-banner {
+    height: 435px;
+
+    .banner-content {
+      top: 130px;
+      left: 36px;
+    }
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .hapo-banner {
+    height: 400px;
+
+    .banner-content {
+      top: 114px;
+      left: 30px;
+
+      .banner-title {
+        font-size: 28px;
+      }
+
+      .banner-special {
+        font-size: 26px;
+      }
+
+      .banner-btn {
+        font-size: 19px;
+        width: 250px;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 800px) {
   .hapo-banner {
+    height: 370px;
+
     .banner-content {
       top: 60px;
       left: 8px;
@@ -128,6 +270,17 @@
         height: 35px;
         font-size: 16px;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .hapo-banner {
+    height: 320px;
+
+    .banner-content {
+      top: 50px;
+      left: 10px;
     }
   }
 }
@@ -173,7 +326,7 @@
     .banner-content {
       top: 200px;
       left: 80px;
-      
+
       .banner-title {
         font-size: 21px;
         line-height: 31px;
