@@ -16,7 +16,7 @@
       width: 100%;
       margin-bottom: 0;
       font-size: 35px;
-      font-weight: 300;
+      font-weight: 400;
       line-height: 61px;
       color: $color-special;
       opacity: 0.9;
@@ -70,11 +70,11 @@
     .banner-content {
       position: absolute;
       top: 182px;
-      left: 275px;
+      left: 70px;
       width: 60%;
 
       .banner-title {
-        font-size: 43px;
+        font-size: 50px;
       }
 
       .banner-special {
@@ -87,8 +87,13 @@
 
       .banner-btn {
         font-size: 26px;
-        width: 370px;
-        height: 70px;
+        display: flex;
+        width: 400px;
+        height: 60px;
+        justify-content: center;
+        align-items: center;
+        font-weight: 400;
+        margin-top: 10px;
       }
     }
   }
@@ -97,55 +102,62 @@
 @media screen and (max-width: 1720px) {
   .hapo-banner {
     .banner-content {
-      left: 230px;
-
       .banner-title {
         font-size: 40px;
       }
 
       .banner-special {
-        font-size: 38px;
-      }
-
-      .banner-btn {
-        font-size: 25px;
-        width: 335px;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 1600px) {
-  .hapo-banner {
-    .banner-content {
-      left: 210px;
-
-      .banner-title {
-        font-size: 39px;
-      }
-
-      .banner-special {
-        font-size: 37px;
-      }
-
-      .banner-btn {
-        width: 290px;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 1530px) {
-  .hapo-banner {
-    .banner-content {
-      left: 185px;
-
-      .banner-title {
-        font-size: 37px;
-      }
-
-      .banner-special {
         font-size: 36px;
+      }
+
+      .banner-btn {
+        width: 380px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .hapo-banner {
+    .banner-content {
+      .banner-btn {
+        width: 350px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .hapo-banner {
+    height: 540px;
+
+    .banner-content {
+      .banner-title {
+        font-size: 35px;
+      }
+      
+      .banner-special {
+        font-size: 32px;
+      }
+
+      .banner-btn {
+        font-size: 22px;
+        width: 320px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1120px) {
+  .hapo-banner {
+    height: 490px;
+
+    .banner-content {
+      top: 150px;
+      left: 90px;
+
+      .banner-title {
+        font-size: 30px;
       }
 
       .banner-btn {
@@ -155,72 +167,6 @@
   }
 }
 
-@media screen and (max-width: 1400px) {
-  .hapo-banner {
-    .banner-content {
-      left: 150px;
-    }
-  }
-}
-
-@media screen and (max-width: 1366px) {
-  .hapo-banner {
-    .banner-content {
-      left: 130px;
-
-      .banner-title {
-        font-size: 35px;
-      }
-
-      .banner-special {
-        font-size: 34px;
-      }
-
-      .banner-span {
-        font-size: 17px;
-      }
-
-      .banner-btn {
-        font-size: 22px;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  .hapo-banner {
-    .banner-content {
-      top: 165px;
-      left: 100px;
-
-      .banner-title {
-        font-size: 33px;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 1120px) {
-  .hapo-banner {
-    .banner-content {
-      top: 150px;
-      left: 905x;
-
-      .banner-title {
-        font-size: 30px;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 1080px) {
-  .hapo-banner {
-    .banner-content {
-      top: 145px;
-      left: 72px;
-    }
-  }
-}
 
 @media screen and (max-width: 1024px) {
   .hapo-banner {
@@ -249,6 +195,8 @@
 
 @media screen and (max-width: 950px) {
   .hapo-banner {
+    height: 435px;
+
     .banner-content {
       top: 130px;
       left: 36px;
@@ -258,6 +206,8 @@
 
 @media screen and (max-width: 880px) {
   .hapo-banner {
+    height: 400px;
+
     .banner-content {
       top: 114px;
       left: 30px;
@@ -280,6 +230,8 @@
 
 @media screen and (max-width: 800px) {
   .hapo-banner {
+    height: 370px;
+
     .banner-content {
       top: 60px;
       left: 8px;
@@ -325,6 +277,8 @@
 
 @media screen and (max-width: 670px) {
   .hapo-banner {
+    height: 320px;
+
     .banner-content {
       top: 50px;
       left: 10px;

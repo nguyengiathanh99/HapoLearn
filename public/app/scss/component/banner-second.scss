@@ -121,6 +121,8 @@
 
 @media screen and (max-width: 470px) {
   .hapo-banner-second {
+    height: 165px;
+
     .hapo-banner-second-content {
       padding-top: 14px;
 
@@ -134,6 +136,12 @@
         font-size: 13px;
       }
     }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .hapo-banner-second {
+    height: 145px;
   }
 }
 
