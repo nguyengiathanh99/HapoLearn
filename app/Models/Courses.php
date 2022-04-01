@@ -37,4 +37,9 @@ class Courses extends Model
     {
         return $this->belongsToMany(Tags::class, 'course_tags', 'course_id', 'tag_id');
     }
+
+    public function lessons()
+    {
+        return $this->hasMany(Lessons::class);
+    }
 }

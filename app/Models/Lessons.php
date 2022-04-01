@@ -27,4 +27,9 @@ class Lessons extends Model
     {
         return $this->hasMany(Documents::class);
     }
+
+    public function course()
+    {
+        return $this->belongsTo(Courses::class);
+    }
 }
