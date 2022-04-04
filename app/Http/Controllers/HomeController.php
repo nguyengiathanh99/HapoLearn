@@ -15,7 +15,6 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-//        $this->middleware('auth');
     }
 
     /**
@@ -25,11 +24,5 @@ class HomeController extends Controller
      */
     public function index()
     {
-//        $course = Courses::find(1);
-        $lesson = Lessons::find(1);
-        dd($lesson->course()->get());
-//        dd($course->lessons()->get());
-        return view('home');
     }
-
 }
