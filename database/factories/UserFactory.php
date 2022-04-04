@@ -27,6 +27,10 @@ class UserFactory extends Factory
             'image' => $this->faker->imageUrl(),
             'phone' => $this->faker->phoneNumber,
             'role' => $this->faker->randomDigit(),
+            'date_of_birth' => $this->faker->date(),
+            'about' => $this->faker->text,
+            'status' => 1,
+            'description' => $this->faker->text,
         );
     }
 }
