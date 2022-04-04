@@ -19,7 +19,6 @@ class CreateCoursesTable extends Migration
             $table->string('image', '255')->nullable();
             $table->string('price', '100')->nullable();
             $table->text('description')->nullable();
-            $table->softDeletes();
             $table->timestamps();
         });
     }

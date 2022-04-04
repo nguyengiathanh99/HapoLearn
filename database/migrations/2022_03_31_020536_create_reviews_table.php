@@ -20,7 +20,6 @@ class CreateReviewsTable extends Migration
             $table->string('file_path')->nullable();
             $table->text('comment')->nullable();
             $table->string('vote', '100')->nullable();
-            $table->softDeletes();
             $table->timestamps();
         });
     }

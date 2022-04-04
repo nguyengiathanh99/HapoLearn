@@ -19,7 +19,6 @@ class CreateDocumentsTable extends Migration
             $table->string('title', 50)->nullable();
             $table->integer('lesson_id');
             $table->string('file_path', 100)->nullable();
-            $table->softDeletes();
             $table->timestamps();
         });
     }
