@@ -21,7 +21,6 @@ class AddSomeFieldsToUsersTable extends Migration
             $table->text('description')->nullable();
             $table->text('about')->nullable();
             $table->tinyInteger('status')->nullable();
-            $table->timestamps();
         });
     }
 

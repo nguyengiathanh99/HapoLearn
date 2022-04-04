@@ -30,6 +30,7 @@ class UserFactory extends Factory
             'date_of_birth' => $this->faker->date(),
             'about' => $this->faker->text,
             'status' => 1,
+            'job' => Str::random(3),
             'description' => $this->faker->text,
         );
     }
