@@ -17,6 +17,7 @@ class CreateTagsTable extends Migration
             $table->id();
             $table->string('name', 50)->nullable();
             $table->string('link')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
