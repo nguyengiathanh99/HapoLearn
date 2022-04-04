@@ -14,7 +14,7 @@ class AddSomeFieldsToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('image')->nullable();
+            $table->string('image', '255')->nullable();
             $table->string('phone', '20')->nullable();
             $table->integer('role')->unsigned()->nullable();
             $table->date('date_of_birth')->nullable();
