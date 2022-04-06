@@ -4,7 +4,7 @@
     </div>
     <div class="nav-bar">
         <div class="logo">
-            <img src="{{asset('/images/hapolearn.png')}}" alt="HapoLearn-Logo">
+            <img src="{{ asset('/images/hapolearn.png') }}" alt="HapoLearn-Logo">
         </div>
         <ul class="menu-content">
             <li><a href="#">home</a></li>

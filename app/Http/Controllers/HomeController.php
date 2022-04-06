@@ -21,6 +21,6 @@ class HomeController extends Controller
         $courseCount = Courses::count();
         $lessonCount = Lessons::count();
         $learner = UserLessons::count();
-        return view('home', compact('courses', 'reviews', 'courseCount', 'lessonCount', 'learner'));
+        return view('index', compact('courses', 'reviews', 'courseCount', 'lessonCount', 'learner'));
     }
 }

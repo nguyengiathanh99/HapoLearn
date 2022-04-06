@@ -1,4 +1,3 @@
-<!-- Message -->
 <div class="hapo-message">
     <div class="content-message">
         <div class="content-message-body">
@@ -26,4 +25,3 @@
         <img src="{{asset('images/message.png')}}" alt="hapo-message">
     </div>
 </div>
-<!-- End Message -->

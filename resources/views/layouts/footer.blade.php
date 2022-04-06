@@ -2,7 +2,7 @@
     <div class="footer-main">
         <div class="footer-left">
             <div class="footer-left-logo">
-                <img src="{{asset('images/hapo-logo-footer.png')}}" alt="footer-logo" class="footer-logo">
+                <img src="{{ asset('images/hapo-logo-footer.png') }}" alt="footer-logo" class="footer-logo">
             </div>
             <p class="footer-left-content">
                 Interactive lessons, "on-the-go" <br> practice, peer support.
