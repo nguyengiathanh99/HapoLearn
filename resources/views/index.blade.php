@@ -59,6 +59,7 @@
             </div>
         </div>
         <a href="#" class="view-courses">View All Our Courses <i class="fas fa-arrow-right"></i>
+        </a>
     </div>
     <div class="why-hapo-learn">
         <div class="why-hapo-mb">
@@ -127,12 +128,13 @@
                                     <p class="feed-back-name">{{ $review->user->name }}</p>
                                     <p class="feed-back-span">{{ $review->user->job }}</p>
                                     <p class="feed-back-star">
-                                        @for($i=1; $i <= $review->vote; $i++)
+                                        @for($i = 1; $i <= $review->vote; $i++)
                                             <i class="fas fa-star"></i>
                                         @endfor
-                                        @for($i=5; $i > $review->vote; $i--)
+                                        @for($i = 5; $i > $review->vote; $i--)
                                             <i class="fas fa-star star-special"></i>
                                         @endfor
+
                                     </p>
                                 </div>
                             </div>
