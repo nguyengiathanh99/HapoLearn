@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
+=======
+    "/js/app.js": "/js/app.js?id=25080a9d9af1d90ce65ac9a08cb42c5c",
+    "/css/app.css": "/css/app.css?id=cca7d4702db511ea61ab500d9daadc1b",
+>>>>>>> c2eb2f1 (create home page)
     "/images/avt.png": "/images/avt.png?id=05114b0b7c4a9539f5f948b951e28368",
     "/images/banner-second.png": "/images/banner-second.png?id=fec3dfceb78160f64e952bc261183253",
     "/images/birdlogo.png": "/images/birdlogo.png?id=b31c293ec3d155f54dc9259855ad9e83",

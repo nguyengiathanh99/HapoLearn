@@ -1,0 +1,1 @@
+(self.webpackChunk=self.webpackChunk||[]).push([[175],{175:()=>{$(document).ready((function(){$(".logo-message").click((function(){$(".content-message").toggle()})),$(".message-close").click((function(){$(".content-message").css("display","none")}))}))}}]);

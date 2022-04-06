@@ -4,7 +4,8 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+require('./bootstrap')
+require('slick-carousel')
 
 window.Vue = require('vue').default;
 
@@ -30,3 +31,16 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
+
+// require('toggle');
+// require('feed-back');
+// require('form-show');
+// require('message');
+// require('list-course');
+
+import('./toggle')
+import('./feed-back')
+import('./form-show')
+import('./message')
+import('./list-course')
+
