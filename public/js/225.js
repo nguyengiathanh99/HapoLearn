@@ -1,1 +1,0 @@
-(self.webpackChunk=self.webpackChunk||[]).push([[225],{225:()=>{$(".slick").slick({dots:!1,infinite:!1,speed:300,slidesToShow:2,slidesToScroll:1,responsive:[{breakpoint:1024,settings:{slidesToShow:1,slidesToScroll:1,infinite:!0,dots:!1}},{breakpoint:600,settings:{slidesToShow:1,slidesToScroll:1}},{breakpoint:480,settings:{slidesToShow:1,slidesToScroll:1}}]})}}]);

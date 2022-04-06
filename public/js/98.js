@@ -1,1 +1,0 @@
-(self.webpackChunk=self.webpackChunk||[]).push([[98],{98:()=>{$(document).ready((function(){$(".list-course-filter").click((function(){$(".hapo-listcourse-selective").toggle()}))}))}}]);

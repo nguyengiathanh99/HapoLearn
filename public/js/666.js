@@ -1,1 +1,0 @@
-(self.webpackChunk=self.webpackChunk||[]).push([[666],{666:()=>{$(document).ready((function(){$(".nav-bar").click((function(){$(".menu-content").toggleClass("show")}))}))}}]);
