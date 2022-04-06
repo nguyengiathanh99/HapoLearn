@@ -113,59 +113,30 @@
             <div class="hapo-feed-back-body">
                 <div class="row slick">
                     @foreach($reviews as $review)
-                    <div class="col-12">
-                        <div class="feed-back-up">
-                            <div class="feed-back-sort-down"></div>
-                            <p class="feed-back-border"></p>
-                            <p class="feed-back-up-content">{{ $review->comment }}</p>
-                        </div>
-                        <div class="feed-back-down">
-                            <div class="feed-back-img">
-                                <img src="{{ $review->user->image }}" alt="Hapo Avatar">
+                        <div class="col-12">
+                            <div class="feed-back-up">
+                                <div class="feed-back-sort-down"></div>
+                                <p class="feed-back-border"></p>
+                                <p class="feed-back-up-content">{{ $review->comment }}</p>
                             </div>
-                            <div class="feed-back-down-content">
-                                <p class="feed-back-name">{{ $review->user->name }}</p>
-                                <p class="feed-back-span">{{ $review->user->job }}</p>
-                                <p class="feed-back-star">
-                                    @switch($review->vote)
-                                        @case(1)
-                                    <i class="fas fa-star"></i>
-                                    @for($i = 1; $i < 5; $i++)
-                                    <i class="fas fa-star star-special"></i>
-                                        @endfor
-                                        @break
-                                        @case(2)
-                                        @for($i = 1; $i < 3; $i++)
+                            <div class="feed-back-down">
+                                <div class="feed-back-img">
+                                    <img src="{{ $review->user->image }}" alt="Hapo Avatar">
+                                </div>
+                                <div class="feed-back-down-content">
+                                    <p class="feed-back-name">{{ $review->user->name }}</p>
+                                    <p class="feed-back-span">{{ $review->user->job }}</p>
+                                    <p class="feed-back-star">
+                                        @for($i=1; $i <= $review->vote; $i++)
                                             <i class="fas fa-star"></i>
                                         @endfor
-                                        @for($i = 1; $i < 4; $i++)
+                                        @for($i=5; $i > $review->vote; $i--)
                                             <i class="fas fa-star star-special"></i>
                                         @endfor
-                                        @break
-                                        @case(3)
-                                        @for($i = 1; $i < 4; $i++)
-                                            <i class="fas fa-star"></i>
-                                        @endfor
-                                        @for($i = 1; $i < 3; $i++)
-                                            <i class="fas fa-star star-special"></i>
-                                        @endfor
-                                        @break
-                                        @case(4)
-                                        @for($i = 1; $i < 5; $i++)
-                                            <i class="fas fa-star"></i>
-                                        @endfor
-                                        <i class="fas fa-star star-special"></i>
-                                        @break
-                                        @case(5)
-                                        @for($i = 1; $i < 6; $i++)
-                                            <i class="fas fa-star"></i>
-                                        @endfor
-                                        @break
-                                    @endswitch
-                                </p>
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
                     @endforeach
                 </div>
             </div>
