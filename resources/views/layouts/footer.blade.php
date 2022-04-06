@@ -1,4 +1,3 @@
-<!-- Footer -->
 <div class="hapo-footer">
     <div class="footer-main">
         <div class="footer-left">
@@ -35,4 +34,3 @@
         © 2022 HapoLearn, Inc. All rights reserved.
     </div>
 </div>
-<!-- End-Footer -->

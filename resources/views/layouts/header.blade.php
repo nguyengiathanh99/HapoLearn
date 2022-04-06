@@ -1,14 +1,11 @@
-<!-- Header -->
 <div class="header">
     <div class="toggle-nav">
         <i class="fas fa-bars toggle"></i>
     </div>
     <div class="nav-bar">
-        <!-- Logo -->
         <div class="logo">
             <img src="{{asset('/images/hapolearn.png')}}" alt="HapoLearn-Logo">
         </div>
-        <!-- Menu -->
         <ul class="menu-content">
             <li><a href="#">home</a></li>
             <li class="menu-content-active"><a href="#" class="link-allcourse">allcourses</a></li>
@@ -19,4 +16,3 @@
         </ul>
     </div>
 </div>
-<!--End Header -->

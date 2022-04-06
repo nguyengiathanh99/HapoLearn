@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-    <!-- Banner -->
     <div class="hapo-banner">
         <div class="container">
             <div class="banner-content">
@@ -13,14 +12,11 @@
             </div>
         </div>
     </div>
-    <!-- End Banner -->
-    <!-- Modal -->
     <div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
          aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body">
-                    <!-- Form-Login -->
                     <div class="hapo-form d-flex justify-content-center align-items-center">
                         <div class="hapo-form-main hapo-login">
                             <div class="form-header">
@@ -75,9 +71,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- End-Form-Login -->
-
-                    <!-- Form-Register -->
                     <div class="hapo-form d-flex justify-content-center align-items-center ">
                         <div class="hapo-form-main hapo-reg">
                             <div class="form-header">
@@ -120,13 +113,11 @@
                             </div>
                         </div>
                     </div>
-                    <!-- End-Form-Register -->
                 </div>
             </div>
         </div>
     </div>
     <div class="course-bg"></div>
-    <!-- List Courses -->
     <div class="wp-hapo-list-courses">
         <div class="container">
             <div class="row">
@@ -149,8 +140,6 @@
             </div>
         </div>
     </div>
-    <!-- End List Courses -->
-    <!-- Other courses -->
     <div class="wp-hapo-other-course">
         <p class="title-other-course">Other courses</p>
         <div class="container">
@@ -175,8 +164,6 @@
         </div>
         <a href="#" class="view-courses">View All Our Courses <i class="fas fa-arrow-right"></i>
     </div>
-    <!-- End other courses -->
-    <!-- Why Hapolearn -->
     <div class="why-hapo-learn">
         <div class="why-hapo-mb">
             <img src="{{ asset('images/mb-1.png') }}" alt="Why-hapo-mb" class="why-hapo-img-mb">
@@ -288,8 +275,6 @@
             </div>
         </div>
     </div>
-    <!-- End feed-back -->
-    <!-- Hapo-Statistic -->
     <div class="hapo-statistic">
         <div class="hapo-statistic-title">
             <div class="statistic-title">Statistic</div>
@@ -309,5 +294,4 @@
             </div>
         </div>
     </div>
-    <!-- End-Hapo-Statistic -->
 @endsection
