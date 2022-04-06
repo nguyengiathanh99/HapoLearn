@@ -7,4 +7,3 @@ $(document).ready(function () {
     $(".content-message").css('display', 'none');
   });
 });
-
