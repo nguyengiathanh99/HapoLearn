@@ -32,12 +32,6 @@ const app = new Vue({
     el: '#app',
 });
 
-// require('toggle');
-// require('feed-back');
-// require('form-show');
-// require('message');
-// require('list-course');
-
 import('./toggle')
 import('./feed-back')
 import('./form-show')

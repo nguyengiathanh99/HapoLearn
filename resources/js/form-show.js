@@ -14,5 +14,4 @@ $(document).ready(function () {
     $(".hapo-login").css('display', 'block')
     $(".hapo-reg").css('display', 'none')
   });
-
 });

@@ -134,7 +134,7 @@
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                         <div class="card">
                             <div class="card-image course-hcj">
-                                <img src="{!! asset($course->image) !!}" alt="Hapo bg html">
+                                <img src="{{ asset($course->image) }}" alt="Hapo bg html">
                             </div>
                             <div class="card-body">
                                 <div class="card-title">{{ $course->name }}</div>
@@ -159,7 +159,7 @@
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                         <div class="card">
                             <div class="card-image course-css">
-                                <img src="{!! asset($course->image) !!}" alt="Hapo bg css">
+                                <img src="{{ asset($course->image) }}" alt="Hapo bg css">
                             </div>
                             <div class="card-body">
                                 <div class="card-title">{{ $course->name }}</div>
@@ -297,11 +297,11 @@
         <div class="statistic-body">
             <div class="statistic-card">
                 <div class="statistic-content">Courses</div>
-                <div class="statistic-num">{{$countCourse}}</div>
+                <div class="statistic-num">{{$courseCount}}</div>
             </div>
             <div class="statistic-card">
                 <div class="statistic-content">Lessons</div>
-                <div class="statistic-num">{{$countLesson}}</div>
+                <div class="statistic-num">{{$lessonCount}}</div>
             </div>
             <div class="statistic-card">
                 <div class="statistic-content">Learners</div>
