@@ -22451,7 +22451,7 @@ readers do not read off random characters that represent icons */
 
 .hapo-banner {
   width: 100%;
-  height: 593px;
+  height: 872px;
   position: relative;
   background-image: url("https://res.cloudinary.com/derrfxjxx/image/upload/v1646801607/hapo_learn_banner_1_ya6dcc.png");
   background-repeat: no-repeat;
@@ -22536,7 +22536,15 @@ readers do not read off random characters that represent icons */
     margin-top: 10px;
   }
 }
+@media screen and (max-width: 1800px) {
+  .hapo-banner {
+    height: 822px;
+  }
+}
 @media screen and (max-width: 1720px) {
+  .hapo-banner {
+    height: 785px;
+  }
   .hapo-banner .banner-content .banner-title {
     font-size: 40px;
   }
@@ -22547,7 +22555,25 @@ readers do not read off random characters that represent icons */
     width: 380px;
   }
 }
+@media screen and (max-width: 1600px) {
+  .hapo-banner {
+    height: 730px;
+  }
+}
+@media screen and (max-width: 1500px) {
+  .hapo-banner {
+    height: 685px;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .hapo-banner {
+    height: 640px;
+  }
+}
 @media screen and (max-width: 1366px) {
+  .hapo-banner {
+    height: 618px;
+  }
   .hapo-banner .banner-content .banner-btn {
     width: 350px;
   }
@@ -22708,6 +22734,9 @@ readers do not read off random characters that represent icons */
   }
 }
 @media screen and (max-width: 500px) {
+  .hapo-banner {
+    height: 228px;
+  }
   .hapo-banner .banner-content {
     top: 23px;
     left: 8px;
@@ -22730,16 +22759,21 @@ readers do not read off random characters that represent icons */
     font-size: 11px;
   }
 }
+@media screen and (max-width: 470px) {
+  .hapo-banner {
+    height: 216px;
+  }
+}
 @media screen and (max-width: 420px) {
   .hapo-banner {
-    height: 390px;
+    height: 389px;
   }
   .hapo-banner .banner-content {
     top: 200px;
     left: 85px;
   }
   .hapo-banner .banner-content .banner-title {
-    font-size: 20px;
+    font-size: 16px;
     line-height: 31px;
     height: 31px;
   }
@@ -22763,7 +22797,6 @@ readers do not read off random characters that represent icons */
     top: 170px;
   }
   .hapo-banner .banner-content .banner-title {
-    font-size: 18px;
     height: 40px;
   }
   .hapo-banner .banner-content .banner-special {
@@ -23561,7 +23594,6 @@ body {
   padding: 8px 18px;
   border-radius: 17px;
   width: 100%;
-  margin-right: 5px;
 }
 .header .nav-bar .menu-content li:hover {
   background: #b2d235;
@@ -24251,7 +24283,7 @@ body {
     font-size: 14px;
   }
   .why-hapo-learn .why-hapo-content .why-hapo-img {
-    width: 270px;
+    width: 245px;
     height: 250px;
     top: 60px;
     left: 342px;
