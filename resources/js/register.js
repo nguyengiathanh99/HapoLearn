@@ -10,4 +10,8 @@ $(document).ready(function () {
     $("#modal-form").modal();
     $(".hapo-reg").css('display', 'none')
   }
+    if ($("#error").hasClass("login-error")) {
+        $("#modal-form").modal();
+        $(".hapo-reg").css('display', 'none')
+    }
 });

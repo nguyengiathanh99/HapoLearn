@@ -51,6 +51,11 @@
                                         </div>
                                         <a href="#" class="forgot-psw">Forgot password</a>
                                     </div>
+                                    @if(session()->has('error'))
+                                        <div class="alert alert-danger login-error" id="error">
+                                            {{ session()->get('error') }}
+                                        </div>
+                                    @endif
                                     <button type="submit" class="btn-submit">LOGIN</button>
                                 </form>
                             </div>
