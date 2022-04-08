@@ -23,7 +23,7 @@ class LoginRequest extends FormRequest
     public function rules()
     {
         return [
-            'username' => 'required',
+            'username_log' => 'required',
             'password_log' => 'required|min:5',
         ];
     }
@@ -31,7 +31,7 @@ class LoginRequest extends FormRequest
     public function messages()
     {
         return [
-            'username.required' => 'Username is required',
+            'username_log.required' => 'Username_log is required',
             'password_log' => 'Password is required',
             'password_log.min' => 'Password is too short',
         ];

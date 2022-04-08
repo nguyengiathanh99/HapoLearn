@@ -6,7 +6,8 @@ $(document).ready(function () {
   if ($("input").hasClass("form-login")) {
     $("#modal-form").modal();
     $(".hapo-reg").css('display', 'none')
-  } else if ($("#message").hasClass("alert-success")) {
+  }
+  if ($("#message").hasClass("alert-success")) {
     $("#modal-form").modal();
     $(".hapo-reg").css('display', 'none')
   }

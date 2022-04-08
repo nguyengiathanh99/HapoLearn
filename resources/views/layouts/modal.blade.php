@@ -30,9 +30,9 @@
                                     @endif
                                     <div class="form-group">
                                         <label for="username">Username:</label>
-                                        <input type="text" class="form-control @error('username') is-invalid form-login @enderror" id="username" name="username">
-                                        @if ($errors->has('username'))
-                                            <p class="text-danger">{{ $errors->first('username') }}</p>
+                                        <input type="text" class="form-control @error('username_log') is-invalid form-login @enderror" id="username" name="username_log">
+                                        @if ($errors->has('username_log'))
+                                            <p class="text-danger">{{ $errors->first('username_log') }}</p>
                                         @endif
                                     </div>
                                     <div class="form-group">
@@ -96,9 +96,9 @@
                                     @csrf
                                     <div class="form-group">
                                         <label for="username">Username:</label>
-                                        <input type="text" class="form-control @error('name') is-invalid form-reg @enderror" id="username" name="name">
-                                        @if ($errors->has('name'))
-                                            <p class="text-danger">{{ $errors->first('name') }}</p>
+                                        <input type="text" class="form-control @error('username_reg') is-invalid form-reg @enderror" id="username" name="username_reg">
+                                        @if ($errors->has('username_reg'))
+                                            <p class="text-danger">{{ $errors->first('username_reg') }}</p>
                                         @endif
                                     </div>
                                     <div class="form-group">
@@ -110,9 +110,9 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="password">Password:</label>
-                                        <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password">
-                                        @if ($errors->has('password'))
-                                            <p class="text-danger">{{ $errors->first('password') }}</p>
+                                        <input type="password" class="form-control @error('password_reg') is-invalid @enderror" id="password" name="password_reg">
+                                        @if ($errors->has('password_reg'))
+                                            <p class="text-danger">{{ $errors->first('password_reg') }}</p>
                                         @endif
                                     </div>
                                     <div class="form-group">
