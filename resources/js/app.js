@@ -5,3 +5,5 @@ import('./form-show')
 import('./message')
 import('./list-course')
 import('./toggle')
+import('./register')
+

@@ -50,13 +50,17 @@ body {
       margin-bottom: 0;
 
       li {
-        padding: 8px 18px;
+        padding: 8px 20px;
         border-radius: 17px;
         width: 100%;
-        margin-left: 10px;
+        margin-right: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         &:hover {
           background: #b2d235;
+
           a {
             color: #feffff;
           }
@@ -68,6 +72,16 @@ body {
         text-transform: uppercase;
         font-weight: 400;
         color: $color-menu;
+      }
+
+      .icon-auth {
+        padding-right: 8px;
+      }
+
+      .text-auth {
+        border-radius: 20px;
+        background: #b2d235;
+        border: none;
       }
 
       .link-allcourse {
