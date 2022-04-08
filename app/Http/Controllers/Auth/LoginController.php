@@ -35,7 +35,7 @@ class LoginController extends Controller
             'name' => $request->username,
             'password' => $request['password_log'],
         ];
-        if (Auth::attempt($login)) {
+        if ( Auth::attempt($login) ) {
             return redirect()->route('home');
         } else {
             return redirect()->back()->with('error', 'Username or Password is incorrect');
