@@ -21,7 +21,7 @@
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" >
                             @csrf
                             <button class="dropdown-item">
-                                Logout
+                                LOGOUT
                             </button>
                         </form>
                     </div>
