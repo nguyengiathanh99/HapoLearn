@@ -102,10 +102,10 @@
                                     <div class="form-group">
                                         <label for="username">Username:</label>
                                         <input type="text"
-                                               class="form-control @error('reg_username') is-invalid form-reg @enderror"
-                                               id="username" name="reg_username">
-                                        @if ($errors->has('reg_username'))
-                                            <p class="text-danger">{{ $errors->first('reg_username') }}</p>
+                                               class="form-control @error('register_username') is-invalid form-reg @enderror"
+                                               id="username" name="register_username">
+                                        @if ($errors->has('register_username'))
+                                            <p class="text-danger">{{ $errors->first('register_username') }}</p>
                                         @endif
                                     </div>
                                     <div class="form-group">
@@ -120,10 +120,10 @@
                                     <div class="form-group">
                                         <label for="password">Password:</label>
                                         <input type="password"
-                                               class="form-control @error('reg_password') is-invalid form-reg @enderror"
-                                               id="password" name="reg_password">
-                                        @if ($errors->has('reg_password'))
-                                            <p class="text-danger">{{ $errors->first('reg_password') }}</p>
+                                               class="form-control @error('register_password') is-invalid form-reg @enderror"
+                                               id="password" name="register_password">
+                                        @if ($errors->has('register_password'))
+                                            <p class="text-danger">{{ $errors->first('register_password') }}</p>
                                         @endif
                                     </div>
                                     <div class="form-group">
