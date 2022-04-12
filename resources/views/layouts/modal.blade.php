@@ -1,17 +1,18 @@
-<div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-body">
-                <div class="hapo-form d-flex justify-content-center align-items-center" >
+                <div class="hapo-form d-flex justify-content-center align-items-center">
                     <div class="hapo-form-main hapo-login">
                         <div class="form-header">
                             <div class="row flex-row-reverse">
                                 <div
-                                    class="col-md-6 col-sm-6 col-6 form-header-content form-header-content-login header-reg">
+                                        class="col-md-6 col-sm-6 col-6 form-header-content form-header-content-login header-reg">
                                     REGISTER
                                 </div>
                                 <div
-                                    class="col-md-6 col-sm-6 col-6 form-header-content form-header-content-reg header-login">
+                                        class="col-md-6 col-sm-6 col-6 form-header-content form-header-content-reg header-login">
                                     LOGIN
                                 </div>
                             </div>
@@ -30,16 +31,20 @@
                                     @endif
                                     <div class="form-group">
                                         <label for="username">Username:</label>
-                                        <input type="text" class="form-control @error('username_log') is-invalid form-login @enderror" id="username" name="username_log">
-                                        @if ($errors->has('username_log'))
-                                            <p class="text-danger">{{ $errors->first('username_log') }}</p>
+                                        <input type="text"
+                                               class="form-control @error('login_username') is-invalid form-login @enderror"
+                                               id="username" name="login_username">
+                                        @if ($errors->has('login_username'))
+                                            <p class="text-danger">{{ $errors->first('login_username') }}</p>
                                         @endif
                                     </div>
                                     <div class="form-group">
                                         <label for="password">Password:</label>
-                                        <input type="password" class="form-control @error('password_log') is-invalid form-login @enderror" id="password" name="password_log">
-                                        @if ($errors->has('password_log'))
-                                            <p class="text-danger">{{ $errors->first('password_log') }}</p>
+                                        <input type="password"
+                                               class="form-control @error('login_password') is-invalid form-login @enderror"
+                                               id="password" name="login_password">
+                                        @if ($errors->has('login_password'))
+                                            <p class="text-danger">{{ $errors->first('login_password') }}</p>
                                         @endif
                                     </div>
                                     <div class="d-flex justify-content-between">
@@ -63,11 +68,11 @@
                             <div class="container login-social">
                                 <div class="login-google">
                                     <a href="#" class="login-special"><i
-                                            class="fab fa-google-plus-g login-icon"></i>Google</a>
+                                                class="fab fa-google-plus-g login-icon"></i>Google</a>
                                 </div>
                                 <div class="login-facebook">
                                     <a href="#" class="login-special"><i
-                                            class="fab fa-facebook-f login-icon"></i>Facebook</a>
+                                                class="fab fa-facebook-f login-icon"></i>Facebook</a>
                                 </div>
                             </div>
                         </div>
@@ -78,11 +83,11 @@
                         <div class="form-header">
                             <div class="row">
                                 <div
-                                    class="col-md-6 col-sm-6 col-6 form-header-content form-header-content-login header-login">
+                                        class="col-md-6 col-sm-6 col-6 form-header-content form-header-content-login header-login">
                                     LOGIN
                                 </div>
                                 <div
-                                    class="col-md-6 col-sm-6 col-6 form-header-content form-header-content-reg header-reg">
+                                        class="col-md-6 col-sm-6 col-6 form-header-content form-header-content-reg header-reg">
                                     REGISTER
                                 </div>
                             </div>
@@ -96,28 +101,36 @@
                                     @csrf
                                     <div class="form-group">
                                         <label for="username">Username:</label>
-                                        <input type="text" class="form-control @error('username_reg') is-invalid form-reg @enderror" id="username" name="username_reg">
-                                        @if ($errors->has('username_reg'))
-                                            <p class="text-danger">{{ $errors->first('username_reg') }}</p>
+                                        <input type="text"
+                                               class="form-control @error('reg_username') is-invalid form-reg @enderror"
+                                               id="username" name="reg_username">
+                                        @if ($errors->has('reg_username'))
+                                            <p class="text-danger">{{ $errors->first('reg_username') }}</p>
                                         @endif
                                     </div>
                                     <div class="form-group">
                                         <label for="email">Email:</label>
-                                        <input type="email" class="form-control @error('email') is-invalid form-reg @enderror" id="email" name="email">
+                                        <input type="email"
+                                               class="form-control @error('email') is-invalid form-reg @enderror"
+                                               id="email" name="email">
                                         @if ($errors->has('email'))
                                             <p class="text-danger">{{ $errors->first('email') }}</p>
                                         @endif
                                     </div>
                                     <div class="form-group">
                                         <label for="password">Password:</label>
-                                        <input type="password" class="form-control @error('password_reg') is-invalid @enderror" id="password" name="password_reg">
-                                        @if ($errors->has('password_reg'))
-                                            <p class="text-danger">{{ $errors->first('password_reg') }}</p>
+                                        <input type="password"
+                                               class="form-control @error('reg_password') is-invalid form-reg @enderror"
+                                               id="password" name="reg_password">
+                                        @if ($errors->has('reg_password'))
+                                            <p class="text-danger">{{ $errors->first('reg_password') }}</p>
                                         @endif
                                     </div>
                                     <div class="form-group">
                                         <label for="confirm-password">Repeat Password:</label>
-                                        <input type="password" class="form-control @error('password') is-invalid @enderror" id="confirm-password" name="password_confirmation">
+                                        <input type="password"
+                                               class="form-control @error('password') is-invalid form-reg @enderror"
+                                               id="confirm-password" name="password_confirmation">
                                         @if ($errors->has('password_confirmation'))
                                             <p class="text-danger">{{ $errors->first('password_confirmation') }}</p>
                                         @endif

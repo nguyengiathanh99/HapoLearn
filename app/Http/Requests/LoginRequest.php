@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
@@ -23,17 +24,17 @@ class LoginRequest extends FormRequest
     public function rules()
     {
         return [
-            'username_log' => 'required',
-            'password_log' => 'required|min:5',
+            'login_username' => 'required',
+            'login_password' => 'required|min:5',
         ];
     }
 
     public function messages()
     {
         return [
-            'username_log.required' => 'Username_log is required',
-            'password_log' => 'Password is required',
-            'password_log.min' => 'Password is too short',
+            'login_username.required' => 'Login username is required',
+            'login_password' => 'Login password is required',
+            'login_password.min' => 'Login password is too short',
         ];
     }
 }

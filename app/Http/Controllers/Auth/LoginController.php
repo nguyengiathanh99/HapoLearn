@@ -33,8 +33,8 @@ class LoginController extends Controller
     public function login(LoginRequest $request)
     {
         $data = [
-            'name' => $request['username_log'],
-            'password' => $request['password_log'],
+            'name' => $request['login_username'],
+            'password' => $request['login_password'],
         ];
 
         if (Auth::attempt($data)) {
