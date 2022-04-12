@@ -45,7 +45,7 @@ class RegisterController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
@@ -60,7 +60,7 @@ class RegisterController extends Controller
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param array $data
      * @return \App\Models\User
      */
     protected function create(array $data)
@@ -68,7 +68,6 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'role' => 0,
             'password' => Hash::make($data['password']),
         ]);
     }
@@ -78,9 +77,12 @@ class RegisterController extends Controller
         $data = [
             'name' => $request['register_username'],
             'email' => $request['email'],
+            'role' => 0,
             'password' => Hash::make($request['register_password']),
         ];
+
         $user = User::create($data);
+
         if ($user) {
             return redirect()->route('home')->with('success', 'Successful account registration');
         }
