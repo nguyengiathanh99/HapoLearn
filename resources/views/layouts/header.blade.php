@@ -17,12 +17,12 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <a class="dropdown-item" href="#">profile</a>
-                        <a href="{{ route('logout') }}" class="dropdown-item"
-                           onclick="event.preventDefault(); $('#logout-form').submit();">
-                            Logout
-                        </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" >
                             @csrf
+                            <button class="dropdown-item">
+                                Logout
+                            </button>
                         </form>
                     </div>
                 </div>
