@@ -80,9 +80,7 @@ class RegisterController extends Controller
             'role' => 0,
             'password' => Hash::make($request['register_password']),
         ];
-
         $user = User::create($data);
-
         if ($user) {
             return redirect()->route('home')->with('success', 'Successful account registration');
         }
