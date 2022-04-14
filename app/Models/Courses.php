@@ -20,12 +20,12 @@ class Courses extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class, 'course_users', 'course_id', 'user_id');
+        return $this->belongsToMany(User::class, 'user_courses', 'course_id', 'user_id');
     }
 
     public function teachers()
     {
-        return $this->belongsToMany(User::class, 'course_teachers', 'course_id', 'user_id');
+        return $this->belongsToMany(User::class, 'teacher_courses', 'course_id', 'user_id');
     }
 
     public function reviews()
@@ -35,7 +35,7 @@ class Courses extends Model
 
     public function tags()
     {
-        return $this->belongsToMany(Tag::class, 'course_tags', 'course_id', 'tag_id');
+        return $this->belongsToMany(Tags::class, 'course_tags', 'course_id', 'tag_id');
     }
 
     public function lessons()
@@ -61,20 +61,40 @@ class Courses extends Model
 
     public function scopeSearch($query, $data)
     {
-        if (is_null($data['amount'])) {
-            $query->orderBy('id', 'desc');
-        } else {
-            $query->orderBy('id', $data['amount']);
-        }
-        if (isset($data['key'])) {
+        if (!is_null($data['key']) && isset($data['key'])) {
             $key = $data['key'];
-            $query->where('name', 'LIKE', '%'. $key .'%')->orWhere('description', 'LIKE', '%'. $key .'%');
+            $query->where('name', 'LIKE', '%' . $key . '%')
+                ->orWhere('description', 'LIKE', '%' . $key . '%');
         }
-        if (isset($data['search_teacher'])) {
-            $search_teacher = $data['search_teacher'];
-            $query->whereHas('teachers', function ($subQuery) use ($search_teacher) {
-                $subQuery->where('user_id', $search_teacher);
+
+        if (!is_null($data['filter']) && isset($data['filter'])) {
+            ($query->orderBy('id', $data['filter']));
+        }
+
+        if (!is_null($data['search_teacher']) && isset($data['search_teacher'])) {
+            $searchTeacher = $data['search_teacher'];
+            $query->whereHas('teachers', function ($subQuery) use ($searchTeacher) {
+                $subQuery->where('user_id', $searchTeacher);
             });
+        }
+
+        if (!is_null($data['search_tag']) && isset($data['search_tag'])) {
+            $searchTag = $data['search_tag'];
+            $query->whereHas('tags', function ($subQuery) use ($searchTag) {
+                $subQuery->where('tag_id', $searchTag);
+            });
+        }
+
+        if (!is_null($data['search-learner']) && isset($data['search-learner'])) {
+            $query->withCount('users')->orderBy('users_count', $data['search-learner']);
+        }
+
+        if (!is_null($data['search-time']) && isset($data['search-time'])) {
+            $query->withSum('lessons', 'time')->orderBy('lessons_sum_time', $data['search-time']);
+        }
+
+        if (!is_null($data['search-lesson']) && isset($data['search-lesson'])) {
+            $query->withCount('lessons')->orderBy('lessons_count', $data['search-lesson']);
         }
         return $query;
     }

@@ -4,8 +4,7 @@
     <div class="hapo-listcourse-body">
         <div class="container">
             <form action="{{ route('search') }}" method="get">
-            @csrf
-            <!-- Listcourse-header -->
+                <!-- Listcourse-header -->
                 <div class="hapo-listcourse-header">
                     <div class="row">
                         <div class="col-md-6">
@@ -19,7 +18,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="list-course-search">
-                                        <input type="text" value="{{ $data['key'] }}" name="key" placeholder="Search..." class="input-search">
+                                        <input type="text" value="{{ $data['key'] }}" name="key" placeholder="Search..."
+                                               class="input-search">
                                         <i class="fas fa-search search"></i>
                                     </div>
                                 </div>
@@ -39,55 +39,52 @@
                         <div class="col-md-2">
                             <ul class="donate-now">
                                 <li>
-                                    <input type="radio" value="desc" id="filter-new" name="amount" checked/>
+                                    <input type="radio" value="desc" id="filter-new" name="filter" checked/>
                                     <label for="filter-new" class="filter-new">Mới nhất</label>
                                 </li>
                                 <li>
-                                    <input type="radio" value="asc" id="filter-old" name="amount"/>
+                                    <input type="radio" value="asc" id="filter-old" name="filter"/>
                                     <label for="filter-old" class="filter-old">Cũ nhất</label>
                                 </li>
                             </ul>
                         </div>
                         <div class="col-md-2">
-
                             <select class="form-select" aria-label="Default select example" name="search_teacher">
-                                <option selected>Teacher</option>
+                                <option value="{{ $data['search_teacher'] }}" selected>Teacher</option>
                                 @foreach($teachers as $teacher)
-                                <option value="{{ $teacher->id }}">{{ $teacher->name }}</option>
+                                    <option value="{{ $teacher->id }}">{{ $teacher->name }}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="col-md-2">
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Số người học</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
+                            <select class="form-select" aria-label="Default select example" name="search-learner">
+                                <option value="{{ $data['search-learner'] }}" selected>Số người học</option>
+                                <option value="asc">Tăng dần</option>
+                                <option value="desc">Giảm dần</option>
                             </select>
                         </div>
                         <div class="col-md-2">
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Thời gian học</option>
-                                <option value="1">Ngày-1</option>
-                                <option value="2">Ngày-2</option>
-                                <option value="3">Ngày-3</option>
+                            <select class="form-select" aria-label="Default select example" name="search-time">
+                                <option value="{{ $data['search-time'] }}" selected>Thời gian học</option>
+                                <option value="asc">Tăng dần</option>
+                                <option value="desc">Giảm dần</option>
                             </select>
                         </div>
                         <div class="col-md-2">
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Số bài học</option>
-                                <option value="1">Tăng dần</option>
-                                <option value="2">Giảm dần</option>
+                            <select class="form-select" aria-label="Default select example" name="search-lesson">
+                                <option value="{{ $data['search-lesson'] }}" selected>Số bài học</option>
+                                <option value="asc">Tăng dần</option>
+                                <option value="desc">Giảm dần</option>
                             </select>
                         </div>
                     </div>
                     <div class="row hapo-listcourse-select-main-second">
                         <div class="col-1"></div>
                         <div class="col-md-2">
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Tags</option>
+                            <select class="form-select" aria-label="Default select example" name="search_tag">
+                                <option value="{{ $data['search_tag'] }}" selected>Tag</option>
                                 @foreach($tags as $tag)
-                                <option value="1">{{ $tag->name }}</option>
+                                    <option value="{{ $tag->id }}">{{ $tag->name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -96,7 +93,6 @@
                 <!-- End-Listcourse-header -->
             </form>
         @include('layouts.modal')
-
         <!-- Listcourse-content -->
             <div class="hapo-list-course-main">
                 <div class="row list-card">
@@ -118,7 +114,7 @@
                                 <div class="hapo-list-course-statistic">
                                     <div class="hapo-list-course-statistic-left">
                                         <div class="list-course-specical-title">Learners</div>
-                                        <div class="list-course-specical-num">{{$course->learner_course}}</div>
+                                        <div class="list-course-specical-num">{{ $course->learner_course }}</div>
                                     </div>
                                     <div class="hapo-list-course-statistic-mid">
                                         <div class="list-course-specical-title">Lessons</div>
