@@ -1,10 +1,8 @@
 @extends('layouts.app')
 @section('content')
-    <!-- Hapo-listcourses-->
     <div class="hapo-listcourse-body">
         <div class="container">
             <form action="{{ route('search') }}" method="get">
-                <!-- Listcourse-header -->
                 <div class="hapo-listcourse-header">
                     <div class="row">
                         <div class="col-md-6">
@@ -30,7 +28,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Listcourse-selective -->
                 <div class="hapo-listcourse-selective">
                     <div class="row hapo-listcourse-select-main">
                         <div class="col-md-1">
@@ -90,10 +87,8 @@
                         </div>
                     </div>
                 </div>
-                <!-- End-Listcourse-header -->
             </form>
         @include('layouts.modal')
-        <!-- Listcourse-content -->
             <div class="hapo-list-course-main">
                 <div class="row list-card">
                     @foreach($courses as $course)
@@ -130,9 +125,7 @@
                     @endforeach
                 </div>
             </div>
-            <!-- End-Listcourse-content -->
             {{ $courses->links('paginate.my-paginate') }}
         </div>
     </div>
-    <!-- End-Hapo-listcourses -->
 @endsection
