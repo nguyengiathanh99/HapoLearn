@@ -16,6 +16,7 @@ class LessonsFactory extends Factory
         return [
             'course_id' => $this->faker->numberBetween(1, 200),
             'name' => $this->faker->name(),
+            'time' => $this->faker->numerify(),
             'description' => $this->faker->text(),
         ];
     }
