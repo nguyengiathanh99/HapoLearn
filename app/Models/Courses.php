@@ -53,7 +53,6 @@ class Courses extends Model
         return $this->lessons()->count();
     }
 
-
     public function getTimeCourseAttribute()
     {
         return $this->lessons()->sum('time');
@@ -61,39 +60,38 @@ class Courses extends Model
 
     public function scopeSearch($query, $data)
     {
-        if (!is_null($data['key']) && isset($data['key'])) {
-            $key = $data['key'];
-            $query->where('name', 'LIKE', '%' . $key . '%')
-                ->orWhere('description', 'LIKE', '%' . $key . '%');
+        if (isset($data['key']) && !is_null($data['key'])) {
+            $query->where('name', 'LIKE', '%' . $data['key'] . '%')
+                ->orWhere('description', 'LIKE', '%' . $data['key'] . '%');
         }
 
-        if (!is_null($data['filter']) && isset($data['filter'])) {
-            ($query->orderBy('id', $data['filter']));
+        if (isset($data['filter']) && !is_null($data['filter'])) {
+            $query->orderBy('id', $data['filter']);
         }
 
-        if (!is_null($data['search_teacher']) && isset($data['search_teacher'])) {
+        if (isset($data['search_teacher']) && !is_null($data['search_teacher'])) {
             $searchTeacher = $data['search_teacher'];
             $query->whereHas('teachers', function ($subQuery) use ($searchTeacher) {
                 $subQuery->where('user_id', $searchTeacher);
             });
         }
 
-        if (!is_null($data['search_tag']) && isset($data['search_tag'])) {
+        if (isset($data['search_tag']) && !is_null($data['search_tag'])) {
             $searchTag = $data['search_tag'];
             $query->whereHas('tags', function ($subQuery) use ($searchTag) {
                 $subQuery->where('tag_id', $searchTag);
             });
         }
 
-        if (!is_null($data['search-learner']) && isset($data['search-learner'])) {
+        if (isset($data['search-learner']) && !is_null($data['search-learner'])) {
             $query->withCount('users')->orderBy('users_count', $data['search-learner']);
         }
 
-        if (!is_null($data['search-time']) && isset($data['search-time'])) {
+        if (isset($data['search-time']) && !is_null($data['search-time'])) {
             $query->withSum('lessons', 'time')->orderBy('lessons_sum_time', $data['search-time']);
         }
 
-        if (!is_null($data['search-lesson']) && isset($data['search-lesson'])) {
+        if (isset($data['search-lesson']) && !is_null($data['search-lesson'])) {
             $query->withCount('lessons')->orderBy('lessons_count', $data['search-lesson']);
         }
         return $query;

@@ -95,7 +95,6 @@ $list-course-filter-old: #E5E6E7;
     }
 
     .filter-new {
-      //background: $list-course-bg-search;
       border-radius: 2px;
       text-align: center;
       padding: 5px;
@@ -112,11 +111,6 @@ $list-course-filter-old: #E5E6E7;
       font-weight: 600;
     }
 
-    .filter-new,
-    .filter-old:hover {
-      background: $list-course-bg-search;
-    }
-
     .form-select {
       width: 100%;
       padding: 5px;
@@ -124,8 +118,8 @@ $list-course-filter-old: #E5E6E7;
 
     .donate-now {
       list-style-type: none;
-      display: flex;
       padding: 0;
+      display: flex;
     }
 
     .donate-now li {
@@ -149,6 +143,12 @@ $list-course-filter-old: #E5E6E7;
     .donate-now input[type="radio"] {
       opacity: 0.01;
       z-index: 100;
+    }
+
+    .donate-now input[type="radio"]:checked+label,
+    .Checked+label {
+      background: $list-course-bg-search;
+      color: #FFFFFF;
     }
 
     .donate-now label {
