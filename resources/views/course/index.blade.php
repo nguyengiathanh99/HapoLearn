@@ -94,7 +94,7 @@
             <div class="hapo-list-course-main">
                 <div class="row list-card">
                     @foreach($courses as $course)
-                        @include('course.content')
+                        @include('course._course')
                     @endforeach
                 </div>
             </div>
