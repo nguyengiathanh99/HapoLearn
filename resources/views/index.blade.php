@@ -12,7 +12,6 @@
             </div>
         </div>
     </div>
-    @include('layouts.modal')
     <div class="course-bg"></div>
     <div class="wp-hapo-list-courses">
         <div class="container">

@@ -4,11 +4,11 @@
     </div>
     <div class="nav-bar">
         <div class="logo">
-            <img src="{{ asset('/images/hapolearn.png') }}" alt="HapoLearn-Logo">
+            <a href="/"><img src="{{ asset('/images/hapolearn.png') }}" alt="HapoLearn-Logo"></a>
         </div>
         <ul class="menu-content">
             <li><a href="#">home</a></li>
-            <li class="menu-content-active"><a href="#" class="link-allcourse">allcourses</a></li>
+            <li class="menu-content-active"><a href="{{ route('course.index') }}" class="link-allcourse">allcourses</a></li>
             @if(Auth::check())
                 <div class="dropdown">
                     <a class="btn btn-success dropdown-toggle text-white text-auth" href="#" role="button" id="dropdownMenuLink"
@@ -35,3 +35,4 @@
         </ul>
     </div>
 </div>
+@include('layouts.modal')
