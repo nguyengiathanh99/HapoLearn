@@ -11,9 +11,14 @@ class CourseController extends Controller
 {
     public function index(Request $request)
     {
-        $courses = Courses::search($request->all())->paginate(config('course.itemPage'));
+        $courses = Courses::search($request->all())->paginate(config('course.item_page'));
         $tags = Tags::all();
-        $teachers = User::all()->where('role', '=', config('course.roleUser'));
+        $teachers = User::teacher()->get();
         return view('course.index', compact('courses', 'request', 'teachers', 'tags'));
+    }
+
+    public function detailCourse()
+    {
+        return view('course.detail_course');
     }
 }

@@ -60,40 +60,39 @@ class Courses extends Model
 
     public function scopeSearch($query, $data)
     {
-        if (isset($data['key']) && !is_null($data['key'])) {
-            $query->where('name', 'LIKE', '%' . $data['key'] . '%')
-                ->orWhere('description', 'LIKE', '%' . $data['key'] . '%');
+        if (isset($data['key_word']) && !is_null($data['key_word'])) {
+            $query->where('name', 'LIKE', '%' . $data['key_word'] . '%')
+                ->orWhere('description', 'LIKE', '%' . $data['key_word'] . '%');
         }
 
-        if (isset($data['filter']) && !is_null($data['filter'])) {
-            $query->orderBy('id', $data['filter']);
+        if (isset($data['created_time']) && !is_null($data['created_time'])) {
+            $query->orderBy('id', $data['created_time']);
         }
 
         if (isset($data['search_teacher']) && !is_null($data['search_teacher'])) {
-            $searchTeacher = $data['search_teacher'];
-            $query->whereHas('teachers', function ($subQuery) use ($searchTeacher) {
-                $subQuery->where('user_id', $searchTeacher);
+            $query->whereHas('teachers', function ($subQuery) use ($data) {
+                $subQuery->where('user_id', $data['search_teacher']);
             });
         }
 
         if (isset($data['search_tag']) && !is_null($data['search_tag'])) {
-            $searchTag = $data['search_tag'];
-            $query->whereHas('tags', function ($subQuery) use ($searchTag) {
-                $subQuery->where('tag_id', $searchTag);
+            $query->whereHas('tags', function ($subQuery) use ($data) {
+                $subQuery->where('tag_id', $data['search_tag']);
             });
         }
 
-        if (isset($data['search-learner']) && !is_null($data['search-learner'])) {
-            $query->withCount('users')->orderBy('users_count', $data['search-learner']);
+        if (isset($data['search_learner']) && !is_null($data['search_learner'])) {
+            $query->withCount('users')->orderBy('users_count', $data['search_learner']);
         }
 
-        if (isset($data['search-time']) && !is_null($data['search-time'])) {
-            $query->withSum('lessons', 'time')->orderBy('lessons_sum_time', $data['search-time']);
+        if (isset($data['search_time']) && !is_null($data['search_time'])) {
+            $query->withSum('lessons', 'time')->orderBy('lessons_sum_time', $data['search_time']);
         }
 
-        if (isset($data['search-lesson']) && !is_null($data['search-lesson'])) {
-            $query->withCount('lessons')->orderBy('lessons_count', $data['search-lesson']);
+        if (isset($data['search_lesson']) && !is_null($data['search_lesson'])) {
+            $query->withCount('lessons')->orderBy('lessons_count', $data['search_lesson']);
         }
         return $query;
     }
+
 }

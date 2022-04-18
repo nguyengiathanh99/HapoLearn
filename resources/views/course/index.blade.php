@@ -16,7 +16,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="list-course-search">
-                                        <input type="text" value="{{ $request['key'] }}" name="key"
+                                        <input type="text" value="{{ $request['key_word'] }}" name="key_word"
                                                placeholder="Search..."
                                                class="input-search">
                                         <i class="fas fa-search search"></i>
@@ -37,12 +37,12 @@
                         <div class="col-md-2">
                             <ul class="donate-now">
                                 <li>
-                                    <input type="radio" value="desc" id="filter-new" name="filter"
+                                    <input type="radio" value="desc" id="filter-new" name="created_time"
                                            @if(($request['filter']) == config('course.filter.desc') || is_null($request['filter'])) checked @endif/>
                                     <label for="filter-new" class="">Mới nhất</label>
                                 </li>
                                 <li>
-                                    <input type="radio" value="asc" id="filter-old" name="filter"
+                                    <input type="radio" value="asc" id="filter-old" name="created_time"
                                            @if(($request['filter']) == config('course.filter.asc')) checked @endif>
                                     <label for="filter-old" class="">Cũ nhất</label>
                                 </li>
@@ -57,24 +57,24 @@
                             </select>
                         </div>
                         <div class="col-md-2">
-                            <select class="form-select" aria-label="Default select example" name="search-learner">
+                            <select class="form-select" aria-label="Default select example" name="search_learner">
                                 <option value="">Số người học</option>
-                                <option value="asc" @if(($request['search-learner']) == config('course.filter.asc')) selected @endif >Tăng dần</option>
-                                <option value="desc" @if(($request['search-learner']) == config('course.filter.desc')) selected @endif >Giảm dần</option>
+                                <option value="asc" @if(($request['search_learner']) == config('course.filter.asc')) selected @endif >Tăng dần</option>
+                                <option value="desc" @if(($request['search_learner']) == config('course.filter.desc')) selected @endif >Giảm dần</option>
                             </select>
                         </div>
                         <div class="col-md-2">
-                            <select class="form-select" aria-label="Default select example" name="search-time">
+                            <select class="form-select" aria-label="Default select example" name="search_time">
                                 <option value="">Thời gian học</option>
-                                <option value="asc" @if(($request['search-time']) == config('course.filter.asc')) selected @endif>Tăng dần</option>
-                                <option value="desc" @if(($request['search-time']) == config('course.filter.desc')) selected @endif>Giảm dần</option>
+                                <option value="asc" @if(($request['search_time']) == config('course.filter.asc')) selected @endif>Tăng dần</option>
+                                <option value="desc" @if(($request['search_time']) == config('course.filter.desc')) selected @endif>Giảm dần</option>
                             </select>
                         </div>
                         <div class="col-md-2">
-                            <select class="form-select" aria-label="Default select example" name="search-lesson">
+                            <select class="form-select" aria-label="Default select example" name="search_lesson">
                                 <option value="">Số bài học</option>
-                                <option value="asc" @if(($request['search-lesson']) == config('course.filter.asc')) selected @endif>Tăng dần</option>
-                                <option value="desc" @if(($request['search-lesson']) == config('course.filter.desc')) selected @endif>Giảm dần</option>
+                                <option value="asc" @if(($request['search_lesson']) == config('course.filter.asc')) selected @endif>Tăng dần</option>
+                                <option value="desc" @if(($request['search_lesson']) == config('course.filter.desc')) selected @endif>Giảm dần</option>
                             </select>
                         </div>
                     </div>

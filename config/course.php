@@ -4,6 +4,6 @@ return [
         'desc' => 'desc',
         'asc' => 'asc'
     ],
-    'itemPage' => 14,
-    'roleUser' => 1,
+    'item_page' => 14,
+    'role_teacher' => 1,
 ];
