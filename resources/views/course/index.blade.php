@@ -16,7 +16,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="list-course-search">
-                                        <input type="text" value="{{ $request['key_word'] }}" name="key_word"
+                                        <input type="text" value="{{ $request['keyword'] }}" name="keyword"
                                                placeholder="Search..."
                                                class="input-search">
                                         <i class="fas fa-search search"></i>

@@ -60,9 +60,9 @@ class Courses extends Model
 
     public function scopeSearch($query, $data)
     {
-        if (isset($data['key_word']) && !is_null($data['key_word'])) {
-            $query->where('name', 'LIKE', '%' . $data['key_word'] . '%')
-                ->orWhere('description', 'LIKE', '%' . $data['key_word'] . '%');
+        if (isset($data['keyword']) && !is_null($data['keyword'])) {
+            $query->where('name', 'LIKE', '%' . $data['keyword'] . '%')
+                ->orWhere('description', 'LIKE', '%' . $data['keyword'] . '%');
         }
 
         if (isset($data['created_time']) && !is_null($data['created_time'])) {
