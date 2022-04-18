@@ -16,9 +16,4 @@ class CourseController extends Controller
         $teachers = User::teacher()->get();
         return view('course.index', compact('courses', 'request', 'teachers', 'tags'));
     }
-
-    public function detailCourse()
-    {
-        return view('course.detail_course');
-    }
 }
