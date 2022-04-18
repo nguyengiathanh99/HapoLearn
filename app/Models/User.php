@@ -10,6 +10,7 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     const ROLE_USER = 0;
+    const ROLE_TEACHER = 1;
     use HasFactory, Notifiable;
     use SoftDeletes;
 
@@ -72,6 +73,6 @@ class User extends Authenticatable
 
     public function scopeTeacher($query)
     {
-        $query->where('role', '=', config('course.role_teacher'));
+        $query->where('role', '=', User::ROLE_TEACHER);
     }
 }
