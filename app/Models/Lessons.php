@@ -33,9 +33,8 @@ class Lessons extends Model
         return $this->belongsTo(Courses::class);
     }
 
-    public function scopeSearchLessons($query, $data, $id)
+    public function scopeSearchLessons($query, $data)
     {
-        $query->where('course_id', $id)->orderby('created_at', config('course.filter.asc'));
         if (isset($data['keyword'])) {
             $query->where('name', 'LIKE', '%' . $data['keyword'] . '%');
         }
