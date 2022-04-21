@@ -4,5 +4,6 @@ return [
         'desc' => 'desc',
         'asc' => 'asc'
     ],
-    'item_page' => 14,
+    'item_page' => 12,
+    'limitCourse' => 5,
 ];

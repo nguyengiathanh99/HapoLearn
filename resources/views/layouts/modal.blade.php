@@ -35,7 +35,7 @@
                                                class="form-control @error('login_username') is-invalid form-login @enderror"
                                                id="username" name="login_username">
                                         @if ($errors->has('login_username'))
-                                            <p class="text-danger">{{ $errors->first('login_username') }}</p>
+                                            <p class="text-danger errors-login">{{ $errors->first('login_username') }}</p>
                                         @endif
                                     </div>
                                     <div class="form-group">
@@ -44,7 +44,7 @@
                                                class="form-control @error('login_password') is-invalid form-login @enderror"
                                                id="password" name="login_password">
                                         @if ($errors->has('login_password'))
-                                            <p class="text-danger">{{ $errors->first('login_password') }}</p>
+                                            <p class="text-danger errors-login">{{ $errors->first('login_password') }}</p>
                                         @endif
                                     </div>
                                     <div class="d-flex justify-content-between">
@@ -105,7 +105,7 @@
                                                class="form-control @error('register_username') is-invalid form-reg @enderror"
                                                id="username" name="register_username">
                                         @if ($errors->has('register_username'))
-                                            <p class="text-danger">{{ $errors->first('register_username') }}</p>
+                                            <p class="text-danger errors-register">{{ $errors->first('register_username') }}</p>
                                         @endif
                                     </div>
                                     <div class="form-group">
@@ -114,7 +114,7 @@
                                                class="form-control @error('email') is-invalid form-reg @enderror"
                                                id="email" name="email">
                                         @if ($errors->has('email'))
-                                            <p class="text-danger">{{ $errors->first('email') }}</p>
+                                            <p class="text-danger errors-register">{{ $errors->first('email') }}</p>
                                         @endif
                                     </div>
                                     <div class="form-group">
@@ -123,7 +123,7 @@
                                                class="form-control @error('register_password') is-invalid form-reg @enderror"
                                                id="password" name="register_password">
                                         @if ($errors->has('register_password'))
-                                            <p class="text-danger">{{ $errors->first('register_password') }}</p>
+                                            <p class="text-danger errors-register">{{ $errors->first('register_password') }}</p>
                                         @endif
                                     </div>
                                     <div class="form-group">
@@ -132,7 +132,7 @@
                                                class="form-control @error('password') is-invalid form-reg @enderror"
                                                id="confirm-password" name="password_confirmation">
                                         @if ($errors->has('password_confirmation'))
-                                            <p class="text-danger">{{ $errors->first('password_confirmation') }}</p>
+                                            <p class="text-danger errors-register">{{ $errors->first('password_confirmation') }}</p>
                                         @endif
                                     </div>
                                     <button type="submit" id="btn-reg" class="btn-submit">REGISTER</button>

@@ -233,12 +233,15 @@ $list-course-filter-old: #E5E6E7;
     }
 
     .list-course-btn-more {
-      background: $list-course-bg-search;
+      background: #B2D235;
       border-radius: 22px;
       border: none;
       padding: 8px 27px;
-      color: $list-course-filter;
+      color: #FFFFFF;
       text-align: center;
+      text-decoration: none;
+      font-weight: 700;
+      cursor: pointer;
     }
 
     .list-course-specical-title {

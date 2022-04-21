@@ -2,7 +2,7 @@
 @section('content')
     <div class="hapo-listcourse-body">
         <div class="container">
-            <form action="{{ route('course.index') }}" method="get">
+            <form action="{{ route('courses.index') }}" method="get">
                 <div class="hapo-listcourse-header">
                     <div class="row">
                         <div class="col-md-6">
@@ -94,7 +94,7 @@
             <div class="hapo-list-course-main">
                 <div class="row list-card">
                     @foreach($courses as $course)
-                        @include('course._course')
+                        @include('courses._course')
                     @endforeach
                 </div>
             </div>
