@@ -61,7 +61,7 @@ class Courses extends Model
     public function getProcessedPriceAttribute()
     {
 
-        return $this->price == 0 ? $this->price = "Free" : number_format($this->price).'$';
+        return $this->price == 0 ? "Free" : number_format($this->price) . '$';
     }
 
     public function scopeSearch($query, $data)
