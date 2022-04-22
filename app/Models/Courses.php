@@ -58,6 +58,12 @@ class Courses extends Model
         return $this->lessons()->sum('time');
     }
 
+    public function getProcessedPriceAttribute()
+    {
+
+        return $this->price == 0 ? "Free" : number_format($this->price) . '$';
+    }
+
     public function scopeSearch($query, $data)
     {
         if (isset($data['keyword']) && !is_null($data['keyword'])) {
@@ -92,6 +98,12 @@ class Courses extends Model
         if (isset($data['search_lesson']) && !is_null($data['search_lesson'])) {
             $query->withCount('lessons')->orderBy('lessons_count', $data['search_lesson']);
         }
+        return $query;
+    }
+
+    public function scopeOthers($query, $id)
+    {
+        $query->where('id', '!=', $id)->limit(config('course.limit_course'));
         return $query;
     }
 }

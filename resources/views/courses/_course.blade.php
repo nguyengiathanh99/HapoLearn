@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="list-course-btn">
-            <button class="list-course-btn-more">More</button>
+            <a href="{{ route('courses.show', $course->id) }}" class="list-course-btn-more">More</a>
         </div>
         <div class="hapo-list-course-statistic">
             <div class="hapo-list-course-statistic-left">

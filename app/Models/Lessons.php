@@ -25,11 +25,19 @@ class Lessons extends Model
 
     public function documents()
     {
-        return $this->hasMany(Documents::class);
+        return $this->hasMany(Documents::class, 'lesson_id');
     }
 
     public function course()
     {
         return $this->belongsTo(Courses::class);
+    }
+
+    public function scopeSearch($query, $data)
+    {
+        if (isset($data['keyword'])) {
+            $query->where('name', 'LIKE', '%' . $data['keyword'] . '%');
+        }
+        return $query;
     }
 }

@@ -14,6 +14,14 @@ class CourseController extends Controller
         $courses = Courses::search($request->all())->paginate(config('course.item_page'));
         $tags = Tags::all();
         $teachers = User::teacher()->get();
-        return view('course.index', compact('courses', 'request', 'teachers', 'tags'));
+        return view('courses.index', compact('courses', 'request', 'teachers', 'tags'));
+    }
+
+    public function show(Request $request, $id)
+    {
+        $course = Courses::find($id);
+        $lessons = $course->lessons()->search($request->all())->paginate(config('course.item_page'));
+        $otherCourses = Courses::others($id)->get();
+        return view('courses.show', compact('course', 'otherCourses', 'request', 'lessons'));
     }
 }

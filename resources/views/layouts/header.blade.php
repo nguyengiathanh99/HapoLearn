@@ -7,18 +7,21 @@
             <a href="/"><img src="{{ asset('/images/hapolearn.png') }}" alt="HapoLearn-Logo"></a>
         </div>
         <ul class="menu-content">
-            <li><a href="#">home</a></li>
-            <li class="menu-content-active"><a href="{{ route('course.index') }}" class="link-allcourse">allcourses</a></li>
+            <li @if(url()->current() == route('home')) class="menu-content-active" @endif><a href="{{route('home')}}">home</a>
+            </li>
+            <li @if(url()->current() == route('courses.index')) class="menu-content-active" @endif><a
+                        href="{{ route('courses.index') }}">allcourses</a></li>
             @if(Auth::check())
                 <div class="dropdown">
-                    <a class="btn btn-success dropdown-toggle text-white text-auth" href="#" role="button" id="dropdownMenuLink"
+                    <a class="btn btn-success dropdown-toggle text-white text-auth" href="#" role="button"
+                       id="dropdownMenuLink"
                        data-toggle="dropdown" aria-expanded="false">
                         <i class="fas fa-user icon-auth"></i>{{Auth::user()->name}}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <a class="dropdown-item" href="#">profile</a>
 
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST">
                             @csrf
                             <button class="dropdown-item">
                                 LOGOUT
@@ -36,3 +39,4 @@
     </div>
 </div>
 @include('layouts.modal')
+
