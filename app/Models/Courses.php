@@ -60,9 +60,8 @@ class Courses extends Model
 
     public function getCoursePriceAttribute()
     {
-        if ($this->price == 0) {
-            return $this->price = "Free";
-        }
+
+        return $this->price == 0 ? $this->price = "Free" : number_format($this->price).'$';
     }
 
     public function scopeSearch($query, $data)
