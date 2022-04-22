@@ -33,11 +33,17 @@ class Lessons extends Model
         return $this->belongsTo(Courses::class);
     }
 
-    public function scopeSearchLessons($query, $data)
+    public function scopeSearch($query, $data)
     {
         if (isset($data['keyword'])) {
             $query->where('name', 'LIKE', '%' . $data['keyword'] . '%');
         }
+        return $query;
+    }
+
+    public function scopeOthers($query, $id)
+    {
+        $query->where('id', '!=', $id)->limit(config('course.limit_course'));
         return $query;
     }
 }

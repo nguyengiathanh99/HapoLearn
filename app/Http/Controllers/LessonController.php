@@ -11,7 +11,7 @@ class LessonController extends Controller
     {
         $lessons = Lessons::find($lessonId);
         $course = Courses::find($courseId);
-        $otherCourses = Lessons::where('course_id', '!=', $course->id)->limit(config('course.limitCourse'))->get();
+        $otherCourses = Lessons::others($courseId)->get();
         return view('lessons.show', compact('lessons', 'course', 'otherCourses'));
     }
 }

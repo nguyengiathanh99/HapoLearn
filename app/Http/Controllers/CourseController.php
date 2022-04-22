@@ -20,8 +20,8 @@ class CourseController extends Controller
     public function show(Request $request, $id)
     {
         $course = Courses::find($id);
-        $lessons = $course->lessons()->searchlessons($request->all())->paginate(config('course.item_page'));
-        $otherCourses = Courses::where('id', '!=', $id)->limit(config('course.limitCourse'))->get();
+        $lessons = $course->lessons()->search($request->all())->paginate(config('course.item_page'));
+        $otherCourses = Courses::others($id)->get();
         return view('courses.show', compact('course', 'otherCourses', 'request', 'lessons'));
     }
 }

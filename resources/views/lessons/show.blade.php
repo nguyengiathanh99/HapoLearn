@@ -108,7 +108,7 @@
                                                 <div class="col-md-1">
                                                     <p>:</p>
                                                 </div>
-                                                <div class="col-md-6">{{ number_format($course->price) }}$</div>
+                                                <div class="col-md-6">{{ $course->course_price }}</div>
                                             </div>
                                         </div>
                                         <div class="information-price information-item information-item-lesson">

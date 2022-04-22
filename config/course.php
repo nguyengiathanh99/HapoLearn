@@ -5,5 +5,5 @@ return [
         'asc' => 'asc'
     ],
     'item_page' => 12,
-    'limitCourse' => 5,
+    'limit_course' => 5,
 ];

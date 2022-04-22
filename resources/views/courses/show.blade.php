@@ -154,7 +154,7 @@
                         <span class="colon">:</span>
                         <span class="data">
                             @foreach ($course->tags as $item)
-                                <a href="{{ route('courses.index',['search_tag' => $item->id]) }}">{{  $item->name }}</a>
+                                <a href="{{route('courses.index',['search_tag' => $item->id])}}">{{  $item->name }}</a>
                             @endforeach
                         </span>
                     </div>
@@ -162,11 +162,7 @@
                         <i class="fas fa-money-bill-alt"></i>
                         <span class="info-text text-price">Price</span>
                         <span class="colon">:</span>
-                        @if ($course->price == 0)
-                            <span class="data">Free</span>
-                        @else
-                            <span class="data">{{ $course->price }} $</span>
-                        @endif
+                        <span class="data">{{ $course->course_price }}</span>
                     </div>
                 </div>
                 @include('courses._other_course')
