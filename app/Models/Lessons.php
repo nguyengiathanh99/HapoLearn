@@ -41,4 +41,3 @@ class Lessons extends Model
         return $query;
     }
 }
-

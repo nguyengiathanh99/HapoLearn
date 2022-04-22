@@ -107,4 +107,3 @@ class Courses extends Model
         return $query;
     }
 }
-

@@ -15,4 +15,3 @@ class LessonController extends Controller
         return view('lessons.show', compact('lessons', 'course', 'otherCourses'));
     }
 }
-
