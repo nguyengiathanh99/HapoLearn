@@ -11,7 +11,8 @@ class LessonController extends Controller
     {
         $lessons = Lessons::find($lessonId);
         $course = Courses::find($courseId);
-        $otherCourses = Lessons::others($courseId)->get();
+        $otherCourses = Courses::others($courseId)->get();
         return view('lessons.show', compact('lessons', 'course', 'otherCourses'));
     }
 }
+

@@ -40,10 +40,5 @@ class Lessons extends Model
         }
         return $query;
     }
-
-    public function scopeOthers($query, $id)
-    {
-        $query->where('id', '!=', $id)->limit(config('course.limit_course'));
-        return $query;
-    }
 }
+

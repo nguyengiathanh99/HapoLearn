@@ -162,7 +162,7 @@
                         <i class="fas fa-money-bill-alt"></i>
                         <span class="info-text text-price">Price</span>
                         <span class="colon">:</span>
-                        <span class="data">{{ $course->course_price }}</span>
+                        <span class="data">{{ $course->processed_price }}</span>
                     </div>
                 </div>
                 @include('courses._other_course')

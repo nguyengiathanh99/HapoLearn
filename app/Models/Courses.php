@@ -58,7 +58,7 @@ class Courses extends Model
         return $this->lessons()->sum('time');
     }
 
-    public function getCoursePriceAttribute()
+    public function getProcessedPriceAttribute()
     {
 
         return $this->price == 0 ? $this->price = "Free" : number_format($this->price).'$';
@@ -107,3 +107,4 @@ class Courses extends Model
         return $query;
     }
 }
+
