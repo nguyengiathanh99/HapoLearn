@@ -14,6 +14,6 @@ class UserCoursesTableSeeder extends Seeder
      */
     public function run()
     {
-        UserCourses::factory()->count(200)->create();
+        UserCourses::factory()->count(500)->create();
     }
 }

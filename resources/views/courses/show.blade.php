@@ -47,7 +47,11 @@
                                     <i class="fa fa-search"></i>
                                     <button type="submit">Tìm kiếm</button>
                                 </form>
-                                <a href="" class="btn-join">Tham gia khóa học</a>
+                                <form action="{{ route('user_courses.store') }}" method="post">
+                                    @csrf
+                                    <input type="hidden" name="course-id" value="{{ $course->id }}">
+                                    <input type="submit" class="btn-join-course {{ $course->checkStatusUserCourse()['color'] }}" value="{{ $course->checkStatusUserCourse()['message'] }}">
+                                </form>
                             </div>
                             <div class="lesson-content">
                                 @foreach($lessons as $key => $lesson)
@@ -81,33 +85,33 @@
                         <div class="tab-pane fade" id="teacher" role="tabpanel" aria-labelledby="teacher-tab">
                             <div class="teacher-content">
                                 <div class="teacher-title">Main Teachers</div>
-                                <div class="teacher-item">
-                                    <div class="item-top d-flex align-items-center">
-                                        <div class="item-avata">
-                                            <div class="avata-teacher-cus">
-                                                <img class="w-100 h-100" src="{{ asset('images/a nghia kute.png') }}"
-                                                     alt="">
-                                            </div>
-                                        </div>
-                                        <div class="item-teacher-info">
-                                            <div class="teacher-name"></div>
-                                            <span>Second Year Teacher</span>
-                                            <div class="teacher-icon d-flex align-items-center">
-                                                <div class="icon-google">
-                                                    <i class="fab fa-google-plus-g"></i>
-                                                </div>
-                                                <div class="icon-facebook">
-                                                    <i class="fab fa-facebook-f"></i>
+                                @foreach($teachers as $teacher)
+                                    <div class="teacher-item">
+                                        <div class="item-top d-flex align-items-center">
+                                            <div class="item-avata">
+                                                <div class="avata-teacher-cus">
+                                                    <img class="w-100 h-100" src="{{ $teacher->image }}"
+                                                         alt="{{ $teacher->name }}">
                                                 </div>
                                             </div>
+                                            <div class="item-teacher-info">
+                                                <div class="teacher-name">{{ $teacher->name }}</div>
+                                                <span>Second Year Teacher</span>
+                                                <div class="teacher-icon d-flex align-items-center">
+                                                    <div class="icon-google">
+                                                        <i class="fab fa-google-plus-g"></i>
+                                                    </div>
+                                                    <div class="icon-facebook">
+                                                        <i class="fab fa-facebook-f"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item-text"> {{ $teacher->description }}
                                         </div>
                                     </div>
-                                    <div class="item-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
-                                        eaque non alias odit aliquid ut dignissimos numquam exercitationem porro
-                                        eligendi corrupti facere earum, aperiam repellat qui. Aspernatur assumenda
-                                        facere fugit.
-                                    </div>
-                                </div>
+                                @endforeach
+
                             </div>
                         </div>
                         <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">

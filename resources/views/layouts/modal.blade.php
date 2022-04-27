@@ -29,6 +29,9 @@
                                             {{ session()->get('success') }}
                                         </div>
                                     @endif
+                                    @if(session()->has('message_login'))
+                                        <div class="message_login" id="message_log"></div>
+                                    @endif
                                     <div class="form-group">
                                         <label for="username">Username:</label>
                                         <input type="text"

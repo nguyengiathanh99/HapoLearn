@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Auth;
 
 class Courses extends Model
 {
@@ -106,4 +107,29 @@ class Courses extends Model
         $query->where('id', '!=', $id)->limit(config('course.limit_course'));
         return $query;
     }
+
+    public function checkStatusUserCourse()
+    {
+        $statusCourse = UserCourses::where('course_id', $this->id)->where('user_id', Auth::id())->pluck('status')->first();
+        if (!empty($statusCourse) && $statusCourse == UserCourses::JOIN_COURSE) {
+            return [
+                'message' => 'Joined',
+                'color' => 'blue'
+            ];
+        }
+        elseif (!empty($statusCourse) && $statusCourse == UserCourses::END_COURSE) {
+            return [
+                'message' => 'Finished course',
+                'color' => 'black'
+            ];
+        }
+        else {
+            return [
+                'message' => 'Take part in',
+                'color' => ''
+            ];
+        }
+    }
 }
+
+

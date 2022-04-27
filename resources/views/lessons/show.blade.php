@@ -41,12 +41,9 @@
                                                     <i class="fas fa-tv"></i>
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <p>Courses</p>
+                                                    <p>Courses:</p>
                                                 </div>
-                                                <div class="col-md-1">
-                                                    <p>:</p>
-                                                </div>
-                                                <div class="col-md-6">{{ $course->name  }}</div>
+                                                <div class="col-md-7 information-item-detail">{{ $course->name  }}</div>
                                             </div>
                                         </div>
                                         <div class="information-lessons information-item">
@@ -55,12 +52,9 @@
                                                     <i class="fas fa-users"></i>
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <p>Learners</p>
+                                                    <p>Learners:</p>
                                                 </div>
-                                                <div class="col-md-1">
-                                                    <p>:</p>
-                                                </div>
-                                                <div class="col-md-6">{{ $course->learner_course }}</div>
+                                                <div class="col-md-7 information-item-detail">{{ $course->learner_course }}</div>
                                             </div>
                                         </div>
                                         <div class="information-times information-item">
@@ -69,12 +63,11 @@
                                                     <i class="fas fa-clock"></i>
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <p>Times</p>
+                                                    <p>Times:</p>
                                                 </div>
-                                                <div class="col-md-1">
-                                                    <p>:</p>
+                                                <div class="col-md-7 information-item-detail">{{ $course->time_course }}
+                                                    hours
                                                 </div>
-                                                <div class="col-md-6">{{ $course->time_course }} hours</div>
                                             </div>
                                         </div>
                                         <div class="information-tags information-item">
@@ -83,12 +76,9 @@
                                                     <i class="fas fa-key"></i>
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <p>Tags</p>
+                                                    <p>Tags:</p>
                                                 </div>
-                                                <div class="col-md-1">
-                                                    <p>:</p>
-                                                </div>
-                                                <div class="col-md-6">
+                                                <div class="col-md-7">
                                                     @foreach($course->tags as $item)
                                                         <a href="{{ route('courses.index',['search_tag' => $item->id]) }}"
                                                            class="link-tag">
@@ -103,17 +93,16 @@
                                                     <i class="fas fa-money-bill-alt"></i>
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <p>Price</p>
+                                                    <p>Price:</p>
                                                 </div>
-                                                <div class="col-md-1">
-                                                    <p>:</p>
-                                                </div>
-                                                <div class="col-md-6">{{ $course->processed_price }}</div>
+                                                <div class="col-md-7 information-item-detail">{{ $course->processed_price }}</div>
                                             </div>
                                         </div>
                                         <div class="information-price information-item information-item-lesson">
-                                            <div class="infomation-lesson-end">
-                                                <a href="" class="btn-end-course">Kết thúc khóa học</a>
+                                            <div class="infomation-lesson-end @if(session()->has('message_end_course')) {{ session()->get('message_end_course') }} end-course @endif">
+                                                <a href="{{ route('user_courses.edit', $course->id) }}"
+                                                   class="btn-end-course">@if(session()->has('message_end_course')) {{ session()->get('message_end_course') }} @else
+                                                        Kết thúc khóa học @endif</a>
                                             </div>
                                         </div>
                                     </div>
@@ -121,6 +110,13 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="progress-learn">
+                    <label for="file">Learning progress:</label>
+                    <progress id="file"
+                              value="{{ $lessons->learning_progress ? $lessons->learning_progress['progress'] : 0}}"
+                              max="100"></progress>
+                    <span>{{ $lessons->learning_progress ? $lessons->learning_progress['progress'] : 0}}%</span>
                 </div>
                 <div class="detail-course-main">
                     <div class="row detail-lesson-main">
@@ -171,28 +167,55 @@
                                                 <div class="title-program">
                                                     <p>Documents</p>
                                                 </div>
-                                                @foreach($lessons->documents()->get() as $lesson)
+                                                @foreach($lessons->documents()->get() as $document)
                                                     <div class="program-main">
                                                         <div class="row">
-                                                            <div class="col-md-9">
+                                                            <div class="col-md-7">
                                                                 <div class="program-content">
                                                                     <div class="row">
                                                                         <div class="col-md-1">
                                                                             <div class="program-thumb-nail">
-                                                                                <img src="{{ $lesson->file_path }}" alt="{{ $lesson->name }}">
+                                                                                <img src="{{ $document->image }}"
+                                                                                     alt="{{ $document->name }}">
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-md-3">
-                                                                            <div class="program-title">{{ $lesson->title }}</div>
+                                                                            <div class="program-title">{{ $document->title }}</div>
                                                                         </div>
                                                                         <div class="col-md-8">
-                                                                            <div class="program-name">{{ $lesson->name }}</div>
+                                                                            <div class="program-name">{{ $document->name }}</div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-md-3">
-                                                                <a href="">Preview</a>
+                                                            <div class="col-md-5">
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        @php
+                                                                            $disable = '';
+                                                                            $status = 'Learn';
+                                                                            if ($document->user_document) {
+                                                                                $disable = 'disabled';
+                                                                                $status = 'Completed';
+                                                                            }
+                                                                        @endphp
+                                                                        <form action="{{ route('user_lessons.update', $lessons->id) }}"
+                                                                              method="post">
+                                                                            @method('PUT')
+                                                                            @csrf
+                                                                            <input type="hidden" name="program_lesson"
+                                                                                   value="1">
+                                                                            <input type="hidden" name="document_id"
+                                                                                   value="{{ $document->id }}">
+                                                                            <button type="submit"
+                                                                                    class="btn btn-success btn-program-success"
+                                                                                    {{$disable}}>{{$status}}</button>
+                                                                        </form>
+                                                                    </div>
+                                                                    <div class="col-md-6 btn-review">
+                                                                        <a href="">View</a>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -211,3 +234,4 @@
             </div>
         </div>
 @endsection
+
