@@ -99,11 +99,15 @@
                                             </div>
                                         </div>
                                         <div class="information-price information-item information-item-lesson">
-                                            <div class="infomation-lesson-end @if(session()->has('message_end_course')) {{ session()->get('message_end_course') }} end-course @endif">
-                                                <a href="{{ route('user_courses.edit', $course->id) }}"
-                                                   class="btn-end-course">@if(session()->has('message_end_course')) {{ session()->get('message_end_course') }} @else
-                                                        Kết thúc khóa học @endif</a>
-                                            </div>
+                                            <form action="{{ route('user_courses.update', $course->id) }}" method="post">
+                                                @csrf
+                                                @method('PUT')
+                                                <div class="infomation-lesson-end">
+                                                    <button
+                                                       class="btn-end-course @if(session()->has('message_end_course')) {{ session()->get('message_end_course') }} end-course @endif">@if(session()->has('message_end_course')) {{ session()->get('message_end_course') }} @else
+                                                            Kết thúc khóa học @endif</button>
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>

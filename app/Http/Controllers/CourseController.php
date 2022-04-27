@@ -22,7 +22,7 @@ class CourseController extends Controller
         $course = Courses::find($id);
         $lessons = $course->lessons()->search($request->all())->paginate(config('course.item_page'));
         $otherCourses = Courses::others($id)->get();
-        $teachers = $course->teachers($course->id)->get();
+        $teachers = $course->teachers()->get();
         return view('courses.show', compact('course', 'otherCourses', 'request', 'lessons', 'teachers'));
     }
 }

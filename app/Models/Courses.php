@@ -116,14 +116,12 @@ class Courses extends Model
                 'message' => 'Joined',
                 'color' => 'blue'
             ];
-        }
-        elseif (!empty($statusCourse) && $statusCourse == UserCourses::END_COURSE) {
+        } elseif (!empty($statusCourse) && $statusCourse == UserCourses::END_COURSE) {
             return [
                 'message' => 'Finished course',
                 'color' => 'black'
             ];
-        }
-        else {
+        } else {
             return [
                 'message' => 'Take part in',
                 'color' => ''
@@ -131,5 +129,3 @@ class Courses extends Model
         }
     }
 }
-
-

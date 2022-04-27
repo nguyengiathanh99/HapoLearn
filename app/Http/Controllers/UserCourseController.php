@@ -24,9 +24,9 @@ class UserCourseController extends Controller
         }
     }
 
-    public function edit($id)
+    public function update(Request $request, $id)
     {
-        $statusCourse = UserCourses::where('course_id', $id)->where('user_id', Auth::id())->first();
+        $statusCourse = UserCourses::checkstatuscourse($id);
         $statusCourse->status = UserCourses::END_COURSE;
         $statusCourse->save();
         if ($statusCourse) {
@@ -34,4 +34,3 @@ class UserCourseController extends Controller
         }
     }
 }
-

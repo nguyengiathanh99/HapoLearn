@@ -111,7 +111,6 @@
                                         </div>
                                     </div>
                                 @endforeach
-
                             </div>
                         </div>
                         <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">

@@ -34,4 +34,3 @@ class Documents extends Model
         return $this->users()->where('user_id', Auth::id())->count();
     }
 }
-

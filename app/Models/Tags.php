@@ -21,4 +21,3 @@ class Tags extends Model
         return $this->belongsToMany(Courses::class, 'course_tags', 'tag_id', 'course_id');
     }
 }
-

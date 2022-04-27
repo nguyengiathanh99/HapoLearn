@@ -38,7 +38,7 @@ class LoginController extends Controller
         ];
 
         if (Auth::attempt($data)) {
-            return redirect(url()->previous());
+            return redirect()->back();
         } else {
             return redirect()->back()->with('error', 'Username or Password is incorrect');
         }
