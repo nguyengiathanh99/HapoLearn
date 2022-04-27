@@ -20,7 +20,7 @@ class UserLessons extends Model
 
     public static function sumProgress($data)
     {
-        $numProgress = ((($data['sumDocumentCompleted'] + 1) / $data['sumDocument']) * config('course.one_hundreds'));
+        $numProgress = ((($data['sum_document_completed'] + 1) / $data['sum_document']) * config('course.one_hundreds'));
         return number_format((float) $numProgress, 2, '.', '');
     }
 }
