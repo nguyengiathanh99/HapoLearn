@@ -50,7 +50,9 @@
                                 <form action="{{ route('user_courses.store') }}" method="post">
                                     @csrf
                                     <input type="hidden" name="course-id" value="{{ $course->id }}">
-                                    <input type="submit" class="btn-join-course {{ $course->checkStatusUserCourse()['color'] }}" value="{{ $course->checkStatusUserCourse()['message'] }}">
+                                    <input type="submit"
+                                           class="btn-join-course {{ $course->checkStatusUserCourse()['color'] }}"
+                                           value="{{ $course->checkStatusUserCourse()['message'] }}">
                                 </form>
                             </div>
                             <div class="lesson-content">
