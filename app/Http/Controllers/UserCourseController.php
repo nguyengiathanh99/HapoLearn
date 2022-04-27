@@ -17,7 +17,6 @@ class UserCourseController extends Controller
             'status' => UserCourses::JOIN_COURSE,
         ];
 
-
         if (isset($data)) {
             UserCourses::create($data);
             return redirect()->back()->with('message_success', 'Đã thêm vào thành công');
