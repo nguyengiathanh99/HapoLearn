@@ -195,29 +195,21 @@
                                                             <div class="col-md-5">
                                                                 <div class="row">
                                                                     <div class="col-md-6">
-                                                                        @php
-                                                                            $disable = '';
-                                                                            $status = 'Learn';
-                                                                            if ($document->user_document) {
-                                                                                $disable = 'disabled';
-                                                                                $status = 'Completed';
-                                                                            }
-                                                                        @endphp
                                                                         <form action="{{ route('user_lessons.update', $lessons->id) }}"
                                                                               method="post">
                                                                             @method('PUT')
                                                                             @csrf
-                                                                            <input type="hidden" name="program_lesson"
-                                                                                   value="1">
                                                                             <input type="hidden" name="document_id"
                                                                                    value="{{ $document->id }}">
                                                                             <button type="submit"
                                                                                     class="btn btn-success btn-program-success"
-                                                                                    {{$disable}}>{{$status}}</button>
+                                                                                    @if($document->user_document) disabled @endif>
+                                                                                @if($document->user_document) Completed @else Learn @endif
+                                                                            </button>
                                                                         </form>
                                                                     </div>
                                                                     <div class="col-md-6 btn-review">
-                                                                        <a href="">View</a>
+                                                                        <a href="{{ $document->file_path }}">View</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -238,4 +230,3 @@
             </div>
         </div>
 @endsection
-

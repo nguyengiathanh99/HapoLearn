@@ -111,12 +111,12 @@ class Courses extends Model
     public function checkStatusUserCourse()
     {
         $statusCourse = UserCourses::where('course_id', $this->id)->where('user_id', Auth::id())->pluck('status')->first();
-        if (!empty($statusCourse) && $statusCourse == UserCourses::JOIN_COURSE) {
+        if (!empty($statusCourse) && $statusCourse == config('course.status_start')) {
             return [
                 'message' => 'Joined',
                 'color' => 'blue'
             ];
-        } elseif (!empty($statusCourse) && $statusCourse == UserCourses::END_COURSE) {
+        } elseif (!empty($statusCourse) && $statusCourse == config('course.status_end')) {
             return [
                 'message' => 'Finished course',
                 'color' => 'black'

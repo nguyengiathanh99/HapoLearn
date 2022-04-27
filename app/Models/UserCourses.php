@@ -18,8 +18,8 @@ class UserCourses extends Model
         'status'
     ];
 
-    const JOIN_COURSE = 1;
-    const END_COURSE = 2;
+//    const JOIN_COURSE = 1;
+//    const END_COURSE = 2;
 
     public function scopeCheckStatusCourse($query, $id)
     {

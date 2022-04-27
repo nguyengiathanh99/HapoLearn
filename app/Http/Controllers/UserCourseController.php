@@ -14,7 +14,7 @@ class UserCourseController extends Controller
         $data = [
             'user_id' => Auth::id(),
             'course_id' => $request['course-id'],
-            'status' => UserCourses::JOIN_COURSE,
+            'status' => config('course.status_start'),
         ];
 
         if (isset($data)) {
@@ -26,7 +26,7 @@ class UserCourseController extends Controller
     public function update(Request $request, $id)
     {
         $statusCourse = UserCourses::checkstatuscourse($id);
-        $statusCourse->status = UserCourses::END_COURSE;
+        $statusCourse->status = config('course.status_end');
         $statusCourse->save();
         if ($statusCourse) {
             return redirect()->back()->with('message_end_course', 'Hoàn thành');

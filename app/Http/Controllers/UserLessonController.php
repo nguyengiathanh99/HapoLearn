@@ -13,9 +13,9 @@ class UserLessonController extends Controller
     public function update(Request $request, $lessonId)
     {
         $lesson = Lessons::find($lessonId);
-        $numLessonComplete = UserDocuments::countlessoncomplete($lessonId);
+        $num_lesson_complete = UserDocuments::countlessoncomplete($lessonId);
         $data = [
-            'sumDocumentCompleted' => $numLessonComplete->count(),
+            'sumDocumentCompleted' => $num_lesson_complete->count(),
             'sumDocument' => $lesson->documents()->count(),
         ];
         $progress = UserLessons::sumProgress($data);
