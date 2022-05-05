@@ -31,7 +31,7 @@ class Courses extends Model
 
     public function reviews()
     {
-        return $this->hasMany(Reviews::class);
+        return $this->hasMany(Reviews::class, 'course_id');
     }
 
     public function tags()
@@ -114,18 +114,25 @@ class Courses extends Model
         if (!empty($statusCourse) && $statusCourse == config('course.status_start')) {
             return [
                 'message' => 'Joined',
-                'color' => 'blue'
+                'color' => 'blue',
+                'disabled' => 'disabled',
             ];
         } elseif (!empty($statusCourse) && $statusCourse == config('course.status_end')) {
             return [
                 'message' => 'Finished course',
-                'color' => 'black'
+                'color' => 'black',
+                'disabled' => 'disabled',
             ];
         } else {
             return [
                 'message' => 'Take part in',
-                'color' => ''
+                'color' => '',
+                'disabled' => '',
             ];
         }
+    }
+    public function countReviewVote($star)
+    {
+        return $this->reviews()->where('vote', $star)->count();
     }
 }

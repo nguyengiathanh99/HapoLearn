@@ -17,6 +17,9 @@ $(document).ready(function () {
     } else if ($('#message_log').hasClass('message_login')) {
       $('#modal-form').modal('toggle');
       openModalLogin();
+    } else if ($('#error_log').hasClass('error_login')) {
+      $('#modal-form').modal('toggle');
+      openModalLogin();
     }
   }
 

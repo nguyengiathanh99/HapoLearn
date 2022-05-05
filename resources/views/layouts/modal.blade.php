@@ -32,6 +32,9 @@
                                     @if(session()->has('message_login'))
                                         <div class="message_login" id="message_log"></div>
                                     @endif
+                                    @if(session()->has('error'))
+                                        <div class="error_login" id="error_log"></div>
+                                    @endif
                                     <div class="form-group">
                                         <label for="username">Username:</label>
                                         <input type="text"
@@ -57,7 +60,7 @@
                                                 Remember me
                                             </label>
                                         </div>
-                                        <a href="#" class="forgot-psw">Forgot password</a>
+                                        <a href="{{ route('password.request') }}" class="forgot-psw">Forgot password</a>
                                     </div>
                                     @if(session()->has('error'))
                                         <div class="alert alert-danger login-error" id="error">

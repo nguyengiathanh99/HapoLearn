@@ -8,5 +8,5 @@ return [
     'limit_course' => 5,
     'one_hundreds' => 100,
     'status_start' => 1,
-    'status_ended' => 2,
+    'status_end' => 2,
 ];

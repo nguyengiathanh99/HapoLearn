@@ -18,9 +18,6 @@ class UserCourses extends Model
         'status'
     ];
 
-//    const JOIN_COURSE = 1;
-//    const END_COURSE = 2;
-
     public function scopeCheckStatusCourse($query, $id)
     {
         return $query->where('course_id', $id)->where('user_id', Auth::id())->first();

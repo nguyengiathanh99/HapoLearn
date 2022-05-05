@@ -19,8 +19,11 @@
                         <i class="fas fa-user icon-auth"></i>{{Auth::user()->name}}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#">profile</a>
-
+                        <form action="{{ route('user-profile.edit', Auth::id())}}">
+                            <button class="dropdown-item">
+                                PROFILE
+                            </button>
+                        </form>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST">
                             @csrf
                             <button class="dropdown-item">
@@ -33,10 +36,8 @@
                 <li>
                     <a href="#" data-toggle="modal" data-target="#modal-form" class="nav-login">login/register</a>
                 </li>
-                <li><a href="#">profile</a></li>
             @endif
         </ul>
     </div>
 </div>
 @include('layouts.modal')
-

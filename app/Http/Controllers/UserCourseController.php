@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Lessons;
+use App\Models\Courses;
 use App\Models\UserCourses;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,15 +11,13 @@ class UserCourseController extends Controller
 {
     public function store(Request $request)
     {
-        $data = [
-            'user_id' => Auth::id(),
-            'course_id' => $request['course-id'],
-            'status' => config('course.status_start'),
-        ];
-
-        if (isset($data)) {
-            UserCourses::create($data);
+        $checkCourse = Courses::find($request['course-id']);
+        if ($checkCourse) {
+            Auth::user()->courses()->attach([$request['course-id'] => ['status' => config('course.status_start')]]);
             return redirect()->back()->with('message_success', 'Đã thêm vào thành công');
+        }
+        else {
+            return "Course does not exist";
         }
     }
 

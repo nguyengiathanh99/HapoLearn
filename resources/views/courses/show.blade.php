@@ -45,14 +45,14 @@
                                     <input type="text" placeholder="Search..." name="keyword"
                                            value="{{ $request->keyword }}">
                                     <i class="fa fa-search"></i>
-                                    <button type="submit">Tìm kiếm</button>
+                                    <button type="submit">Search</button>
                                 </form>
                                 <form action="{{ route('user_courses.store') }}" method="post">
                                     @csrf
                                     <input type="hidden" name="course-id" value="{{ $course->id }}">
                                     <input type="submit"
                                            class="btn-join-course {{ $course->checkStatusUserCourse()['color'] }}"
-                                           value="{{ $course->checkStatusUserCourse()['message'] }}">
+                                           value="{{ $course->checkStatusUserCourse()['message'] }}" {{ $course->checkStatusUserCourse()['disabled'] }}>
                                 </form>
                             </div>
                             <div class="lesson-content">
@@ -84,44 +84,8 @@
                                 <p class="text-center font-weight-bold">Không tìm thấy khóa học phù hợp !</p>
                             @endif
                         </div>
-                        <div class="tab-pane fade" id="teacher" role="tabpanel" aria-labelledby="teacher-tab">
-                            <div class="teacher-content">
-                                <div class="teacher-title">Main Teachers</div>
-                                @foreach($teachers as $teacher)
-                                    <div class="teacher-item">
-                                        <div class="item-top d-flex align-items-center">
-                                            <div class="item-avata">
-                                                <div class="avata-teacher-cus">
-                                                    <img class="w-100 h-100" src="{{ $teacher->image }}"
-                                                         alt="{{ $teacher->name }}">
-                                                </div>
-                                            </div>
-                                            <div class="item-teacher-info">
-                                                <div class="teacher-name">{{ $teacher->name }}</div>
-                                                <span>Second Year Teacher</span>
-                                                <div class="teacher-icon d-flex align-items-center">
-                                                    <div class="icon-google">
-                                                        <i class="fab fa-google-plus-g"></i>
-                                                    </div>
-                                                    <div class="icon-facebook">
-                                                        <i class="fab fa-facebook-f"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item-text"> {{ $teacher->description }}
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
-                            <div class="review-content">
-                                <div class="review-total">
-                                    05 Reviews
-                                </div>
-                            </div>
-                        </div>
+                        @include('courses._teacher')
+                        @include('courses._review')
                     </div>
                 </div>
             </div>

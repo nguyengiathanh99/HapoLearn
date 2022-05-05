@@ -6,6 +6,9 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\UserCourseController;
 use App\Http\Controllers\UserLessonController;
+use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\FaceBookController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -26,4 +29,15 @@ Route::resource('courses.lessons', LessonController::class);
 Route::middleware('auth')->group(function () {
     Route::resource('user_courses', UserCourseController::class);
     Route::resource('user_lessons', UserLessonController::class);
+    Route::resource('course_reviews', ReviewController::class);
+    Route::resource('user-profile', ProfileController::class)->except([
+        'show','destroy','index','store'
+    ]);
 });
+
+# Facebook Login Url
+Route::prefix('facebook')->name('facebook')->group(function () {
+    Route::get('auth', [FaceBookController::class, 'loginUsingFacebook'])->name('login');
+    Route::get('callback', [FaceBookController::class, 'callbackFromFacebook'])->name('callback');
+});
+

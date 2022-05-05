@@ -222,9 +222,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 other-course-lesson">
-                            @include('courses._other_course')
-                        </div>
+{{--                        <div class="col-md-4 other-course-lesson">--}}
+{{--                            @include('courses._other_course')--}}
+{{--                        </div>--}}
                     </div>
                 </div>
             </div>

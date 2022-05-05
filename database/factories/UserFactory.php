@@ -28,10 +28,10 @@ class UserFactory extends Factory
             'phone' => $this->faker->phoneNumber,
             'role' => $this->faker->numberBetween(1, 2),
             'date_of_birth' => $this->faker->date(),
-            'about' => $this->faker->text,
             'status' => 1,
             'job' => Str::random(3),
             'description' => $this->faker->text,
+            'address' => $this->faker->address(),
         );
     }
 }

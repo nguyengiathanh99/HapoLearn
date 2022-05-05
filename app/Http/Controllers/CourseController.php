@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Courses;
+use App\Models\Reviews;
 use App\Models\Tags;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -23,6 +24,8 @@ class CourseController extends Controller
         $lessons = $course->lessons()->search($request->all())->paginate(config('course.item_page'));
         $otherCourses = Courses::others($id)->get();
         $teachers = $course->teachers()->get();
-        return view('courses.show', compact('course', 'otherCourses', 'request', 'lessons', 'teachers'));
+        $reviews = $course->reviews()->paginate(config('course.item_page'));
+
+        return view('courses.show', compact('course', 'otherCourses', 'request', 'lessons', 'teachers', 'reviews'));
     }
 }
