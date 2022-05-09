@@ -73,7 +73,7 @@
                             <p class="login-diff"><span>Login with</span></p>
                             <div class="container login-social">
                                 <div class="login-google">
-                                    <a href="#" class="login-special"><i
+                                    <a href="{{ url('/google') }}" class="login-special"><i
                                                 class="fab fa-google-plus-g login-icon"></i>Google</a>
                                 </div>
                                 <div class="login-facebook">

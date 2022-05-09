@@ -70,8 +70,10 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
-                                                <a href="{{ route('courses.lessons.show', [$course->id, $lesson->id]) }}"
-                                                   class="btn btn-success btn-course-learn">Learn</a>
+                                                @if(Auth::user() != null)
+                                                    <a href="{{ route('courses.lessons.show', [$course->id, $lesson->id]) }}"
+                                                       class="btn btn-success btn-course-learn">Learn</a>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>

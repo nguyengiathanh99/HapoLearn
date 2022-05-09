@@ -15,8 +15,7 @@ class UserCourseController extends Controller
         if ($checkCourse) {
             Auth::user()->courses()->attach([$request['course-id'] => ['status' => config('course.status_start')]]);
             return redirect()->back()->with('message_success', 'Đã thêm vào thành công');
-        }
-        else {
+        } else {
             return "Course does not exist";
         }
     }

@@ -8,7 +8,7 @@ use App\Http\Controllers\UserCourseController;
 use App\Http\Controllers\UserLessonController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\FaceBookController;
+use App\Http\Controllers\GoogleController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -34,3 +34,6 @@ Route::middleware('auth')->group(function () {
         'show','destroy','index','store'
     ]);
 });
+
+Route::get('/google', [GoogleController::class, 'redirectToGoogle']);
+Route::get('/google/callback', [GoogleController::class, 'handleGoogleCallBack']);
