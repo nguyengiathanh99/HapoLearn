@@ -8,15 +8,16 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="review-star-left-image">
-                            <div class="review-star-vote">{{ $reviews->count() }}</div>
+                            <div class="review-star-vote">{{ $course->coursestar }}</div>
                             <div class="review">
-                                <i class="fas fa-star star-review"></i>
-                                <i class="fas fa-star star-review"></i>
-                                <i class="fas fa-star star-review"></i>
-                                <i class="fas fa-star star-review"></i>
-                                <i class="fas fa-star star-review"></i>
+                                @for($i = 1; $i <= $course->coursestar; $i++)
+                                    <i class="fas fa-star star-review"></i>
+                                @endfor
+                                    @for($i = 5; $i > $course->coursestar; $i--)
+                                        <i class="fas fa-star"></i>
+                                    @endfor
                             </div>
-                            <div class="review-star-rating">{{ $course->countReviewVote(5) }} Ratings</div>
+                            <div class="review-star-rating">{{ $course->coursestar }} Ratings</div>
                         </div>
                     </div>
                     <div class="col-md-8 review-star-right">

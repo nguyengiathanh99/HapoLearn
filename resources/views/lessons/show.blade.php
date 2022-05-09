@@ -103,9 +103,28 @@
                                                 @csrf
                                                 @method('PUT')
                                                 <div class="infomation-lesson-end">
-                                                    <button
-                                                       class="btn-end-course @if(session()->has('message_end_course')) {{ session()->get('message_end_course') }} end-course @endif">@if(session()->has('message_end_course')) {{ session()->get('message_end_course') }} @else
-                                                            Kết thúc khóa học @endif</button>
+                                                    <button type="button"
+                                                       class="btn-end-course" data-toggle="modal" data-target="#exampleModal">@if(session()->has('message_end_course')) {{ session()->get('message_end_course') }} @else
+                                                            Kết thúc khóa học @endif   </button>
+                                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content bg-white">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLabel">Thông báo</h5>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body modal-body-end-course">
+                                                                    Bạn muốn kết thúc khóa học ?
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="submit" class="btn btn-primary">Yes</button>
+                                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </form>
                                         </div>

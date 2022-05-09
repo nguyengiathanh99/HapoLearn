@@ -108,7 +108,7 @@ class Courses extends Model
         return $query;
     }
 
-    public function checkStatusUserCourse()
+    public function checkStatusUserCourse($component = null)
     {
         $statusCourse = UserCourses::where('course_id', $this->id)->where('user_id', Auth::id())->pluck('status')->first();
         if (!empty($statusCourse) && $statusCourse == config('course.status_start')) {
@@ -131,8 +131,14 @@ class Courses extends Model
             ];
         }
     }
+
     public function countReviewVote($star)
     {
         return $this->reviews()->where('vote', $star)->count();
+    }
+
+    public function getCourseStarAttribute()
+    {
+        return number_format($this->reviews()->pluck('vote')->avg());
     }
 }

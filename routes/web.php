@@ -34,10 +34,3 @@ Route::middleware('auth')->group(function () {
         'show','destroy','index','store'
     ]);
 });
-
-# Facebook Login Url
-Route::prefix('facebook')->name('facebook')->group(function () {
-    Route::get('auth', [FaceBookController::class, 'loginUsingFacebook'])->name('login');
-    Route::get('callback', [FaceBookController::class, 'callbackFromFacebook'])->name('callback');
-});
-
