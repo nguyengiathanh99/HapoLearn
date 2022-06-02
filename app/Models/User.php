@@ -30,6 +30,8 @@ class User extends Authenticatable
         'about',
         'description',
         'status',
+        'facebook_id',
+        'google_id'
     ];
 
     /**
@@ -63,12 +65,17 @@ class User extends Authenticatable
 
     public function reviews()
     {
-        return $this->hasMany(Reviews::class);
+        return $this->hasMany(Reviews::class, 'user_id');
     }
 
     public function lessons()
     {
         return $this->belongsToMany(Lessons::class, 'user_lessons', 'user_id', 'lesson_id');
+    }
+
+    public function documents()
+    {
+        return $this->belongsToMany(Documents::class, 'user_documents', 'user_id', 'document_id');
     }
 
     public function scopeTeacher($query)

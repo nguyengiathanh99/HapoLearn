@@ -143,6 +143,14 @@
     padding: 20px 0;
     border-bottom: 1px solid #D1D1D1;
 
+    .btn-review {
+      margin-top: 10px;
+    }
+
+    .btn-program-success {
+      border-radius: 22px;
+    }
+
     a {
       background: #B2D235;
       color: #ffff;
@@ -341,6 +349,11 @@
       border-radius: 22px;
       padding: 6px 25px;
       cursor: pointer;
+      border: none;
+    }
+
+    .end-course {
+      background: gray;
     }
   }
 }
@@ -348,7 +361,12 @@
 .information-item {
   .link-tag {
     color: #5D8BD0;
+    font-size: 16px;
   }
+}
+
+.information-item-detail {
+  font-size: 20px;
 }
 
 .other-course {
@@ -486,4 +504,14 @@
     width: 60%;
     height: 60%;
   }
+
+}
+
+.progress-learn {
+  margin-top: 30px;
+}
+
+.modal-body-end-course {
+  margin-top: 0;
+  padding: 15px;
 }

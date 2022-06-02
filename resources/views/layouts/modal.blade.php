@@ -29,6 +29,12 @@
                                             {{ session()->get('success') }}
                                         </div>
                                     @endif
+                                    @if(session()->has('message_login'))
+                                        <div class="message_login" id="message_log"></div>
+                                    @endif
+                                    @if(session()->has('error'))
+                                        <div class="error_login" id="error_log"></div>
+                                    @endif
                                     <div class="form-group">
                                         <label for="username">Username:</label>
                                         <input type="text"
@@ -54,7 +60,7 @@
                                                 Remember me
                                             </label>
                                         </div>
-                                        <a href="#" class="forgot-psw">Forgot password</a>
+                                        <a href="{{ route('password.request') }}" class="forgot-psw">Forgot password</a>
                                     </div>
                                     @if(session()->has('error'))
                                         <div class="alert alert-danger login-error" id="error">
@@ -67,7 +73,7 @@
                             <p class="login-diff"><span>Login with</span></p>
                             <div class="container login-social">
                                 <div class="login-google">
-                                    <a href="#" class="login-special"><i
+                                    <a href="{{ url('/google') }}" class="login-special"><i
                                                 class="fab fa-google-plus-g login-icon"></i>Google</a>
                                 </div>
                                 <div class="login-facebook">

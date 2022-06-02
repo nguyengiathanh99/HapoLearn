@@ -99,8 +99,6 @@
             </div>
         </div>
     </div>
-    <!-- End Why Hapolearn -->
-    <!-- feed-back -->
     <div class="hapo-feedback">
         <div class="container">
             <div class="hapo-feedback-header">
@@ -133,7 +131,6 @@
                                         @for($i = 5; $i > $review->vote; $i--)
                                             <i class="fas fa-star star-special"></i>
                                         @endfor
-
                                     </p>
                                 </div>
                             </div>
@@ -141,6 +138,14 @@
                     @endforeach
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="hapo-banner-second">
+        <div class="hapo-banner-second-content">
+            <div class="banner-second-content">
+                Become a member of our <br> growing community!
+            </div>
+            <button class="banner-second-btn">Start Learning Now!</button>
         </div>
     </div>
     <div class="hapo-statistic">

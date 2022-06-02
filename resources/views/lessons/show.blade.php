@@ -41,12 +41,9 @@
                                                     <i class="fas fa-tv"></i>
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <p>Courses</p>
+                                                    <p>Courses:</p>
                                                 </div>
-                                                <div class="col-md-1">
-                                                    <p>:</p>
-                                                </div>
-                                                <div class="col-md-6">{{ $course->name  }}</div>
+                                                <div class="col-md-7 information-item-detail">{{ $course->name  }}</div>
                                             </div>
                                         </div>
                                         <div class="information-lessons information-item">
@@ -55,12 +52,9 @@
                                                     <i class="fas fa-users"></i>
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <p>Learners</p>
+                                                    <p>Learners:</p>
                                                 </div>
-                                                <div class="col-md-1">
-                                                    <p>:</p>
-                                                </div>
-                                                <div class="col-md-6">{{ $course->learner_course }}</div>
+                                                <div class="col-md-7 information-item-detail">{{ $course->learner_course }}</div>
                                             </div>
                                         </div>
                                         <div class="information-times information-item">
@@ -69,12 +63,11 @@
                                                     <i class="fas fa-clock"></i>
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <p>Times</p>
+                                                    <p>Times:</p>
                                                 </div>
-                                                <div class="col-md-1">
-                                                    <p>:</p>
+                                                <div class="col-md-7 information-item-detail">{{ $course->time_course }}
+                                                    hours
                                                 </div>
-                                                <div class="col-md-6">{{ $course->time_course }} hours</div>
                                             </div>
                                         </div>
                                         <div class="information-tags information-item">
@@ -83,12 +76,9 @@
                                                     <i class="fas fa-key"></i>
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <p>Tags</p>
+                                                    <p>Tags:</p>
                                                 </div>
-                                                <div class="col-md-1">
-                                                    <p>:</p>
-                                                </div>
-                                                <div class="col-md-6">
+                                                <div class="col-md-7">
                                                     @foreach($course->tags as $item)
                                                         <a href="{{ route('courses.index',['search_tag' => $item->id]) }}"
                                                            class="link-tag">
@@ -103,24 +93,53 @@
                                                     <i class="fas fa-money-bill-alt"></i>
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <p>Price</p>
+                                                    <p>Price:</p>
                                                 </div>
-                                                <div class="col-md-1">
-                                                    <p>:</p>
-                                                </div>
-                                                <div class="col-md-6">{{ $course->processed_price }}</div>
+                                                <div class="col-md-7 information-item-detail">{{ $course->processed_price }}</div>
                                             </div>
                                         </div>
                                         <div class="information-price information-item information-item-lesson">
-                                            <div class="infomation-lesson-end">
-                                                <a href="" class="btn-end-course">Kết thúc khóa học</a>
-                                            </div>
+                                            <form action="{{ route('user_courses.update', $course->id) }}" method="post">
+                                                @csrf
+                                                @method('PUT')
+                                                <div class="infomation-lesson-end">
+                                                    <button type="button"
+                                                       class="btn-end-course" data-toggle="modal" data-target="#exampleModal">@if(session()->has('message_end_course')) {{ session()->get('message_end_course') }} @else
+                                                            Kết thúc khóa học @endif   </button>
+                                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content bg-white">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLabel">Thông báo</h5>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body modal-body-end-course">
+                                                                    Bạn muốn kết thúc khóa học ?
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="submit" class="btn btn-primary">Yes</button>
+                                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="progress-learn">
+                    <label for="file">Learning progress:</label>
+                    <progress id="file"
+                              value="{{ $lessons->learning_progress ? $lessons->learning_progress['progress'] : 0}}"
+                              max="100"></progress>
+                    <span>{{ $lessons->learning_progress ? $lessons->learning_progress['progress'] : 0}}%</span>
                 </div>
                 <div class="detail-course-main">
                     <div class="row detail-lesson-main">
@@ -171,28 +190,47 @@
                                                 <div class="title-program">
                                                     <p>Documents</p>
                                                 </div>
-                                                @foreach($lessons->documents()->get() as $lesson)
+                                                @foreach($lessons->documents()->get() as $document)
                                                     <div class="program-main">
                                                         <div class="row">
-                                                            <div class="col-md-9">
+                                                            <div class="col-md-7">
                                                                 <div class="program-content">
                                                                     <div class="row">
                                                                         <div class="col-md-1">
                                                                             <div class="program-thumb-nail">
-                                                                                <img src="{{ $lesson->file_path }}" alt="{{ $lesson->name }}">
+                                                                                <img src="{{ $document->image }}"
+                                                                                     alt="{{ $document->name }}">
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-md-3">
-                                                                            <div class="program-title">{{ $lesson->title }}</div>
+                                                                            <div class="program-title">{{ $document->title }}</div>
                                                                         </div>
                                                                         <div class="col-md-8">
-                                                                            <div class="program-name">{{ $lesson->name }}</div>
+                                                                            <div class="program-name">{{ $document->name }}</div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-md-3">
-                                                                <a href="">Preview</a>
+                                                            <div class="col-md-5">
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <form action="{{ route('user_lessons.update', $lessons->id) }}"
+                                                                              method="post">
+                                                                            @method('PUT')
+                                                                            @csrf
+                                                                            <input type="hidden" name="document_id"
+                                                                                   value="{{ $document->id }}">
+                                                                            <button type="submit"
+                                                                                    class="btn btn-success btn-program-success"
+                                                                                    @if($document->user_document) disabled @endif>
+                                                                                @if($document->user_document) Completed @else Learn @endif
+                                                                            </button>
+                                                                        </form>
+                                                                    </div>
+                                                                    <div class="col-md-6 btn-review">
+                                                                        <a href="{{ $document->file_path }}">View</a>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -203,9 +241,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 other-course-lesson">
-                            @include('courses._other_course')
-                        </div>
+{{--                        <div class="col-md-4 other-course-lesson">--}}
+{{--                            @include('courses._other_course')--}}
+{{--                        </div>--}}
                     </div>
                 </div>
             </div>

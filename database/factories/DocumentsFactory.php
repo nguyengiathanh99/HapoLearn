@@ -17,7 +17,8 @@ class DocumentsFactory extends Factory
             'name' => $this->faker->name(),
             'title' => $this->faker->name(),
             'lesson_id' => $this->faker->numberBetween(1, 200),
-            'file_path' => $this->faker->imageUrl(),
+            'image' => $this->faker->imageUrl(),
+            'file_path' => $this->faker->url(),
         ];
     }
 }

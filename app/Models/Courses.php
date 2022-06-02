@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Auth;
 
 class Courses extends Model
 {
@@ -30,7 +31,7 @@ class Courses extends Model
 
     public function reviews()
     {
-        return $this->hasMany(Reviews::class);
+        return $this->hasMany(Reviews::class, 'course_id');
     }
 
     public function tags()
@@ -105,5 +106,39 @@ class Courses extends Model
     {
         $query->where('id', '!=', $id)->limit(config('course.limit_course'));
         return $query;
+    }
+
+    public function checkStatusUserCourse($component = null)
+    {
+        $statusCourse = UserCourses::where('course_id', $this->id)->where('user_id', Auth::id())->pluck('status')->first();
+        if (!empty($statusCourse) && $statusCourse == config('course.status_start')) {
+            return [
+                'message' => 'Joined',
+                'color' => 'blue',
+                'disabled' => 'disabled',
+            ];
+        } elseif (!empty($statusCourse) && $statusCourse == config('course.status_end')) {
+            return [
+                'message' => 'Finished course',
+                'color' => 'black',
+                'disabled' => 'disabled',
+            ];
+        } else {
+            return [
+                'message' => 'Take part in',
+                'color' => '',
+                'disabled' => '',
+            ];
+        }
+    }
+
+    public function countReviewVote($star)
+    {
+        return $this->reviews()->where('vote', $star)->count();
+    }
+
+    public function getCourseStarAttribute()
+    {
+        return number_format($this->reviews()->pluck('vote')->avg());
     }
 }

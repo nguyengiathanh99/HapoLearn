@@ -26,12 +26,12 @@ class UserFactory extends Factory
             'remember_token' => Str::random(10),
             'image' => $this->faker->imageUrl(),
             'phone' => $this->faker->phoneNumber,
-            'role' => $this->faker->randomDigit(),
+            'role' => $this->faker->numberBetween(1, 2),
             'date_of_birth' => $this->faker->date(),
-            'about' => $this->faker->text,
             'status' => 1,
             'job' => Str::random(3),
             'description' => $this->faker->text,
+            'address' => $this->faker->address(),
         );
     }
 }

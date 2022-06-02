@@ -4,6 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\LessonController;
+use App\Http\Controllers\UserCourseController;
+use App\Http\Controllers\UserLessonController;
+use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\GoogleController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -21,3 +26,14 @@ Auth::routes();
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::resource('courses', CourseController::class);
 Route::resource('courses.lessons', LessonController::class);
+Route::middleware('auth')->group(function () {
+    Route::resource('user_courses', UserCourseController::class);
+    Route::resource('user_lessons', UserLessonController::class);
+    Route::resource('course_reviews', ReviewController::class);
+    Route::resource('user-profile', ProfileController::class)->except([
+        'show','destroy','index','store'
+    ]);
+});
+
+Route::get('/google', [GoogleController::class, 'redirectToGoogle']);
+Route::get('/google/callback', [GoogleController::class, 'handleGoogleCallBack']);

@@ -45,9 +45,15 @@
                                     <input type="text" placeholder="Search..." name="keyword"
                                            value="{{ $request->keyword }}">
                                     <i class="fa fa-search"></i>
-                                    <button type="submit">Tìm kiếm</button>
+                                    <button type="submit">Search</button>
                                 </form>
-                                <a href="" class="btn-join">Tham gia khóa học</a>
+                                <form action="{{ route('user_courses.store') }}" method="post">
+                                    @csrf
+                                    <input type="hidden" name="course-id" value="{{ $course->id }}">
+                                    <input type="submit"
+                                           class="btn-join-course {{ $course->checkStatusUserCourse()['color'] }}"
+                                           value="{{ $course->checkStatusUserCourse()['message'] }}" {{ $course->checkStatusUserCourse()['disabled'] }}>
+                                </form>
                             </div>
                             <div class="lesson-content">
                                 @foreach($lessons as $key => $lesson)
@@ -64,8 +70,10 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
-                                                <a href="{{ route('courses.lessons.show', [$course->id, $lesson->id]) }}"
-                                                   class="btn btn-success btn-course-learn">Learn</a>
+                                                @if(Auth::user() != null)
+                                                    <a href="{{ route('courses.lessons.show', [$course->id, $lesson->id]) }}"
+                                                       class="btn btn-success btn-course-learn">Learn</a>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
@@ -78,45 +86,8 @@
                                 <p class="text-center font-weight-bold">Không tìm thấy khóa học phù hợp !</p>
                             @endif
                         </div>
-                        <div class="tab-pane fade" id="teacher" role="tabpanel" aria-labelledby="teacher-tab">
-                            <div class="teacher-content">
-                                <div class="teacher-title">Main Teachers</div>
-                                <div class="teacher-item">
-                                    <div class="item-top d-flex align-items-center">
-                                        <div class="item-avata">
-                                            <div class="avata-teacher-cus">
-                                                <img class="w-100 h-100" src="{{ asset('images/a nghia kute.png') }}"
-                                                     alt="">
-                                            </div>
-                                        </div>
-                                        <div class="item-teacher-info">
-                                            <div class="teacher-name"></div>
-                                            <span>Second Year Teacher</span>
-                                            <div class="teacher-icon d-flex align-items-center">
-                                                <div class="icon-google">
-                                                    <i class="fab fa-google-plus-g"></i>
-                                                </div>
-                                                <div class="icon-facebook">
-                                                    <i class="fab fa-facebook-f"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="item-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
-                                        eaque non alias odit aliquid ut dignissimos numquam exercitationem porro
-                                        eligendi corrupti facere earum, aperiam repellat qui. Aspernatur assumenda
-                                        facere fugit.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
-                            <div class="review-content">
-                                <div class="review-total">
-                                    05 Reviews
-                                </div>
-                            </div>
-                        </div>
+                        @include('courses._teacher')
+                        @include('courses._review')
                     </div>
                 </div>
             </div>
