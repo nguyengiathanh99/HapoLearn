@@ -4,7 +4,8 @@
     </div>
     <div class="nav-bar">
         <div class="logo">
-            <a href="/"><img src="{{ asset('/images/hapolearn.png') }}" alt="HapoLearn-Logo"></a>
+{{--            <a href="/"><img src="{{ asset('/images/hapolearn.png') }}" alt="HapoLearn-Logo"></a>--}}
+            <a href="/"><img src="#" alt="Unitop-Logo"></a>
         </div>
         <ul class="menu-content">
             <li @if(url()->current() == route('home')) class="menu-content-active" @endif><a href="{{route('home')}}">home</a>
