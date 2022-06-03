@@ -34,6 +34,8 @@ Route::middleware('auth')->group(function () {
         'show','destroy','index','store'
     ]);
 });
-
+//Login with Google
 Route::get('/google', [GoogleController::class, 'redirectToGoogle']);
 Route::get('/google/callback', [GoogleController::class, 'handleGoogleCallBack']);
+//Login with Facebook
+
