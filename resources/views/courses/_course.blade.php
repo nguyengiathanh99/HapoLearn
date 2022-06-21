@@ -2,7 +2,7 @@
     <div class="list-course-card ">
         <div class="hapo-list-course-head">
             <div class="list-course-logo">
-                <img src="{{ asset($course->image) }}" alt="list-course-html">
+                <img src="http://localhost:8080/Unitop_Admin/public/{{ $course->image }}" alt="list-course-html">
             </div>
             <div class="list-course-content">
                 <div class="list-course-content-title">{{ $course->name }}</div>

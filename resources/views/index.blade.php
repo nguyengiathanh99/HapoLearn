@@ -4,7 +4,7 @@
         <div class="container">
             <div class="banner-content">
                 <p class="banner-title">Learn Anytime, Anywhere</p>
-                <p class="banner-special">at HapoLearn <span class="banner-img"><img
+                <p class="banner-special">at Unitop <span class="banner-img"><img
                             src="{{ asset('images/birdlogo.png') }}"
                             alt="Hapo Bird Logo"></span>!</p>
                 <p class="banner-span">Interactive lesson, "on-the-go"<br> practice, peer support</p>
@@ -16,22 +16,22 @@
     <div class="wp-hapo-list-courses">
         <div class="container">
             <div class="row">
-                @foreach($courses as $course)
-                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                        <div class="card">
-                            <div class="card-image course-hcj">
-                                <img src="{{ asset($course->image) }}" alt="Hapo bg html">
-                            </div>
-                            <div class="card-body">
-                                <div class="card-title">{{ $course->name }}</div>
-                                <div class="card-content">
-                                    {{ $course->description }}
-                                </div>
-                                <button class="card-btn">Take This Course</button>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
+               @foreach($courses as $course)
+                   <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                       <div class="card">
+                           <div class="card-image course-hcj">
+                               <img src="http://localhost:8080/Unitop_Admin/public/{{ $course->image }}" alt="Hapo bg html">
+                           </div>
+                           <div class="card-body">
+                               <div class="card-title">{{ $course->name }}</div>
+                               <div class="card-content">
+                                   {{ $course->description }}
+                               </div>
+                               <button class="card-btn">Take This Course</button>
+                           </div>
+                       </div>
+                   </div>
+            @endforeach
             </div>
         </div>
     </div>
@@ -41,9 +41,9 @@
             <div class="row">
                 @foreach($courses as $course)
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                        <div class="card">
+                        <div class="card" style="margin-bottom: 30px">
                             <div class="card-image course-css">
-                                <img src="{{ asset($course->image) }}" alt="Hapo bg css">
+                                <img src="http://localhost:8080/Unitop_Admin/public/{{ ($course->image) }}" alt="{{ $course->name }}">
                             </div>
                             <div class="card-body">
                                 <div class="card-title">{{ $course->name }}</div>

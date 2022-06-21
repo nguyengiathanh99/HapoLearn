@@ -28,7 +28,14 @@
                     <div class="row">
                         <div class="col-md-8">
                             <div class="image-course">
-                                <img src="{{ $course->image  }}" alt="{{ $course->name  }}">
+                                <img src="http://localhost:8080/Unitop_Admin/public/{{ $course->image  }}" alt="{{ $course->name  }}">
+                            </div>
+                            <div id="doc-iframe">
+                                @foreach ($lessons->documents()->get() as $item)
+                                <video width="90%" height="90%" controls="true" poster="" id="video">
+                                    <source src="http://localhost:8080/Unitop_Admin/public/{{ $item->file_path }}" type="video/mp4">
+                                </video>
+                                @endforeach
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -40,10 +47,10 @@
                                                 <div class="col-md-1">
                                                     <i class="fas fa-tv"></i>
                                                 </div>
-                                                <div class="col-md-4">
+                                                <div class="col-md-5">
                                                     <p>Courses:</p>
                                                 </div>
-                                                <div class="col-md-7 information-item-detail">{{ $course->name  }}</div>
+                                                <div class="col-md-6 information-item-detail">{{ $course->name  }}</div>
                                             </div>
                                         </div>
                                         <div class="information-lessons information-item">
@@ -51,10 +58,10 @@
                                                 <div class="col-md-1">
                                                     <i class="fas fa-users"></i>
                                                 </div>
-                                                <div class="col-md-4">
+                                                <div class="col-md-5">
                                                     <p>Learners:</p>
                                                 </div>
-                                                <div class="col-md-7 information-item-detail">{{ $course->learner_course }}</div>
+                                                <div class="col-md-6 information-item-detail">{{ $course->learner_course }}</div>
                                             </div>
                                         </div>
                                         <div class="information-times information-item">
@@ -193,25 +200,25 @@
                                                 @foreach($lessons->documents()->get() as $document)
                                                     <div class="program-main">
                                                         <div class="row">
-                                                            <div class="col-md-7">
+                                                            <div class="col-md-6">
                                                                 <div class="program-content">
                                                                     <div class="row">
-                                                                        <div class="col-md-1">
+                                                                        <div class="col-md-3">
                                                                             <div class="program-thumb-nail">
-                                                                                <img src="{{ $document->image }}"
+                                                                                <img src="http://localhost:8080/Unitop_Admin/public/{{ $document->image }}"
                                                                                      alt="{{ $document->name }}">
                                                                             </div>
                                                                         </div>
-                                                                        <div class="col-md-3">
+                                                                        <div class="col-md-9">
                                                                             <div class="program-title">{{ $document->title }}</div>
                                                                         </div>
-                                                                        <div class="col-md-8">
+                                                                        {{-- <div class="col-md-8">
                                                                             <div class="program-name">{{ $document->name }}</div>
-                                                                        </div>
+                                                                        </div> --}}
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-md-5">
+                                                            <div class="col-md-6">
                                                                 <div class="row">
                                                                     <div class="col-md-6">
                                                                         <form action="{{ route('user_lessons.update', $lessons->id) }}"
@@ -220,15 +227,30 @@
                                                                             @csrf
                                                                             <input type="hidden" name="document_id"
                                                                                    value="{{ $document->id }}">
-                                                                            <button type="submit"
-                                                                                    class="btn btn-success btn-program-success"
+                                                                            {{-- <button type="submit"
+                                                                                    class="btn btn-success btn-program-success program-success"
                                                                                     @if($document->user_document) disabled @endif>
-                                                                                @if($document->user_document) Completed @else Learn @endif
-                                                                            </button>
+                                                                                @if($document->user_document) Completed @else Complete @endif
+                                                                            </button> --}}
+                                                                            <div id="status" class="incomplete">
+                                                                                {{-- <span>Play status: </span> --}}
+                                                                                <span class="status complete"><button type="submit"
+                                                                                    class="btn btn-success btn-program-success program-success status complete"
+                                                                                    @if($document->user_document) disabled @endif>
+                                                                                @if($document->user_document) Completed @else Complete @endif
+                                                                                </button></span>
+                                                                                <span class="status incomplete">INCOMPLETE</span>
+                                                                                <br />
+                                                                                </div>
+                                                                                <div style="display: none">
+                                                                                <span id="played">0</span> seconds out of
+                                                                                <span id="duration"></span> seconds.
+                                                                                </div>
                                                                         </form>
                                                                     </div>
-                                                                    <div class="col-md-6 btn-review">
-                                                                        <a href="{{ $document->file_path }}">View</a>
+                                                                    <div class="col-md-6">
+                                                                        {{-- <a href="{{ $document->file_path }}" target="blank">View</a> --}}
+                                                                        <div id="doc-view" style="cursor: pointer">View</div>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -248,4 +270,49 @@
                 </div>
             </div>
         </div>
+    <script>
+        var video = document.getElementById("video");
+        var timeStarted = -1;
+        var timePlayed = 0;
+        var duration = 0;
+        // If video metadata is laoded get duration
+        if(video.readyState > 0)
+        getDuration.call(video);
+        //If metadata not loaded, use event to get it
+        else
+        {
+        video.addEventListener('loadedmetadata', getDuration);
+        }
+        // remember time user started the video
+        function videoStartedPlaying() {
+        timeStarted = new Date().getTime()/1000;
+        }
+        function videoStoppedPlaying(event) {
+        // Start time less then zero means stop event was fired vidout start event
+        if(timeStarted>0) {
+            var playedFor = new Date().getTime()/1000 - timeStarted;
+            timeStarted = -1;
+            // add the new number of seconds played
+            timePlayed+=playedFor;
+        }
+        document.getElementById("played").innerHTML = Math.round(timePlayed)+"";
+        // Count as complete only if end of video was reached
+        if(timePlayed>=duration && event.type=="ended") {
+            document.getElementById("status").className="complete";
+        }
+        }
+
+        function getDuration() {
+        duration = video.duration;
+        document.getElementById("duration").appendChild(new Text(Math.round(duration)+""));
+        console.log("Duration: ", duration);
+        }
+
+        video.addEventListener("play", videoStartedPlaying);
+        video.addEventListener("playing", videoStartedPlaying);
+
+        video.addEventListener("ended", videoStoppedPlaying);
+        video.addEventListener("pause", videoStoppedPlaying);
+
+    </script>
 @endsection
