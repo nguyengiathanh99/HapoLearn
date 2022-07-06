@@ -16,7 +16,6 @@ class CoursesFactory extends Factory
         return [
             'name' => $this->faker->name(),
             'image' => $this->faker->imageUrl(),
-            'price' => 0,
             'description' => $this->faker->text(),
         ];
     }

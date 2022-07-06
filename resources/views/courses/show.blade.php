@@ -21,17 +21,13 @@
         <div class="detail-content d-flex">
             <div class="detail-left">
                 <div class="detail-img">
-                    <img class="w-100 h-100" src="{{ $course->image }}" alt="{{ $course->name }}">
+                    <img class="w-100 h-100" src="http://localhost:8080/Unitop_Admin/public/{{ $course->image }}" alt="{{ $course->name }}">
                 </div>
                 <div class="detail-left-content">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
                             <a class="nav-link active" id="lesson-tab" data-toggle="tab" href="#lesson" role="tab"
                                aria-controls="lesson" aria-selected="true">Lessons</a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="teacher-tab" data-toggle="tab" href="#teacher" role="tab"
-                               aria-controls="teacher" aria-selected="false">Teacher</a>
                         </li>
                         <li class="nav-item" role="presentation">
                             <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab"
@@ -56,28 +52,48 @@
                                 </form>
                             </div>
                             <div class="lesson-content">
-                                @foreach($lessons as $key => $lesson)
-                                    <div class="lessons">
-                                        <div class="row">
-                                            <div class="col-md-1">
-                                                <div class="lesson-id">
-                                                    <p>{{ $key. '.' }}</p>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-9">
-                                                <div class="lesson-name">
-                                                    <p>{{ $lesson->name }}</p>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-2">
-                                                @if(Auth::user() != null)
-                                                    <a href="{{ route('courses.lessons.show', [$course->id, $lesson->id]) }}"
-                                                       class="btn btn-success btn-course-learn">Learn</a>
-                                                @endif
-                                            </div>
+                                <div id="accordion">
+                                    <div class="card">
+{{--                                      <div class="card-header" id="headingOne">--}}
+{{--                                        <h5 class="mb-0">--}}
+{{--                                            @foreach($lessons as $item)--}}
+{{--                                          <div class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">--}}
+{{--                                            {{ $item->chapter }}--}}
+{{--                                          </div>--}}
+{{--                                            @endforeach--}}
+{{--                                        </h5>--}}
+{{--                                      </div>--}}
+                                      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <ul style="list-style: none">
+                                                @foreach($lessons as $key => $lesson)
+                                                <li>
+                                                    <div class="lessons">
+                                                        <div class="row">
+                                                            <div class="col-md-1">
+                                                                <div class="lesson-id">
+                                                                    <p>{{ $key. '.' }}</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-9">
+                                                                <div class="lesson-name">
+                                                                    <p>{{ $lesson->name }}</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-2">
+                                                                @if(Auth::user() != null)
+                                                                    <a href="{{ route('courses.lessons.show', [$course->id, $lesson->id]) }}"
+                                                                       class="btn btn-success btn-course-learn">Learn</a>
+                                                                @endif
+                                                            </div>
+                                                        </div>
+                                                    </div></li>
+                                                @endforeach
+                                            </ul>
                                         </div>
+                                      </div>
                                     </div>
-                                @endforeach
+                                  </div>
                             </div>
                             <div class="lesson-pagination d-flex justify-content-end">
                                 {!! $lessons->links('paginate.my-paginate') !!}
@@ -86,7 +102,6 @@
                                 <p class="text-center font-weight-bold">Không tìm thấy khóa học phù hợp !</p>
                             @endif
                         </div>
-                        @include('courses._teacher')
                         @include('courses._review')
                     </div>
                 </div>

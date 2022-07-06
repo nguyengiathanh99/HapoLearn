@@ -23,7 +23,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-3">
-                                    <button class="list-course-btn-search">Tìm kiếm</button>
+                                    <button class="list-course-btn-search">Search</button>
                                 </div>
                             </div>
                         </div>

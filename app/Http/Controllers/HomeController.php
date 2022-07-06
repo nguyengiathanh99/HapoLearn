@@ -16,8 +16,8 @@ class HomeController extends Controller
 
     public function index()
     {
-        $courses = Courses::all()->random(3);
-        $reviews = Reviews::all()->random(3);
+        $courses = Courses::all();
+        $reviews = Reviews::all();
         $courseCount = Courses::count();
         $lessonCount = Lessons::count();
         $learner = UserLessons::count();

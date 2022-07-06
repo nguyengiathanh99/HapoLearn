@@ -2,11 +2,18 @@
     <div class="list-course-card ">
         <div class="hapo-list-course-head">
             <div class="list-course-logo">
-                <img src="{{ asset($course->image) }}" alt="list-course-html">
+                <img src="http://localhost:8080/Unitop_Admin/public/{{ $course->image }}" alt="list-course-html">
             </div>
             <div class="list-course-content">
                 <div class="list-course-content-title">{{ $course->name }}</div>
                 <p class="list-course-content-txt">{{ $course->description }}</p>
+            </div>
+            <div class="course-wish">
+                @guest()
+                    <a href="javascript:void(0);" onclick="toastr.info('abc', { closeButton: true, progressBar: true })" class=""><i class="fa fa-heart"></i>80</a>
+                @else
+
+                @endguest
             </div>
         </div>
         <div class="list-course-btn">

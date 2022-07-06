@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddColumnJobToUsersTable extends Migration
+class CreateUserCourseFavoritesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class AddColumnJobToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('job')->nullable();
+        Schema::create('user_course_favorites', function (Blueprint $table) {
+            $table->id();
+            $table->integer('course_id')->unsigned();
+            $table->integer('user_id');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +28,6 @@ class AddColumnJobToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('job');
-        });
+        Schema::dropIfExists('user_course_favorites');
     }
 }

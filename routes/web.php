@@ -8,6 +8,7 @@ use App\Http\Controllers\UserCourseController;
 use App\Http\Controllers\UserLessonController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\GoogleController;
 use Illuminate\Support\Facades\Auth;
 
@@ -33,9 +34,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('user-profile', ProfileController::class)->except([
         'show','destroy','index','store'
     ]);
+    Route::post('favorite/{course}/add', [FavoriteController::class, 'add'])->name('course.favorite');
 });
 //Login with Google
 Route::get('/google', [GoogleController::class, 'redirectToGoogle']);
 Route::get('/google/callback', [GoogleController::class, 'handleGoogleCallBack']);
-//Login with Facebook
-
