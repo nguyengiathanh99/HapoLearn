@@ -28,13 +28,15 @@
                     <div class="row">
                         <div class="col-md-8">
                             <div class="image-course">
-                                <img src="http://localhost:8080/Unitop_Admin/public/{{ $course->image  }}" alt="{{ $course->name  }}">
+                                <img src="http://localhost:8080/Unitop_Admin/public/{{ $course->image  }}"
+                                     alt="{{ $course->name  }}">
                             </div>
                             <div id="doc-iframe">
                                 @foreach ($lessons->documents()->get() as $item)
-                                <video width="90%" height="90%" controls="true" poster="" id="video">
-                                    <source src="http://localhost:8080/Unitop_Admin/public/{{ $item->file_path }}" type="video/mp4">
-                                </video>
+                                    <video width="90%" height="90%" controls="true" poster="" id="video">
+                                        <source src="http://localhost:8080/Unitop_Admin/public/{{ $item->file_path }}"
+                                                type="video/mp4">
+                                    </video>
                                 @endforeach
                             </div>
                         </div>
@@ -106,19 +108,25 @@
                                             </div>
                                         </div>
                                         <div class="information-price information-item information-item-lesson">
-                                            <form action="{{ route('user_courses.update', $course->id) }}" method="post">
+                                            <form action="{{ route('user_courses.update', $course->id) }}"
+                                                  method="post">
                                                 @csrf
                                                 @method('PUT')
                                                 <div class="infomation-lesson-end">
                                                     <button type="button"
-                                                       class="btn-end-course" data-toggle="modal" data-target="#exampleModal">@if(session()->has('message_end_course')) {{ session()->get('message_end_course') }} @else
+                                                            class="btn-end-course" data-toggle="modal"
+                                                            data-target="#exampleModal">@if(session()->has('message_end_course')) {{ session()->get('message_end_course') }} @else
                                                             Kết thúc khóa học @endif   </button>
-                                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal fade" id="exampleModal" tabindex="-1"
+                                                         role="dialog" aria-labelledby="exampleModalLabel"
+                                                         aria-hidden="true">
                                                         <div class="modal-dialog" role="document">
                                                             <div class="modal-content bg-white">
                                                                 <div class="modal-header">
-                                                                    <h5 class="modal-title" id="exampleModalLabel">Thông báo</h5>
-                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <h5 class="modal-title" id="exampleModalLabel">Thông
+                                                                        báo</h5>
+                                                                    <button type="button" class="close"
+                                                                            data-dismiss="modal" aria-label="Close">
                                                                         <span aria-hidden="true">&times;</span>
                                                                     </button>
                                                                 </div>
@@ -126,8 +134,11 @@
                                                                     Bạn muốn kết thúc khóa học ?
                                                                 </div>
                                                                 <div class="modal-footer">
-                                                                    <button type="submit" class="btn btn-primary">Yes</button>
-                                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                    <button type="submit" class="btn btn-primary">Yes
+                                                                    </button>
+                                                                    <button type="button" class="btn btn-secondary"
+                                                                            data-dismiss="modal">Close
+                                                                    </button>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -220,37 +231,40 @@
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <div class="row">
-                                                                    <div class="col-md-6">
+                                                                    <div class="col-md-5">
                                                                         <form action="{{ route('user_lessons.update', $lessons->id) }}"
                                                                               method="post">
                                                                             @method('PUT')
                                                                             @csrf
                                                                             <input type="hidden" name="document_id"
                                                                                    value="{{ $document->id }}">
-                                                                            {{-- <button type="submit"
-                                                                                    class="btn btn-success btn-program-success program-success"
-                                                                                    @if($document->user_document) disabled @endif>
-                                                                                @if($document->user_document) Completed @else Complete @endif
-                                                                            </button> --}}
                                                                             <div id="status" class="incomplete">
-                                                                                {{-- <span>Play status: </span> --}}
-                                                                                <span class="status complete"><button type="submit"
-                                                                                    class="btn btn-success btn-program-success program-success status complete"
-                                                                                    @if($document->user_document) disabled @endif>
-                                                                                @if($document->user_document) Completed @else Complete @endif
+                                                                                {{--                                                                                 <span>Play status: </span>--}}
+                                                                                <span class="status complete"><button
+                                                                                            type="submit"
+                                                                                            class="btn btn-success btn-program-success program-success status complete"
+                                                                                            @if($document->user_document) disabled @endif>
+                                                                                @if($document->user_document)
+                                                                                            Completed @else
+                                                                                            Complete @endif
                                                                                 </button></span>
                                                                                 <span class="status incomplete">INCOMPLETE</span>
-                                                                                <br />
-                                                                                </div>
-                                                                                <div style="display: none">
-                                                                                <span id="played">0</span> seconds out of
+                                                                                <br/>
+                                                                            </div>
+                                                                            <div style="display: none">
+                                                                                <span id="played">0</span> seconds out
+                                                                                of
                                                                                 <span id="duration"></span> seconds.
-                                                                                </div>
+                                                                            </div>
                                                                         </form>
                                                                     </div>
-                                                                    <div class="col-md-6">
-                                                                        {{-- <a href="{{ $document->file_path }}" target="blank">View</a> --}}
-                                                                        <div id="doc-view" style="cursor: pointer">View</div>
+                                                                    <div class="col-md-7">
+                                                                        <div id="doc-view" style="cursor: pointer">
+                                                                            View
+                                                                        </div>
+                                                                        <div class="container mt-4">
+                                                                            {!! $shareButtons1 !!}
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -263,56 +277,8 @@
                                 </div>
                             </div>
                         </div>
-{{--                        <div class="col-md-4 other-course-lesson">--}}
-{{--                            @include('courses._other_course')--}}
-{{--                        </div>--}}
                     </div>
                 </div>
             </div>
         </div>
-    <script>
-        var video = document.getElementById("video");
-        var timeStarted = -1;
-        var timePlayed = 0;
-        var duration = 0;
-        // If video metadata is laoded get duration
-        if(video.readyState > 0)
-        getDuration.call(video);
-        //If metadata not loaded, use event to get it
-        else
-        {
-        video.addEventListener('loadedmetadata', getDuration);
-        }
-        // remember time user started the video
-        function videoStartedPlaying() {
-        timeStarted = new Date().getTime()/1000;
-        }
-        function videoStoppedPlaying(event) {
-        // Start time less then zero means stop event was fired vidout start event
-        if(timeStarted>0) {
-            var playedFor = new Date().getTime()/1000 - timeStarted;
-            timeStarted = -1;
-            // add the new number of seconds played
-            timePlayed+=playedFor;
-        }
-        document.getElementById("played").innerHTML = Math.round(timePlayed)+"";
-        // Count as complete only if end of video was reached
-        if(timePlayed>=duration && event.type=="ended") {
-            document.getElementById("status").className="complete";
-        }
-        }
-
-        function getDuration() {
-        duration = video.duration;
-        document.getElementById("duration").appendChild(new Text(Math.round(duration)+""));
-        console.log("Duration: ", duration);
-        }
-
-        video.addEventListener("play", videoStartedPlaying);
-        video.addEventListener("playing", videoStartedPlaying);
-
-        video.addEventListener("ended", videoStoppedPlaying);
-        video.addEventListener("pause", videoStoppedPlaying);
-
-    </script>
 @endsection

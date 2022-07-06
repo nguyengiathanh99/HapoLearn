@@ -65,6 +65,11 @@ class Courses extends Model
         return $this->price == 0 ? "Free" : number_format($this->price) . '$';
     }
 
+    public function favorite_to_user()
+    {
+        return $this->belongsToMany(User::class)->withTimestamps();
+    }
+
     public function scopeSearch($query, $data)
     {
         if (isset($data['keyword']) && !is_null($data['keyword'])) {

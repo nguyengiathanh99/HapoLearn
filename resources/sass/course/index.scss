@@ -281,3 +281,23 @@ $list-course-filter-old: #E5E6E7;
     }
   }
 }
+.course-wish {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 15px;
+  right: 35px;
+}
+.course-wish a {
+  text-decoration: none;
+}
+
+.course-wish .fa {
+  font-size: 30px;
+  color: #cbcbcb;
+}
+
+.course-wish .fa:hover {
+  color: #ff7007;
+}
+

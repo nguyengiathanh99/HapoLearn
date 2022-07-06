@@ -78,6 +78,11 @@ class User extends Authenticatable
         return $this->belongsToMany(Documents::class, 'user_documents', 'user_id', 'document_id');
     }
 
+    public function favorite_courses()
+    {
+        return $this->hasMany(Courses::class, 'course_id');
+    }
+
     public function scopeTeacher($query)
     {
         $query->where('role', User::ROLE_TEACHER);

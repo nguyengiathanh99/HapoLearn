@@ -21,11 +21,12 @@ class CourseController extends Controller
     public function show(Request $request, $id)
     {
         $course = Courses::find($id);
+        $courses = Courses::all();
         $lessons = $course->lessons()->search($request->all())->paginate(config('course.item_page'));
         $otherCourses = Courses::others($id)->get();
         $teachers = $course->teachers()->get();
         $reviews = $course->reviews()->paginate(config('course.item_page'));
 
-        return view('courses.show', compact('course', 'otherCourses', 'request', 'lessons', 'teachers', 'reviews'));
+        return view('courses.show', compact('course', 'otherCourses', 'request', 'lessons', 'teachers', 'reviews', 'courses'));
     }
 }

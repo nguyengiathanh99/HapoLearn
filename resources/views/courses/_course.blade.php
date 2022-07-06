@@ -8,6 +8,13 @@
                 <div class="list-course-content-title">{{ $course->name }}</div>
                 <p class="list-course-content-txt">{{ $course->description }}</p>
             </div>
+            <div class="course-wish">
+                @guest()
+                    <a href="javascript:void(0);" onclick="toastr.info('abc', { closeButton: true, progressBar: true })" class=""><i class="fa fa-heart"></i>80</a>
+                @else
+
+                @endguest
+            </div>
         </div>
         <div class="list-course-btn">
             <a href="{{ route('courses.show', $course->id) }}" class="list-course-btn-more">More</a>

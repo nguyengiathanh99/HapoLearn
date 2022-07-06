@@ -52,18 +52,17 @@
                                 </form>
                             </div>
                             <div class="lesson-content">
-
                                 <div id="accordion">
                                     <div class="card">
-                                      <div class="card-header" id="headingOne">
-                                        <h5 class="mb-0">
-                                            @foreach($lessons as $item)
-                                          <div class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            {{ $item->chapter }}
-                                          </div>
-                                            @endforeach
-                                        </h5>
-                                      </div>
+{{--                                      <div class="card-header" id="headingOne">--}}
+{{--                                        <h5 class="mb-0">--}}
+{{--                                            @foreach($lessons as $item)--}}
+{{--                                          <div class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">--}}
+{{--                                            {{ $item->chapter }}--}}
+{{--                                          </div>--}}
+{{--                                            @endforeach--}}
+{{--                                        </h5>--}}
+{{--                                      </div>--}}
                                       <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                                         <div class="card-body">
                                             <ul style="list-style: none">
